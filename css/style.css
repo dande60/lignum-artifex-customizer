@@ -670,6 +670,8 @@ h3 {
 .field-group {
   display: grid;
   gap: 8px;
+  align-content: start;
+  align-self: start;
 }
 
 .field-group-compact {
