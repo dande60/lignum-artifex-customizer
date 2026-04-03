@@ -25,7 +25,7 @@ const FALLBACK_PRODUCTS = [
           { value: "engraved-keepsake", label: "Engraved keepsake" },
           { value: "serving-piece", label: "Serving piece" },
           { value: "holiday-gift", label: "Holiday gift" },
-          { value: "i-need-guidance", label: "I need help choosing" },
+          { value: "i-need-guidance", label: "Need Custom Gift" },
         ],
       },
       {
