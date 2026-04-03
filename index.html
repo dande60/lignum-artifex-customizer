@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lignum Artifex Customizer | Start Your Design</title>
+  <meta
+    name="description"
+    content="Configure a custom woodworking inquiry with Lignum Artifex. Share dimensions, material direction, engraving details, and project notes through a refined quote-request experience."
+  />
+  <meta property="og:title" content="Lignum Artifex Customizer | Start Your Design" />
+  <meta
+    property="og:description"
+    content="A separate customizer experience for bespoke woodworking and CNC-crafted inquiries."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/social-share.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lignum Artifex Customizer | Start Your Design" />
+  <meta
+    name="twitter:description"
+    content="Shape a custom quote request with materials, dimensions, typography, and finish direction."
+  />
+  <meta name="twitter:image" content="assets/images/social-share.jpg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="assets/images/hero.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand-mark" href="#top" aria-label="Lignum Artifex Customizer home">
+        <img src="assets/images/logo.png" alt="Lignum Artifex logo" />
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#process">How It Works</a>
+        <a href="#customizer">Build Request</a>
+        <a href="https://lignumartifex.com/" class="nav-return">Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-backdrop"></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Separate Customizer Site</p>
+          <h1>Shape the request before the conversation starts.</h1>
+          <p class="hero-lede">
+            This customizer is built for tailored inquiries. Clients can define the broad direction now, then refine the final piece with Lignum Artifex afterward.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#customizer">Start Your Design</a>
+            <a class="button button-secondary" href="https://lignumartifex.com/services.html">View Main Services</a>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="Customizer notes">
+          <p class="eyebrow">Built For</p>
+          <ul class="hero-list">
+            <li>Quote-ready dimensions and material direction</li>
+            <li>Placeholder product framework for future catalog growth</li>
+            <li>Typography-ready fields for signs, plaques, and engraved work</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page-section process-section" id="process">
+      <div class="section-intro">
+        <p class="eyebrow">How It Works</p>
+        <h2>A cleaner intake flow for custom work.</h2>
+        <p>
+          The first version stays focused: collect the right details, summarize the build direction clearly, and send a structured quote request without forcing a full ecommerce workflow.
+        </p>
+      </div>
+      <div class="process-grid">
+        <article class="process-block">
+          <p class="process-kicker">01</p>
+          <h3>Select a product framework</h3>
+          <p>Start with a placeholder product now, then swap in real products later through the shared JSON schema.</p>
+        </article>
+        <article class="process-block">
+          <p class="process-kicker">02</p>
+          <h3>Set the design direction</h3>
+          <p>Dimensions, material choices, finishes, engraving copy, and optional font selections are grouped into one structured request.</p>
+        </article>
+        <article class="process-block">
+          <p class="process-kicker">03</p>
+          <h3>Send a quote-ready brief</h3>
+          <p>The client submission reaches Formspree with a clean summary, customer details, and the selected product image URL.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section customizer-section" id="customizer">
+      <div class="section-intro customizer-intro">
+        <p class="eyebrow">Customizer</p>
+        <h2>Build a request that already understands the product.</h2>
+        <p>
+          This first release is intentionally product-data driven. New products can be added later by editing a definition file rather than rebuilding the page.
+        </p>
+      </div>
+
+      <div class="customizer-shell">
+        <aside class="product-rail">
+          <div class="product-preview">
+            <p class="rail-kicker">Selected Product</p>
+            <h3 id="product-name">Loading product...</h3>
+            <p id="product-category" class="product-category"></p>
+            <p id="product-description" class="product-description"></p>
+            <figure class="product-figure">
+              <img id="product-image" src="assets/images/hero.png" alt="Selected product preview" />
+            </figure>
+            <div class="quote-meta">
+              <span class="meta-label">Quote Flow</span>
+              <span id="product-quote-type" class="meta-value"></span>
+            </div>
+          </div>
+
+          <div class="summary-panel">
+            <div class="summary-heading">
+              <p class="rail-kicker">Live Summary</p>
+              <h3>Inquiry Snapshot</h3>
+            </div>
+            <ul id="summary-list" class="summary-list"></ul>
+          </div>
+
+          <div class="rules-panel">
+            <p class="rail-kicker">Current Notes</p>
+            <ul id="product-rules" class="rules-list"></ul>
+          </div>
+        </aside>
+
+        <div class="form-stage">
+          <form id="customizer-form" class="customizer-form" novalidate>
+            <div class="field-group field-group-top">
+              <label class="field-label" for="product-select">Product</label>
+              <select id="product-select" name="product_select" required></select>
+            </div>
+
+            <section class="form-section">
+              <div class="section-copy">
+                <p class="section-kicker">Configuration</p>
+                <h3>Define the piece</h3>
+              </div>
+              <div id="dynamic-fields" class="dynamic-fields"></div>
+            </section>
+
+            <section class="form-section">
+              <div class="section-copy">
+                <p class="section-kicker">Client Details</p>
+                <h3>Where should the quote go?</h3>
+              </div>
+              <div class="dynamic-fields">
+                <label class="field-group">
+                  <span class="field-label">Name</span>
+                  <input type="text" name="name" required autocomplete="name" />
+                </label>
+                <label class="field-group">
+                  <span class="field-label">Email</span>
+                  <input type="email" name="email" required autocomplete="email" />
+                </label>
+                <label class="field-group">
+                  <span class="field-label">Phone</span>
+                  <input type="tel" name="phone" autocomplete="tel" />
+                </label>
+                <label class="field-group">
+                  <span class="field-label">Company <span class="optional">Optional</span></span>
+                  <input type="text" name="company" autocomplete="organization" />
+                </label>
+                <label class="field-group">
+                  <span class="field-label">Preferred Timeline <span class="optional">Optional</span></span>
+                  <input type="text" name="deadline" placeholder="Example: Needed by September 15" />
+                </label>
+                <label class="field-group field-group-wide">
+                  <span class="field-label">Project Notes</span>
+                  <textarea name="project_notes" rows="5" placeholder="Reference the setting, installation context, design goals, or anything that should shape the quote."></textarea>
+                </label>
+              </div>
+            </section>
+
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <input type="hidden" name="product_name" id="hidden-product-name" />
+            <input type="hidden" name="product_category" id="hidden-product-category" />
+            <input type="hidden" name="quote_type" id="hidden-quote-type" />
+            <input type="hidden" name="product_image_url" id="hidden-product-image-url" />
+            <input type="hidden" name="configuration_summary" id="hidden-summary" />
+            <input type="hidden" name="_subject" id="hidden-subject" />
+
+            <div class="form-actions">
+              <button type="submit" class="button button-primary" id="submit-button">Send Quote Request</button>
+              <p class="microcopy">This sends a structured inquiry through Formspree. It is not a checkout flow.</p>
+            </div>
+
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-title">Lignum Artifex</p>
+        <p class="footer-copy">
+          Separate customizer experience for bespoke woodworking and CNC-crafted inquiries.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#top">Back to Top</a>
+        <a href="https://lignumartifex.com/">Return to Main Site</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
