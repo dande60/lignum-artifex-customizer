@@ -58,6 +58,17 @@ const FALLBACK_PRODUCTS = [
         placeholder: "Name, monogram, date, or phrase",
       },
       {
+        id: "engraving_style",
+        label: "Engraving Style",
+        type: "select",
+        required: false,
+        choices: [
+          { value: "painted", label: "Painted" },
+          { value: "epoxy-inlay", label: "Epoxy inlay" },
+          { value: "other", label: "Other" },
+        ],
+      },
+      {
         id: "personalization_length_request",
         label: "Message Length",
         type: "select",
@@ -214,6 +225,17 @@ const FALLBACK_PRODUCTS = [
         type: "text",
         required: false,
         placeholder: "Monogram, name, date, or short phrase",
+      },
+      {
+        id: "engraving_style",
+        label: "Engraving Style",
+        type: "select",
+        required: false,
+        choices: [
+          { value: "painted", label: "Painted" },
+          { value: "epoxy-inlay", label: "Epoxy inlay" },
+          { value: "other", label: "Other" },
+        ],
       },
       {
         id: "font_style",
