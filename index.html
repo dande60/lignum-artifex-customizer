@@ -141,10 +141,18 @@
 
         <div class="form-stage">
           <form id="customizer-form" class="customizer-form" novalidate>
-            <div class="field-group field-group-top">
-              <label class="field-label" for="product-select">Product</label>
-              <select id="product-select" name="product_select" required></select>
-            </div>
+            <section class="form-section form-section-first">
+              <div class="section-copy">
+                <p class="section-kicker">Product</p>
+                <h3>Choose the piece</h3>
+                <p class="field-help">Pick a product visually, then refine the details below.</p>
+              </div>
+              <div id="product-card-grid" class="product-card-grid" role="list" aria-label="Product choices"></div>
+              <div class="field-group field-group-top visually-hidden">
+                <label class="field-label" for="product-select">Product</label>
+                <select id="product-select" name="product_select" required></select>
+              </div>
+            </section>
 
             <section class="form-section">
               <div class="section-copy">

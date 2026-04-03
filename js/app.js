@@ -423,6 +423,7 @@ const state = {
 
 const form = document.getElementById("customizer-form");
 const productSelect = document.getElementById("product-select");
+const productCardGrid = document.getElementById("product-card-grid");
 const dynamicFields = document.getElementById("dynamic-fields");
 const summaryList = document.getElementById("summary-list");
 const rulesList = document.getElementById("product-rules");
@@ -486,12 +487,35 @@ function bindStaticEvents() {
 
 function populateProductSelector() {
   productSelect.innerHTML = "";
+  productCardGrid.innerHTML = "";
 
   state.products.forEach((product) => {
     const option = document.createElement("option");
     option.value = product.id;
     option.textContent = product.name;
     productSelect.append(option);
+
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "product-card";
+    card.dataset.productId = product.id;
+    card.setAttribute("role", "listitem");
+    card.setAttribute("aria-pressed", "false");
+    card.innerHTML = `
+      <div class="product-card-media">
+        <img src="${product.image}" alt="${product.name}" />
+      </div>
+      <div class="product-card-body">
+        <p class="product-card-kicker">${product.category}</p>
+        <h4 class="product-card-title">${product.name}</h4>
+        <p class="product-card-copy">${product.description}</p>
+        <span class="product-card-pill">${product.quoteType}</span>
+      </div>
+    `;
+    card.addEventListener("click", () => {
+      selectProduct(product.id);
+    });
+    productCardGrid.append(card);
   });
 }
 
@@ -499,6 +523,7 @@ function selectProduct(productId) {
   const product = state.products.find((item) => item.id === productId) || state.products[0];
   state.currentProduct = product;
   productSelect.value = product.id;
+  syncSelectedProductCard(product.id);
 
   renderProductDetails(product);
   renderDynamicFields(product);
@@ -506,6 +531,15 @@ function selectProduct(productId) {
   updateSummary();
   clearValidationErrors();
   setStatus("");
+}
+
+function syncSelectedProductCard(productId) {
+  const cards = productCardGrid.querySelectorAll(".product-card");
+  cards.forEach((card) => {
+    const isSelected = card.dataset.productId === productId;
+    card.classList.toggle("is-selected", isSelected);
+    card.setAttribute("aria-pressed", String(isSelected));
+  });
 }
 
 function renderProductDetails(product) {
