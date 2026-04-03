@@ -536,7 +536,7 @@ function renderDynamicFields(product) {
   product.options.forEach((field) => {
     const wrapper = document.createElement("label");
     wrapper.className = `field-group${field.type === "textarea" ? " field-group-wide" : ""}`;
-    if (field.id === "finish") {
+    if (field.id === "finish" || field.id === "material_direction") {
       wrapper.classList.add("field-group-compact");
     }
     wrapper.dataset.fieldId = field.id;
