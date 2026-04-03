@@ -498,6 +498,7 @@ function selectProduct(productId) {
   renderProductDetails(product);
   renderDynamicFields(product);
   applyVisibilityRules();
+  updateChoiceVisuals();
   updateSummary();
   clearValidationErrors();
   setStatus("");
@@ -555,6 +556,19 @@ function renderDynamicFields(product) {
       help.className = "field-help";
       help.textContent = field.helpText;
       wrapper.append(help);
+    }
+
+    if (field.type === "select") {
+      const choiceVisual = document.createElement("div");
+      choiceVisual.className = "choice-visual is-hidden";
+      choiceVisual.dataset.choiceVisualFor = field.id;
+      choiceVisual.innerHTML = `
+        <figure class="choice-visual-frame">
+          <img class="choice-visual-image" alt="" />
+        </figure>
+        <p class="choice-visual-caption"></p>
+      `;
+      wrapper.append(choiceVisual);
     }
 
     const error = document.createElement("p");
@@ -635,6 +649,8 @@ function applyVisibilityRules() {
       wrapper.classList.remove("is-invalid");
     }
   });
+
+  updateChoiceVisuals();
 }
 
 function evaluateVisibility(field) {
@@ -692,6 +708,42 @@ function updateSummary() {
     `Quote Type: ${state.currentProduct.quoteType}`,
     ...summaryLines,
   ].join("\n");
+}
+
+function updateChoiceVisuals() {
+  if (!state.currentProduct) return;
+
+  state.currentProduct.options.forEach((field) => {
+    if (field.type !== "select") {
+      return;
+    }
+
+    const wrapper = dynamicFields.querySelector(`[data-field-id="${field.id}"]`);
+    const visual = wrapper?.querySelector(`[data-choice-visual-for="${field.id}"]`);
+    const input = form.elements[field.id];
+
+    if (!wrapper || !visual || !input) {
+      return;
+    }
+
+    const imageNode = visual.querySelector(".choice-visual-image");
+    const captionNode = visual.querySelector(".choice-visual-caption");
+    const choice = field.choices.find((item) => item.value === input.value);
+    const hasVisual = Boolean(choice?.image) && !wrapper.classList.contains("is-hidden");
+
+    visual.classList.toggle("is-hidden", !hasVisual);
+
+    if (!hasVisual) {
+      imageNode.removeAttribute("src");
+      imageNode.alt = "";
+      captionNode.textContent = "";
+      return;
+    }
+
+    imageNode.src = choice.image;
+    imageNode.alt = choice.imageAlt || `${choice.label} reference`;
+    captionNode.textContent = choice.imageCaption || choice.label;
+  });
 }
 
 function formatFieldValue(field, rawValue) {
