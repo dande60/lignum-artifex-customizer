@@ -28,10 +28,6 @@
             "label": "Serving piece"
           },
           {
-            "value": "desk-or-office-item",
-            "label": "Desk or office item"
-          },
-          {
             "value": "holiday-gift",
             "label": "Holiday gift"
           },
