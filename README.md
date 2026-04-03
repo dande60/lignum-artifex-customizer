@@ -41,3 +41,9 @@ This project is intended for GitHub Pages first, with a custom subdomain added l
 After GitHub Pages is enabled for the repo, the default published URL will be:
 
 `https://dande60.github.io/lignum-artifex-customizer/`
+
+## Temporary Public State
+
+- The public root page currently shows a branded coming-soon experience.
+- The unfinished customizer is preserved privately at [customizer-preview.html](./customizer-preview.html).
+- The preview page is intentionally unlinked from the public landing page.
