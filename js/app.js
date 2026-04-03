@@ -89,6 +89,8 @@ const FALLBACK_PRODUCTS = [
           { value: "natural", label: "Natural" },
           { value: "oiled", label: "Oiled" },
           { value: "stained", label: "Stained" },
+          { value: "lacquer", label: "Lacquer" },
+          { value: "other", label: "Other" },
           { value: "needs-guidance", label: "I need finish guidance" },
         ],
       },
@@ -201,6 +203,8 @@ const FALLBACK_PRODUCTS = [
         choices: [
           { value: "food-safe-oil", label: "Food-safe oil" },
           { value: "hardwax-oil", label: "Hardwax oil" },
+          { value: "lacquer", label: "Lacquer" },
+          { value: "other", label: "Other" },
           { value: "needs-guidance", label: "I need finish guidance" },
         ],
       },
@@ -356,6 +360,8 @@ const FALLBACK_PRODUCTS = [
         choices: [
           { value: "matte-hardwax", label: "Matte hardwax" },
           { value: "satin-hardwax", label: "Satin hardwax" },
+          { value: "lacquer", label: "Lacquer" },
+          { value: "other", label: "Other" },
           { value: "needs-guidance", label: "I need finish guidance" },
         ],
       },

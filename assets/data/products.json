@@ -141,6 +141,14 @@
             "label": "Stained"
           },
           {
+            "value": "lacquer",
+            "label": "Lacquer"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          },
+          {
             "value": "needs-guidance",
             "label": "I need finish guidance"
           }
@@ -298,6 +306,14 @@
           {
             "value": "hardwax-oil",
             "label": "Hardwax oil"
+          },
+          {
+            "value": "lacquer",
+            "label": "Lacquer"
+          },
+          {
+            "value": "other",
+            "label": "Other"
           },
           {
             "value": "needs-guidance",
@@ -536,6 +552,14 @@
           {
             "value": "satin-hardwax",
             "label": "Satin hardwax"
+          },
+          {
+            "value": "lacquer",
+            "label": "Lacquer"
+          },
+          {
+            "value": "other",
+            "label": "Other"
           },
           {
             "value": "needs-guidance",
