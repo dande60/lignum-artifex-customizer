@@ -53,7 +53,19 @@ const FALLBACK_PRODUCTS = [
         label: "Personalization / Message",
         type: "text",
         required: false,
-        placeholder: "Name, monogram, date, short phrase, or inscription",
+        maxLength: 20,
+        helpText: "Maximum 20 characters. If you need more, choose the option below.",
+        placeholder: "Name, monogram, date, or phrase",
+      },
+      {
+        id: "personalization_length_request",
+        label: "Message Length",
+        type: "select",
+        required: false,
+        choices: [
+          { value: "standard-20", label: "20 characters or less" },
+          { value: "custom-requires-more", label: "Custom requires more" },
+        ],
       },
       {
         id: "font_style",
@@ -600,6 +612,10 @@ function createControl(field) {
 
   if (field.placeholder) {
     control.placeholder = field.placeholder;
+  }
+
+  if (typeof field.maxLength !== "undefined") {
+    control.maxLength = Number(field.maxLength);
   }
 
   if (typeof field.min !== "undefined") {
