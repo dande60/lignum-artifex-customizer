@@ -36,18 +36,6 @@ const FALLBACK_PRODUCTS = [
         placeholder: "Example: wedding couple, client gift, anniversary, retirement",
       },
       {
-        id: "size_guidance",
-        label: "Size Direction",
-        type: "select",
-        required: true,
-        choices: [
-          { value: "small", label: "Small gift" },
-          { value: "medium", label: "Medium gift" },
-          { value: "statement-piece", label: "Statement piece" },
-          { value: "not-sure", label: "Not sure yet" },
-        ],
-      },
-      {
         id: "material_direction",
         label: "Material Direction",
         type: "select",
