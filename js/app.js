@@ -71,6 +71,7 @@ const FALLBACK_PRODUCTS = [
         id: "finish",
         label: "Finish Direction",
         type: "select",
+        showChoiceVisual: false,
         required: false,
         choices: [
           { value: "natural", label: "Natural" },
@@ -190,6 +191,7 @@ const FALLBACK_PRODUCTS = [
         id: "finish",
         label: "Finish Direction",
         type: "select",
+        showChoiceVisual: false,
         required: true,
         choices: [
           { value: "food-safe-oil", label: "Food-safe oil" },
@@ -344,6 +346,7 @@ const FALLBACK_PRODUCTS = [
         id: "finish",
         label: "Finish Direction",
         type: "select",
+        showChoiceVisual: false,
         required: true,
         choices: [
           { value: "matte-hardwax", label: "Matte hardwax" },
@@ -545,7 +548,7 @@ function renderDynamicFields(product) {
       wrapper.append(help);
     }
 
-    if (field.type === "select") {
+    if (field.type === "select" && field.showChoiceVisual !== false) {
       const choiceVisual = document.createElement("div");
       choiceVisual.className = "choice-visual is-hidden";
       choiceVisual.dataset.choiceVisualFor = field.id;
