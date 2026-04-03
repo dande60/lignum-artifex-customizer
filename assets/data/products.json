@@ -1,5 +1,411 @@
 [
   {
+    "id": "charcuterie-boards",
+    "name": "Charcuterie Boards",
+    "category": "Serving Boards",
+    "description": "A custom serving board inquiry with room to define shape, size, wood selection, handle detail, and engraving direction.",
+    "active": true,
+    "image": "assets/images/hero.png",
+    "quoteType": "Custom review required",
+    "rules": [
+      "Board dimensions, species, and engraving depth are finalized during quote review.",
+      "Food-safe finish assumptions are captured here, but final recommendations may depend on intended use.",
+      "This version collects direction only. Pricing and file uploads remain outside the current release."
+    ],
+    "options": [
+      {
+        "id": "board_shape",
+        "label": "Board Shape",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "rectangular",
+            "label": "Rectangular"
+          },
+          {
+            "value": "rounded-rectangle",
+            "label": "Rounded rectangle"
+          },
+          {
+            "value": "paddle-handle",
+            "label": "Paddle with handle"
+          },
+          {
+            "value": "live-edge",
+            "label": "Live edge style"
+          }
+        ]
+      },
+      {
+        "id": "length",
+        "label": "Length",
+        "type": "number",
+        "required": true,
+        "placeholder": "20",
+        "unit": "in",
+        "min": 8,
+        "max": 48
+      },
+      {
+        "id": "width",
+        "label": "Width",
+        "type": "number",
+        "required": true,
+        "placeholder": "10",
+        "unit": "in",
+        "min": 6,
+        "max": 24
+      },
+      {
+        "id": "thickness",
+        "label": "Thickness",
+        "type": "number",
+        "required": false,
+        "placeholder": "1.25",
+        "unit": "in",
+        "min": 0.75,
+        "max": 3
+      },
+      {
+        "id": "wood_species",
+        "label": "Wood Species",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "walnut",
+            "label": "Walnut"
+          },
+          {
+            "value": "maple",
+            "label": "Maple"
+          },
+          {
+            "value": "white-oak",
+            "label": "White oak"
+          },
+          {
+            "value": "mixed-hardwood",
+            "label": "Mixed hardwood"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "I need species guidance"
+          }
+        ]
+      },
+      {
+        "id": "handle_style",
+        "label": "Handle / Grip",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "none",
+            "label": "No handle"
+          },
+          {
+            "value": "cutout",
+            "label": "Integrated cutout"
+          },
+          {
+            "value": "extended-paddle",
+            "label": "Extended paddle handle"
+          },
+          {
+            "value": "hanging-hole",
+            "label": "Hanging hole"
+          }
+        ]
+      },
+      {
+        "id": "finish",
+        "label": "Finish Direction",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "food-safe-oil",
+            "label": "Food-safe oil"
+          },
+          {
+            "value": "hardwax-oil",
+            "label": "Hardwax oil"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "I need finish guidance"
+          }
+        ]
+      },
+      {
+        "id": "engraving",
+        "label": "Personalization / Engraving",
+        "type": "text",
+        "required": false,
+        "placeholder": "Monogram, name, date, or short phrase"
+      },
+      {
+        "id": "font_style",
+        "label": "Font Style",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "decide-later",
+            "label": "Decide later"
+          },
+          {
+            "value": "classic-serif",
+            "label": "Classic serif"
+          },
+          {
+            "value": "modern-sans",
+            "label": "Modern sans"
+          },
+          {
+            "value": "script",
+            "label": "Script"
+          }
+        ]
+      },
+      {
+        "id": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true,
+        "placeholder": "1",
+        "min": 1,
+        "max": 50
+      },
+      {
+        "id": "design_notes",
+        "label": "Board Notes",
+        "type": "textarea",
+        "required": false,
+        "placeholder": "Reference the use case, serving style, gift context, or any edge/detail preferences."
+      }
+    ]
+  },
+  {
+    "id": "river-tables",
+    "name": "River Tables",
+    "category": "Furniture",
+    "description": "A table inquiry for resin river builds, slab pairing, base style, and room-specific size planning.",
+    "active": true,
+    "image": "assets/images/hero.png",
+    "quoteType": "Custom review required",
+    "rules": [
+      "River table slab selection and resin tone are confirmed during quote review.",
+      "Large-format pieces may require delivery and installation planning based on the final dimensions.",
+      "This form captures direction only. Final pricing, drawings, and finish samples happen afterward."
+    ],
+    "options": [
+      {
+        "id": "table_type",
+        "label": "Table Type",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "dining-table",
+            "label": "Dining table"
+          },
+          {
+            "value": "coffee-table",
+            "label": "Coffee table"
+          },
+          {
+            "value": "console-table",
+            "label": "Console table"
+          },
+          {
+            "value": "desk",
+            "label": "Desk"
+          }
+        ]
+      },
+      {
+        "id": "length",
+        "label": "Length",
+        "type": "number",
+        "required": true,
+        "placeholder": "72",
+        "unit": "in",
+        "min": 24,
+        "max": 144
+      },
+      {
+        "id": "width",
+        "label": "Width",
+        "type": "number",
+        "required": true,
+        "placeholder": "36",
+        "unit": "in",
+        "min": 16,
+        "max": 60
+      },
+      {
+        "id": "height",
+        "label": "Height",
+        "type": "number",
+        "required": false,
+        "placeholder": "30",
+        "unit": "in",
+        "min": 14,
+        "max": 42
+      },
+      {
+        "id": "wood_species",
+        "label": "Wood Species",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "walnut",
+            "label": "Walnut"
+          },
+          {
+            "value": "maple",
+            "label": "Maple"
+          },
+          {
+            "value": "oak",
+            "label": "Oak"
+          },
+          {
+            "value": "elm",
+            "label": "Elm"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "I need slab guidance"
+          }
+        ]
+      },
+      {
+        "id": "river_color",
+        "label": "River / Resin Tone",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "clear",
+            "label": "Clear"
+          },
+          {
+            "value": "smoke",
+            "label": "Smoke"
+          },
+          {
+            "value": "deep-blue",
+            "label": "Deep blue"
+          },
+          {
+            "value": "black",
+            "label": "Black"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "I need resin guidance"
+          }
+        ]
+      },
+      {
+        "id": "base_style",
+        "label": "Base Style",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "metal-u",
+            "label": "Metal U base"
+          },
+          {
+            "value": "metal-x",
+            "label": "Metal X base"
+          },
+          {
+            "value": "wood-pedestal",
+            "label": "Wood pedestal"
+          },
+          {
+            "value": "client-supplied",
+            "label": "Client supplied base"
+          }
+        ]
+      },
+      {
+        "id": "edge_style",
+        "label": "Edge Style",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "natural-live-edge",
+            "label": "Natural live edge"
+          },
+          {
+            "value": "straightened-live-edge",
+            "label": "Straightened live edge"
+          },
+          {
+            "value": "clean-square",
+            "label": "Clean square edge"
+          }
+        ]
+      },
+      {
+        "id": "finish",
+        "label": "Finish Direction",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "matte-hardwax",
+            "label": "Matte hardwax"
+          },
+          {
+            "value": "satin-hardwax",
+            "label": "Satin hardwax"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "I need finish guidance"
+          }
+        ]
+      },
+      {
+        "id": "delivery_scope",
+        "label": "Delivery / Installation",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "pickup",
+            "label": "Pickup"
+          },
+          {
+            "value": "local-delivery",
+            "label": "Local delivery"
+          },
+          {
+            "value": "delivery-install",
+            "label": "Delivery and installation"
+          }
+        ]
+      },
+      {
+        "id": "design_notes",
+        "label": "Table Notes",
+        "type": "textarea",
+        "required": false,
+        "placeholder": "Reference the room, seating requirements, color direction, or any slab/resin inspiration."
+      }
+    ]
+  },
+  {
     "id": "custom-sign-template",
     "name": "Custom Sign Template",
     "category": "Placeholder Product",
