@@ -90,13 +90,6 @@ const FALLBACK_PRODUCTS = [
         max: 100,
       },
       {
-        id: "deadline",
-        label: "Gift Deadline",
-        type: "text",
-        required: false,
-        placeholder: "Example: Needed before December 15",
-      },
-      {
         id: "design_notes",
         label: "Gift Notes",
         type: "textarea",
