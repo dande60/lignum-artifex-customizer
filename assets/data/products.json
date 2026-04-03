@@ -1,5 +1,186 @@
 [
   {
+    "id": "gift-ideas",
+    "name": "Gift Ideas",
+    "category": "Personalized Gifts",
+    "description": "A flexible inquiry for custom gift pieces, engraved keepsakes, small-batch gifts, and one-off personalized woodworking ideas.",
+    "active": true,
+    "image": "assets/images/hero.png",
+    "quoteType": "Custom review required",
+    "rules": [
+      "Gift concepts vary widely, so this form is used to capture direction before product details are finalized.",
+      "Personalization, timelines, and quantity affect feasibility and quote scope.",
+      "This version gathers design intent only. Pricing and uploads remain outside the current release."
+    ],
+    "options": [
+      {
+        "id": "gift_type",
+        "label": "Gift Type",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "engraved-keepsake",
+            "label": "Engraved keepsake"
+          },
+          {
+            "value": "serving-piece",
+            "label": "Serving piece"
+          },
+          {
+            "value": "desk-or-office-item",
+            "label": "Desk or office item"
+          },
+          {
+            "value": "holiday-gift",
+            "label": "Holiday gift"
+          },
+          {
+            "value": "i-need-guidance",
+            "label": "I need help choosing"
+          }
+        ]
+      },
+      {
+        "id": "recipient",
+        "label": "Who Is It For?",
+        "type": "text",
+        "required": false,
+        "placeholder": "Example: wedding couple, client gift, anniversary, retirement"
+      },
+      {
+        "id": "size_guidance",
+        "label": "Size Direction",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "small",
+            "label": "Small gift"
+          },
+          {
+            "value": "medium",
+            "label": "Medium gift"
+          },
+          {
+            "value": "statement-piece",
+            "label": "Statement piece"
+          },
+          {
+            "value": "not-sure",
+            "label": "Not sure yet"
+          }
+        ]
+      },
+      {
+        "id": "material_direction",
+        "label": "Material Direction",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "walnut",
+            "label": "Walnut"
+          },
+          {
+            "value": "maple",
+            "label": "Maple"
+          },
+          {
+            "value": "oak",
+            "label": "Oak"
+          },
+          {
+            "value": "mixed-hardwood",
+            "label": "Mixed hardwood"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "I need material guidance"
+          }
+        ]
+      },
+      {
+        "id": "personalization",
+        "label": "Personalization / Message",
+        "type": "text",
+        "required": false,
+        "placeholder": "Name, monogram, date, short phrase, or inscription"
+      },
+      {
+        "id": "font_style",
+        "label": "Font Style",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "decide-later",
+            "label": "Decide later"
+          },
+          {
+            "value": "classic-serif",
+            "label": "Classic serif"
+          },
+          {
+            "value": "modern-sans",
+            "label": "Modern sans"
+          },
+          {
+            "value": "script",
+            "label": "Script"
+          }
+        ]
+      },
+      {
+        "id": "finish",
+        "label": "Finish Direction",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "natural",
+            "label": "Natural"
+          },
+          {
+            "value": "oiled",
+            "label": "Oiled"
+          },
+          {
+            "value": "stained",
+            "label": "Stained"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "I need finish guidance"
+          }
+        ]
+      },
+      {
+        "id": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true,
+        "placeholder": "1",
+        "min": 1,
+        "max": 100
+      },
+      {
+        "id": "deadline",
+        "label": "Gift Deadline",
+        "type": "text",
+        "required": false,
+        "placeholder": "Example: Needed before December 15"
+      },
+      {
+        "id": "design_notes",
+        "label": "Gift Notes",
+        "type": "textarea",
+        "required": false,
+        "placeholder": "Describe the occasion, gift tone, budget sensitivity, or any inspiration for the piece."
+      }
+    ]
+  },
+  {
     "id": "charcuterie-boards",
     "name": "Charcuterie Boards",
     "category": "Serving Boards",
