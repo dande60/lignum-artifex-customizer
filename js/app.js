@@ -221,7 +221,9 @@ const FALLBACK_PRODUCTS = [
         choices: [
           { value: "walnut", label: "Walnut" },
           { value: "maple", label: "Maple" },
-          { value: "white-oak", label: "White oak" },
+          { value: "oak", label: "Oak" },
+          { value: "olive-wood", label: "Olive wood" },
+          { value: "pear-wood", label: "Pear wood" },
           { value: "mixed-hardwood", label: "Mixed hardwood" },
           { value: "needs-guidance", label: "I need species guidance" },
         ],
