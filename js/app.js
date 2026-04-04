@@ -65,7 +65,7 @@ const FALLBACK_PRODUCTS = [
         choices: [
           { value: "painted", label: "Painted" },
           { value: "epoxy-inlay", label: "Epoxy inlay" },
-          { value: "other", label: "Other" },
+          { value: "other", label: "Other (please fill in your amount)" },
         ],
       },
       {
@@ -163,7 +163,7 @@ const FALLBACK_PRODUCTS = [
           { value: "16", label: "16 in" },
           { value: "20", label: "20 in" },
           { value: "24", label: "24 in" },
-          { value: "other", label: "Other" },
+          { value: "other", label: "Other (please fill in your amount)" },
         ],
       },
       {
