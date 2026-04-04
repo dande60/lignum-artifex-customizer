@@ -696,12 +696,16 @@ function createControl(field) {
   return control;
 }
 
+function getNamedControl(fieldId) {
+  return form.elements.namedItem(fieldId);
+}
+
 function applyVisibilityRules() {
   if (!state.currentProduct) return;
 
   state.currentProduct.options.forEach((field) => {
     const wrapper = dynamicFields.querySelector(`[data-field-id="${field.id}"]`);
-    const input = form.elements[field.id];
+    const input = getNamedControl(field.id);
     const shouldShow = evaluateVisibility(field);
 
     wrapper.classList.toggle("is-hidden", !shouldShow);
@@ -723,7 +727,7 @@ function evaluateVisibility(field) {
     return true;
   }
 
-  const source = form.elements[field.showWhen.field];
+  const source = getNamedControl(field.showWhen.field);
   if (!source) {
     return true;
   }
@@ -738,7 +742,7 @@ function updateSummary() {
   const summaryLines = [];
 
   state.currentProduct.options.forEach((field) => {
-    const input = form.elements[field.id];
+    const input = getNamedControl(field.id);
     if (!input || input.disabled) {
       return;
     }
@@ -785,7 +789,7 @@ function updateChoiceVisuals() {
 
     const wrapper = dynamicFields.querySelector(`[data-field-id="${field.id}"]`);
     const visual = wrapper?.querySelector(`[data-choice-visual-for="${field.id}"]`);
-    const input = form.elements[field.id];
+    const input = getNamedControl(field.id);
 
     if (!wrapper || !visual || !input) {
       return;
