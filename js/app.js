@@ -155,12 +155,27 @@ const FALLBACK_PRODUCTS = [
       {
         id: "length",
         label: "Length",
+        type: "select",
+        required: true,
+        choices: [
+          { value: "10", label: "10 in" },
+          { value: "12", label: "12 in" },
+          { value: "16", label: "16 in" },
+          { value: "20", label: "20 in" },
+          { value: "24", label: "24 in" },
+          { value: "other", label: "Other" },
+        ],
+      },
+      {
+        id: "custom_length",
+        label: "Custom Length",
         type: "number",
         required: true,
         placeholder: "20",
         unit: "in",
         min: 8,
         max: 48,
+        showWhen: { field: "length", equals: "other" },
       },
       {
         id: "width",
