@@ -603,11 +603,20 @@ function renderDynamicFields(product) {
     if (field.id === "finish" || field.id === "material_direction") {
       wrapper.classList.add("field-group-compact");
     }
+    if (field.showWhen) {
+      wrapper.classList.add("field-group-conditional");
+    }
     wrapper.dataset.fieldId = field.id;
 
     const label = document.createElement("span");
     label.className = "field-label";
     label.textContent = field.label;
+    if (field.showWhen) {
+      const marker = document.createElement("span");
+      marker.className = "field-label-mark";
+      marker.textContent = " *";
+      label.append(marker);
+    }
     wrapper.append(label);
 
     const input = createControl(field);
@@ -710,6 +719,7 @@ function applyVisibilityRules() {
     const shouldShow = evaluateVisibility(field);
 
     wrapper.classList.toggle("is-hidden", !shouldShow);
+    wrapper.classList.toggle("is-conditional-active", Boolean(field.showWhen) && shouldShow);
     input.disabled = !shouldShow;
     input.required = shouldShow && Boolean(field.required);
 

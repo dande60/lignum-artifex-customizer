@@ -689,6 +689,11 @@ h3 {
   color: rgba(25, 37, 55, 0.82);
 }
 
+.field-label-mark {
+  color: var(--danger);
+  font-weight: 600;
+}
+
 .optional {
   color: rgba(25, 37, 55, 0.5);
   letter-spacing: 0.08em;
@@ -752,6 +757,28 @@ textarea {
   font-size: 0.85rem;
   line-height: 1.5;
   color: rgba(25, 37, 55, 0.58);
+}
+
+.field-group-conditional {
+  padding: 0;
+  border-radius: 18px;
+}
+
+.field-group-conditional.is-conditional-active {
+  padding: 12px;
+  background: rgba(143, 45, 45, 0.05);
+  border: 1px solid rgba(143, 45, 45, 0.24);
+}
+
+.field-group-conditional.is-conditional-active .field-label {
+  color: var(--danger);
+}
+
+.field-group-conditional.is-conditional-active input,
+.field-group-conditional.is-conditional-active select,
+.field-group-conditional.is-conditional-active textarea {
+  border-color: rgba(143, 45, 45, 0.5);
+  box-shadow: 0 0 0 3px rgba(143, 45, 45, 0.08);
 }
 
 .choice-visual {
