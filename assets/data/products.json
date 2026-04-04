@@ -217,6 +217,10 @@
             "label": "Rectangular"
           },
           {
+            "value": "square",
+            "label": "Square"
+          },
+          {
             "value": "rounded-rectangle",
             "label": "Rounded rectangle"
           },
@@ -227,6 +231,10 @@
           {
             "value": "live-edge",
             "label": "Live edge style"
+          },
+          {
+            "value": "custom-shape",
+            "label": "Custom shape"
           }
         ]
       },

@@ -145,9 +145,11 @@ const FALLBACK_PRODUCTS = [
         required: true,
         choices: [
           { value: "rectangular", label: "Rectangular" },
+          { value: "square", label: "Square" },
           { value: "rounded-rectangle", label: "Rounded rectangle" },
           { value: "paddle-handle", label: "Paddle with handle" },
           { value: "live-edge", label: "Live edge style" },
+          { value: "custom-shape", label: "Custom shape" },
         ],
       },
       {
