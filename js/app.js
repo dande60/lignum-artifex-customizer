@@ -502,10 +502,13 @@ function bindStaticEvents() {
     selectProduct(event.target.value);
   });
 
-  form.addEventListener("input", () => {
+  const refreshDynamicState = () => {
     applyVisibilityRules();
     updateSummary();
-  });
+  };
+
+  form.addEventListener("input", refreshDynamicState);
+  form.addEventListener("change", refreshDynamicState);
 
   form.addEventListener("submit", handleSubmit);
 }
