@@ -312,7 +312,7 @@
           },
           {
             "value": "other",
-            "label": "Other"
+            "label": "Other (please fill in your amount)"
           }
         ]
       },

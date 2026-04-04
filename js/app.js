@@ -188,7 +188,7 @@ const FALLBACK_PRODUCTS = [
           { value: "10", label: "10 in" },
           { value: "12", label: "12 in" },
           { value: "14", label: "14 in" },
-          { value: "other", label: "Other" },
+          { value: "other", label: "Other (please fill in your amount)" },
         ],
       },
       {
