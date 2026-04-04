@@ -4,13 +4,17 @@
     "name": "Gift Ideas",
     "category": "Personalized Gifts",
     "description": "A flexible inquiry for custom gift pieces, engraved keepsakes, small-batch gifts, and one-off personalized woodworking ideas.",
+    "detailLinkText": "Visit the gallery for more ideas:",
+    "detailLinkLabel": "Portfolio Gallery",
+    "detailLinkHref": "https://www.lignumartifex.com/gallery.html",
     "active": true,
-    "image": "assets/images/hero.png",
+    "image": "assets/images/products/jewel-box.png",
     "quoteType": "Custom review required",
     "rules": [
       "Gift concepts vary widely, so this form is used to capture direction before product details are finalized.",
       "Personalization, timelines, and quantity affect feasibility and quote scope.",
-      "This version gathers design intent only. Pricing and uploads remain outside the current release."
+      "This version gathers design intent only. Pricing and uploads remain outside the current release.",
+      "Quote responses are typically sent within 48 to 72 hours."
     ],
     "options": [
       {
@@ -24,8 +28,8 @@
             "label": "Engraved keepsake"
           },
           {
-            "value": "serving-piece",
-            "label": "Serving piece"
+            "value": "plaque",
+            "label": "Plaque"
           },
           {
             "value": "holiday-gift",
@@ -38,37 +42,35 @@
         ]
       },
       {
-        "id": "recipient",
-        "label": "Who Is It For?",
-        "type": "text",
-        "required": false,
-        "placeholder": "Example: wedding couple, client gift, anniversary, retirement"
-      },
-      {
         "id": "material_direction",
-        "label": "Material Direction",
+        "label": "Wood Species",
         "type": "select",
         "required": true,
         "choices": [
           {
             "value": "walnut",
-            "label": "Walnut"
+            "label": "Walnut",
+    "image": "assets/images/wood-species/black-walnut.png",
+            "imageAlt": "Black walnut wood grain sample",
+            "imageCaption": "Black Walnut"
           },
           {
             "value": "maple",
-            "label": "Maple"
+            "label": "Maple",
+    "image": "assets/images/wood-species/maple.png",
+            "imageAlt": "Maple wood grain sample",
+            "imageCaption": "Maple"
           },
           {
             "value": "oak",
-            "label": "Oak"
-          },
-          {
-            "value": "mixed-hardwood",
-            "label": "Mixed hardwood"
+            "label": "Oak",
+    "image": "assets/images/wood-species/oak-wood.png",
+            "imageAlt": "Oak wood grain sample",
+            "imageCaption": "Oak"
           },
           {
             "value": "needs-guidance",
-            "label": "I need material guidance"
+            "label": "Exotics and more Please describe in notes"
           }
         ]
       },
@@ -77,8 +79,8 @@
         "label": "Personalization / Message",
         "type": "text",
         "required": false,
-        "maxLength": 20,
-        "helpText": "Maximum 20 characters. If you need more, choose the option below.",
+        "maxLength": 30,
+        "helpText": "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
         "placeholder": "Name, monogram, date, or phrase"
       },
       {
@@ -97,23 +99,7 @@
           },
           {
             "value": "other",
-            "label": "Other (please fill in your amount)"
-          }
-        ]
-      },
-      {
-        "id": "personalization_length_request",
-        "label": "Message Length",
-        "type": "select",
-        "required": false,
-        "choices": [
-          {
-            "value": "standard-20",
-            "label": "20 characters or less"
-          },
-          {
-            "value": "custom-requires-more",
-            "label": "Custom requires more"
+            "label": "Other (Explain in notes)"
           }
         ]
       },
@@ -124,20 +110,48 @@
         "required": false,
         "choices": [
           {
-            "value": "decide-later",
-            "label": "Decide later"
-          },
-          {
             "value": "classic-serif",
             "label": "Classic serif"
+          },
+          {
+            "value": "times-roman",
+            "label": "Times Roman"
           },
           {
             "value": "modern-sans",
             "label": "Modern sans"
           },
           {
+            "value": "arial",
+            "label": "Arial"
+          },
+          {
+            "value": "cormorant-garamond",
+            "label": "Cormorant Garamond"
+          },
+          {
+            "value": "marcellus",
+            "label": "Marcellus"
+          },
+          {
+            "value": "josefin-sans",
+            "label": "Josefin Sans"
+          },
+          {
             "value": "script",
-            "label": "Script"
+            "label": "Allura"
+          },
+          {
+            "value": "great-vibes",
+            "label": "Great Vibes"
+          },
+          {
+            "value": "parisienne",
+            "label": "Parisienne"
+          },
+          {
+            "value": "decide-later",
+            "label": "* Decide later *"
           }
         ]
       },
@@ -179,6 +193,7 @@
         "label": "Quantity",
         "type": "number",
         "required": true,
+        "defaultValue": 1,
         "placeholder": "1",
         "min": 1,
         "max": 100
@@ -194,18 +209,42 @@
   },
   {
     "id": "charcuterie-boards",
-    "name": "Charcuterie Boards",
+    "name": "Kitchen & Serving",
     "category": "Serving Boards",
-    "description": "A custom serving board inquiry with room to define shape, size, wood selection, handle detail, and engraving direction.",
+    "description": "A custom kitchen board inquiry with room to define board type, shape, size, wood selection, handle detail, and engraving direction.",
+    "detailLinkText": "Visit the gallery for more ideas:",
+    "detailLinkLabel": "Portfolio Gallery",
+    "detailLinkHref": "https://www.lignumartifex.com/gallery.html",
     "active": true,
-    "image": "assets/images/hero.png",
+    "image": "assets/images/products/board-1.png",
     "quoteType": "Custom review required",
     "rules": [
       "Board dimensions, species, and engraving depth are finalized during quote review.",
       "Food-safe finish assumptions are captured here, but final recommendations may depend on intended use.",
-      "This version collects direction only. Pricing and file uploads remain outside the current release."
+      "This version collects direction only. Pricing and file uploads remain outside the current release.",
+      "Quote responses are typically sent within 48 to 72 hours."
     ],
     "options": [
+      {
+        "id": "board_type",
+        "label": "Type",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "charcuterie-board",
+            "label": "Charcuterie board"
+          },
+          {
+            "value": "cutting-board",
+            "label": "Cutting board"
+          },
+          {
+            "value": "custom-board",
+            "label": "Custom board"
+          }
+        ]
+      },
       {
         "id": "board_shape",
         "label": "Board Shape",
@@ -226,11 +265,19 @@
           },
           {
             "value": "paddle-handle",
-            "label": "Paddle with handle"
+            "label": "Paddle with handle",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
           },
           {
             "value": "live-edge",
-            "label": "Live edge style"
+            "label": "Live edge style",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
           },
           {
             "value": "custom-shape",
@@ -334,19 +381,63 @@
         "id": "thickness",
         "label": "Thickness",
         "type": "select",
-        "required": false,
+        "required": true,
         "choices": [
           {
+            "value": "0.625",
+            "label": "5/8 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "0.75",
+            "label": "3/4 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "1",
+            "label": "1 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
             "value": "1.5",
-            "label": "1 1/2 in"
+            "label": "1 1/2 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
           },
           {
             "value": "2",
-            "label": "2 in"
+            "label": "2 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
           },
           {
             "value": "2.5",
-            "label": "2 1/2 in"
+            "label": "2 1/2 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
+          },
+          {
+            "value": "3",
+            "label": "3 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
           }
         ]
       },
@@ -358,43 +449,62 @@
         "choices": [
           {
             "value": "walnut",
-            "label": "Walnut"
+            "label": "Walnut",
+    "image": "assets/images/wood-species/black-walnut.png",
+            "imageAlt": "Black walnut wood grain sample",
+            "imageCaption": "Black Walnut"
           },
           {
             "value": "maple",
-            "label": "Maple"
+            "label": "Maple",
+    "image": "assets/images/wood-species/maple.png",
+            "imageAlt": "Maple wood grain sample",
+            "imageCaption": "Maple"
           },
           {
             "value": "oak",
-            "label": "Oak"
+            "label": "Oak",
+    "image": "assets/images/wood-species/oak-wood.png",
+            "imageAlt": "Oak wood grain sample",
+            "imageCaption": "Oak"
           },
           {
             "value": "olive-wood",
-            "label": "Olive wood"
+            "label": "Olive wood",
+            "image": "assets/images/wood-species/olive-wood.jpg",
+            "imageAlt": "Olive wood grain sample",
+            "imageCaption": "Olive wood"
           },
           {
             "value": "pear-wood",
-            "label": "Pear wood"
-          },
-          {
-            "value": "mixed-hardwood",
-            "label": "Mixed hardwood"
+            "label": "Pear wood",
+            "image": "assets/images/wood-species/pear-wood.jpg",
+            "imageAlt": "Pear wood grain sample",
+            "imageCaption": "Pear wood"
           },
           {
             "value": "needs-guidance",
-            "label": "I need species guidance"
+            "label": "Exotics and more Please describe in notes"
           }
         ]
       },
       {
         "id": "handle_style",
         "label": "Handle / Grip",
-        "type": "select",
-        "required": false,
+        "type": "checkbox-group",
+        "showEmptyPlaceholder": true,
+        "emptyPlaceholderText": "Pick type first",
+        "deferChoicesUntil": "board_type",
+        "required": true,
         "choices": [
           {
             "value": "none",
-            "label": "No handle"
+            "label": "No handle",
+            "exclusive": true,
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
           },
           {
             "value": "cutout",
@@ -402,11 +512,27 @@
           },
           {
             "value": "extended-paddle",
-            "label": "Extended paddle handle"
+            "label": "Paddle Handle (comes with hanging hole)",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "juice-groove",
+            "label": "Juice Groove",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
           },
           {
             "value": "hanging-hole",
-            "label": "Hanging hole"
+            "label": "Hanging hole",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
           }
         ]
       },
@@ -426,10 +552,6 @@
             "label": "Hardwax oil"
           },
           {
-            "value": "lacquer",
-            "label": "Lacquer"
-          },
-          {
             "value": "other",
             "label": "Other"
           },
@@ -441,10 +563,12 @@
       },
       {
         "id": "engraving",
-        "label": "Personalization / Engraving",
+        "label": "Personalization / Message",
         "type": "text",
         "required": false,
-        "placeholder": "Monogram, name, date, or short phrase"
+        "maxLength": 30,
+        "helpText": "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
+        "placeholder": "Name, monogram, date, or phrase"
       },
       {
         "id": "engraving_style",
@@ -462,7 +586,7 @@
           },
           {
             "value": "other",
-            "label": "Other"
+            "label": "Other (Explain in notes)"
           }
         ]
       },
@@ -473,20 +597,48 @@
         "required": false,
         "choices": [
           {
-            "value": "decide-later",
-            "label": "Decide later"
-          },
-          {
             "value": "classic-serif",
             "label": "Classic serif"
+          },
+          {
+            "value": "times-roman",
+            "label": "Times Roman"
           },
           {
             "value": "modern-sans",
             "label": "Modern sans"
           },
           {
+            "value": "arial",
+            "label": "Arial"
+          },
+          {
+            "value": "cormorant-garamond",
+            "label": "Cormorant Garamond"
+          },
+          {
+            "value": "marcellus",
+            "label": "Marcellus"
+          },
+          {
+            "value": "josefin-sans",
+            "label": "Josefin Sans"
+          },
+          {
             "value": "script",
-            "label": "Script"
+            "label": "Allura"
+          },
+          {
+            "value": "great-vibes",
+            "label": "Great Vibes"
+          },
+          {
+            "value": "parisienne",
+            "label": "Parisienne"
+          },
+          {
+            "value": "decide-later",
+            "label": "* Decide later *"
           }
         ]
       },
@@ -495,9 +647,18 @@
         "label": "Quantity",
         "type": "number",
         "required": true,
+        "defaultValue": 1,
         "placeholder": "1",
         "min": 1,
         "max": 50
+      },
+      {
+        "id": "artwork_inlay",
+        "label": "Do You Have Or Do You Want Custom Artwork Inlay On The Board?",
+        "type": "checkbox",
+        "required": false,
+        "checkboxLabel": "Yes",
+        "checkedNote": "Explain in Board Notes."
       },
       {
         "id": "design_notes",
@@ -513,13 +674,17 @@
     "name": "River Tables",
     "category": "Furniture",
     "description": "A table inquiry for resin river builds, slab pairing, base style, and room-specific size planning.",
+    "detailLinkText": "Visit the gallery for more ideas:",
+    "detailLinkLabel": "Portfolio Gallery",
+    "detailLinkHref": "https://www.lignumartifex.com/gallery.html",
     "active": true,
-    "image": "assets/images/hero.png",
+    "image": "assets/images/products/rivertable.png",
     "quoteType": "Custom review required",
     "rules": [
       "River table slab selection and resin tone are confirmed during quote review.",
       "Large-format pieces may require delivery and installation planning based on the final dimensions.",
-      "This form captures direction only. Final pricing, drawings, and finish samples happen afterward."
+      "This form captures direction only. Final pricing, drawings, and finish samples happen afterward.",
+      "Quote responses are typically sent within 48 to 72 hours."
     ],
     "options": [
       {
@@ -543,38 +708,12 @@
           {
             "value": "desk",
             "label": "Desk"
+          },
+          {
+            "value": "water-fall-end",
+            "label": "Water Fall End"
           }
         ]
-      },
-      {
-        "id": "length",
-        "label": "Length",
-        "type": "number",
-        "required": true,
-        "placeholder": "72",
-        "unit": "in",
-        "min": 24,
-        "max": 144
-      },
-      {
-        "id": "width",
-        "label": "Width",
-        "type": "number",
-        "required": true,
-        "placeholder": "36",
-        "unit": "in",
-        "min": 16,
-        "max": 60
-      },
-      {
-        "id": "height",
-        "label": "Height",
-        "type": "number",
-        "required": false,
-        "placeholder": "30",
-        "unit": "in",
-        "min": 14,
-        "max": 42
       },
       {
         "id": "wood_species",
@@ -584,51 +723,149 @@
         "choices": [
           {
             "value": "walnut",
-            "label": "Walnut"
+            "label": "Walnut",
+    "image": "assets/images/wood-species/black-walnut.png",
+            "imageAlt": "Black walnut wood grain sample",
+            "imageCaption": "Black Walnut"
           },
           {
             "value": "maple",
-            "label": "Maple"
+            "label": "Maple",
+    "image": "assets/images/wood-species/maple.png",
+            "imageAlt": "Maple wood grain sample",
+            "imageCaption": "Maple"
           },
           {
             "value": "oak",
-            "label": "Oak"
+            "label": "Oak",
+    "image": "assets/images/wood-species/oak-wood.png",
+            "imageAlt": "Oak wood grain sample",
+            "imageCaption": "Oak"
           },
           {
             "value": "elm",
-            "label": "Elm"
+            "label": "Elm",
+    "image": "assets/images/wood-species/elm-wood.png",
+            "imageAlt": "Elm wood grain sample",
+            "imageCaption": "Elm"
           },
           {
             "value": "needs-guidance",
-            "label": "I need slab guidance"
+            "label": "Exotics and more Please describe in notes"
           }
         ]
+      },
+      {
+        "id": "table_description",
+        "label": "Describe Your Table",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Describe the overall size, seating intent, room placement, slab look, river tone, and any details you already know about the table."
       },
       {
         "id": "river_color",
         "label": "River / Resin Tone",
         "type": "select",
+        "presentation": "swatch-grid",
+        "swatchHeading": "Color",
+        "showChoiceVisual": false,
+        "helpText": "Choose a resin tone visually. Swatches are reference-only and final color can shift with depth, lighting, and finish.",
         "required": true,
         "choices": [
           {
-            "value": "clear",
-            "label": "Clear"
+            "value": "copper",
+            "label": "Copper",
+    "swatchImage": "assets/images/resin-colors/copper.png",
+            "swatchBase": "#9c5637",
+            "swatchAccent": "#d98a56"
+          },
+          {
+            "value": "pearl",
+            "label": "Pearl",
+    "swatchImage": "assets/images/resin-colors/pearl.png",
+            "swatchBase": "#e8e0d4",
+            "swatchAccent": "#fffaf2"
+          },
+          {
+            "value": "whale",
+            "label": "Whale",
+    "swatchImage": "assets/images/resin-colors/whale.png",
+            "swatchBase": "#2e3947",
+            "swatchAccent": "#66778c"
+          },
+          {
+            "value": "azure",
+            "label": "Azure",
+    "swatchImage": "assets/images/resin-colors/azure.png",
+            "swatchBase": "#2567d8",
+            "swatchAccent": "#6ab7ff"
           },
           {
             "value": "smoke",
-            "label": "Smoke"
+            "label": "Dolphin",
+    "swatchImage": "assets/images/resin-colors/dolphin.png",
+            "swatchBase": "#505962",
+            "swatchAccent": "#aeb5bd"
           },
           {
-            "value": "deep-blue",
-            "label": "Deep blue"
+            "value": "caribbean",
+            "label": "Caribbean",
+    "swatchImage": "assets/images/resin-colors/caribbean.png",
+            "swatchBase": "#1fb6c9",
+            "swatchAccent": "#8ff0ee"
+          },
+          {
+            "value": "jungle",
+            "label": "Jungle",
+    "swatchImage": "assets/images/resin-colors/jungle.png",
+            "swatchBase": "#216b46",
+            "swatchAccent": "#5bc67c"
+          },
+          {
+            "value": "maui",
+            "label": "Maui",
+    "swatchImage": "assets/images/resin-colors/maui.png",
+            "swatchBase": "#2db7a3",
+            "swatchAccent": "#89efe4"
+          },
+          {
+            "value": "margarita",
+            "label": "Margarita",
+    "swatchImage": "assets/images/resin-colors/margarita.png",
+            "swatchBase": "#a6d84c",
+            "swatchAccent": "#dfff86"
+          },
+          {
+            "value": "gold",
+            "label": "Gold",
+    "swatchImage": "assets/images/resin-colors/gold.png",
+            "swatchBase": "#c79520",
+            "swatchAccent": "#ffe06a"
+          },
+          {
+            "value": "ocean",
+            "label": "Ocean",
+    "swatchImage": "assets/images/resin-colors/ocean.png",
+            "swatchBase": "#145584",
+            "swatchAccent": "#4dd0d7"
+          },
+          {
+            "value": "royal-purple",
+            "label": "Royal Purple",
+    "swatchImage": "assets/images/resin-colors/royal-purple.png",
+            "swatchBase": "#5631a8",
+            "swatchAccent": "#8c67e9"
           },
           {
             "value": "black",
-            "label": "Black"
+            "label": "Caviar",
+    "swatchImage": "assets/images/resin-colors/black.png",
+            "swatchBase": "#11161a",
+            "swatchAccent": "#4f5961"
           },
           {
             "value": "needs-guidance",
-            "label": "I need resin guidance"
+            "label": "Contact for more option"
           }
         ]
       },
@@ -653,26 +890,6 @@
           {
             "value": "client-supplied",
             "label": "Client supplied base"
-          }
-        ]
-      },
-      {
-        "id": "edge_style",
-        "label": "Edge Style",
-        "type": "select",
-        "required": true,
-        "choices": [
-          {
-            "value": "natural-live-edge",
-            "label": "Natural live edge"
-          },
-          {
-            "value": "straightened-live-edge",
-            "label": "Straightened live edge"
-          },
-          {
-            "value": "clean-square",
-            "label": "Clean square edge"
           }
         ]
       },
@@ -724,13 +941,60 @@
             "label": "Delivery and installation"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "items-for-sale",
+    "name": "Items for Sale",
+    "category": "Available Pieces",
+    "description": "An inquiry for finished pieces, currently available shop items, and one-off work that may already be built or close to ready.",
+    "active": true,
+    "hideContactForm": true,
+    "image": "assets/images/products/gift-ideas.png",
+    "quoteType": "Availability review required",
+    "rules": [
+      "Available pieces can change quickly, so this form is used to confirm interest before availability is promised.",
+      "Exact dimensions, species, and finish may vary from piece to piece.",
+      "If a listed item is no longer available, similar options can still be discussed after contact.",
+      "Quote responses are typically sent within 48 to 72 hours."
+    ],
+    "options": [
+      {
+        "id": "sale_budget_range",
+        "label": "Budget Range",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "under-150",
+            "label": "Under $150"
+          },
+          {
+            "value": "150-300",
+            "label": "$150 to $300"
+          },
+          {
+            "value": "300-600",
+            "label": "$300 to $600"
+          },
+          {
+            "value": "600-plus",
+            "label": "$600+"
+          },
+          {
+            "value": "open",
+            "label": "See all items"
+          }
+        ]
       },
       {
-        "id": "design_notes",
-        "label": "Table Notes",
-        "type": "textarea",
-        "required": false,
-        "placeholder": "Reference the room, seating requirements, color direction, or any slab/resin inspiration."
+        "id": "sale_notes",
+        "label": "Item Notes",
+        "type": "notice",
+        "messageHtml": "Items appear here as products become available. If you require something more bespoke or unique, contact us and we can help bring your vision to life. For more ideas <a href=\"https://www.lignumartifex.com/gallery.html\" target=\"_blank\" rel=\"noreferrer\">Visit our Gallery</a>.",
+        "linkLabel": "Contact Us",
+        "linkHref": "https://www.lignumartifex.com/contact.html"
       }
     ]
   }

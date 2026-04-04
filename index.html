@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lignum Artifex Customizer Preview | Start Your Design</title>
+  <title>Lignum Artifex Customizer | Start Your Design</title>
   <meta
     name="description"
-    content="Private preview of the Lignum Artifex customizer experience while the public site is in a temporary coming-soon state."
+    content="Build a quote-ready custom woodworking request with product details, materials, finishes, and design direction for Lignum Artifex."
   />
-  <meta property="og:title" content="Lignum Artifex Customizer Preview | Start Your Design" />
+  <meta property="og:title" content="Lignum Artifex Customizer | Start Your Design" />
   <meta
     property="og:description"
-    content="Private preview of a customizer experience for bespoke woodworking and CNC-crafted inquiries."
+    content="Choose the product, define the details, and send a quote-ready request to Lignum Artifex."
   />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/images/social-share.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Lignum Artifex Customizer Preview | Start Your Design" />
+  <meta name="twitter:title" content="Lignum Artifex Customizer | Start Your Design" />
   <meta
     name="twitter:description"
-    content="Private preview of a quote-request experience with materials, dimensions, typography, and finish direction."
+    content="Choose the product, define the details, and send a quote-ready request to Lignum Artifex."
   />
   <meta name="twitter:image" content="assets/images/social-share.jpg" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&family=Great+Vibes&family=Josefin+Sans:wght@400;500;600&family=Marcellus&family=Parisienne&family=Work+Sans:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="css/style.css" />
@@ -52,22 +52,22 @@
       <div class="hero-backdrop"></div>
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Private Preview</p>
-          <h1>Shape the request before the conversation starts.</h1>
+          <p class="eyebrow">Start Your Design</p>
+          <h1>Start the design request here.</h1>
           <p class="hero-lede">
-            This preview keeps the unfinished customizer available internally while the public site remains in a temporary coming-soon state.
+            Choose the product, define the details, and send a quote-ready request before the project conversation begins.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#customizer">Open Preview</a>
-            <a class="button button-secondary" href="https://lignumartifex.com/services.html">View Main Services</a>
+            <a class="button button-primary" href="#customizer">Start Your Request</a>
+            <a class="button button-secondary" href="https://lignumartifex.com/">View Main Site</a>
           </div>
         </div>
         <aside class="hero-aside" aria-label="Customizer notes">
           <p class="eyebrow">Built For</p>
           <ul class="hero-list">
-            <li>Quote-ready dimensions and material direction</li>
-            <li>Placeholder product framework for future catalog growth</li>
-            <li>Typography-ready fields for signs, plaques, and engraved work</li>
+            <li>Quote-ready product details</li>
+            <li>Clear material and finish direction</li>
+            <li>Faster response and cleaner project intake</li>
           </ul>
         </aside>
       </div>
@@ -75,17 +75,13 @@
 
     <section class="page-section process-section" id="process">
       <div class="section-intro">
-        <p class="eyebrow">How It Works</p>
-        <h2>A cleaner intake flow for custom work.</h2>
-        <p>
-          The first version stays focused: collect the right details, summarize the build direction clearly, and send a structured quote request without forcing a full ecommerce workflow.
-        </p>
+        <h2>How It Works</h2>
       </div>
       <div class="process-grid">
         <article class="process-block">
           <p class="process-kicker">01</p>
-          <h3>Select a product framework</h3>
-          <p>Start with a placeholder product now, then swap in real products later through the shared JSON schema.</p>
+          <h3>Choose your product</h3>
+          <p>Start with the product category that fits the project best, then refine the details with dimensions, material direction, finish, and personalization.</p>
         </article>
         <article class="process-block">
           <p class="process-kicker">02</p>
@@ -95,34 +91,32 @@
         <article class="process-block">
           <p class="process-kicker">03</p>
           <h3>Send a quote-ready brief</h3>
-          <p>The client submission reaches Formspree with a clean summary, customer details, and the selected product image URL.</p>
+          <p>The submission reaches the quote inbox with a clean summary, customer details, and the selected product image URL.</p>
         </article>
       </div>
     </section>
 
     <section class="page-section customizer-section" id="customizer">
       <div class="section-intro customizer-intro">
-        <p class="eyebrow">Customizer</p>
-        <h2>Build a request that already understands the product.</h2>
-        <p>
-          This first release is intentionally product-data driven. New products can be added later by editing a definition file rather than rebuilding the page.
-        </p>
+        <h2 class="section-title-compact">Customizer</h2>
       </div>
-
       <div class="customizer-shell">
         <aside class="product-rail">
           <div class="product-preview">
-            <p class="rail-kicker">Selected Product</p>
-            <h3 id="product-name">Loading product...</h3>
-            <p id="product-category" class="product-category"></p>
-            <p id="product-description" class="product-description"></p>
-            <figure class="product-figure">
-              <img id="product-image" src="assets/images/hero.png" alt="Selected product preview" />
-            </figure>
-            <div class="quote-meta">
-              <span class="meta-label">Quote Flow</span>
-              <span id="product-quote-type" class="meta-value"></span>
-            </div>
+              <figure id="product-preview-figure" class="product-figure is-hidden">
+                <img id="product-preview-image" alt="" />
+              </figure>
+              <p class="rail-kicker">Selected Product</p>
+              <h3 id="product-name">Loading product...</h3>
+              <p id="product-category" class="product-category"></p>
+              <p id="product-description" class="product-description"></p>
+              <p id="product-description-link" class="product-description-link is-hidden">
+                <span id="product-description-link-text"></span>
+                <a id="product-description-link-anchor" href="#" target="_blank" rel="noreferrer"></a>
+              </p>
+              <div class="visually-hidden" aria-hidden="true">
+                <span id="product-quote-type"></span>
+              </div>
           </div>
 
           <div class="summary-panel">
@@ -131,10 +125,14 @@
               <h3>Inquiry Snapshot</h3>
             </div>
             <ul id="summary-list" class="summary-list"></ul>
+            <div class="summary-actions">
+              <button type="button" class="summary-action-button" id="download-summary-button">Download PDF</button>
+            </div>
+            <p id="summary-action-status" class="summary-action-status" role="status" aria-live="polite"></p>
           </div>
 
           <div class="rules-panel">
-            <p class="rail-kicker">Current Notes</p>
+            <p class="rail-kicker">What To Expect</p>
             <ul id="product-rules" class="rules-list"></ul>
           </div>
         </aside>
@@ -157,43 +155,40 @@
             <section class="form-section">
               <div class="section-copy">
                 <p class="section-kicker">Configuration</p>
-                <h3>Define the piece</h3>
+                <h3 id="configuration-title">Define the piece</h3>
               </div>
               <div id="dynamic-fields" class="dynamic-fields"></div>
             </section>
 
-            <section class="form-section">
+            <section class="form-section" id="client-details-section">
               <div class="section-copy">
                 <p class="section-kicker">Client Details</p>
                 <h3>Where should the quote go?</h3>
+                <p class="turnaround-note">Quote responses are typically sent within 48 to 72 hours.</p>
               </div>
               <div class="dynamic-fields">
                 <label class="field-group">
-                  <span class="field-label">Name</span>
+                  <span class="field-label">Name <span class="field-label-mark">*</span></span>
                   <input type="text" name="name" required autocomplete="name" />
                 </label>
                 <label class="field-group">
-                  <span class="field-label">Email</span>
+                  <span class="field-label">Email <span class="field-label-mark">*</span></span>
                   <input type="email" name="email" required autocomplete="email" />
                 </label>
                 <label class="field-group">
-                  <span class="field-label">Phone</span>
-                  <input type="tel" name="phone" autocomplete="tel" />
+                  <span class="field-label">Phone <span class="field-label-mark">*</span></span>
+                  <input type="tel" name="phone" required autocomplete="tel" />
                 </label>
                 <label class="field-group">
                   <span class="field-label">Company <span class="optional">Optional</span></span>
                   <input type="text" name="company" autocomplete="organization" />
                 </label>
-                <label class="field-group">
-                  <span class="field-label">Preferred Timeline</span>
-                  <input type="text" name="deadline" required placeholder="Example: Needed by September 15" />
-                </label>
-                <label class="field-group field-group-wide">
-                  <span class="field-label">Project Notes</span>
-                  <textarea name="project_notes" rows="5" placeholder="Reference the setting, installation context, design goals, or anything that should shape the quote."></textarea>
-                </label>
-              </div>
-            </section>
+                  <label class="field-group">
+                    <span class="field-label">Preferred Timeline <span class="field-label-mark">*</span></span>
+                    <input type="text" name="deadline" required placeholder="Example: Needed by September 15" />
+                  </label>
+                </div>
+              </section>
 
             <div class="honeypot" aria-hidden="true">
               <label for="website">Website</label>
@@ -207,9 +202,9 @@
             <input type="hidden" name="configuration_summary" id="hidden-summary" />
             <input type="hidden" name="_subject" id="hidden-subject" />
 
-            <div class="form-actions">
+            <div class="form-actions" id="form-actions">
               <button type="submit" class="button button-primary" id="submit-button">Send Quote Request</button>
-              <p class="microcopy">This sends a structured inquiry through Formspree. It is not a checkout flow.</p>
+              <p class="microcopy">This sends a structured inquiry. It is not a checkout flow.</p>
             </div>
 
             <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
@@ -224,7 +219,7 @@
       <div>
         <p class="footer-title">Lignum Artifex</p>
         <p class="footer-copy">
-          Private preview of the separate customizer experience for bespoke woodworking and CNC-crafted inquiries.
+          Build a structured custom woodworking request for Lignum Artifex and send it directly for quote review.
         </p>
       </div>
       <div class="footer-links">
@@ -234,6 +229,8 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
