@@ -287,12 +287,48 @@
       {
         "id": "width",
         "label": "Width",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "6",
+            "label": "6 in"
+          },
+          {
+            "value": "8",
+            "label": "8 in"
+          },
+          {
+            "value": "10",
+            "label": "10 in"
+          },
+          {
+            "value": "12",
+            "label": "12 in"
+          },
+          {
+            "value": "14",
+            "label": "14 in"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ]
+      },
+      {
+        "id": "custom_width",
+        "label": "Custom Width",
         "type": "number",
         "required": true,
         "placeholder": "10",
         "unit": "in",
         "min": 6,
-        "max": 24
+        "max": 24,
+        "showWhen": {
+          "field": "width",
+          "equals": "other"
+        }
       },
       {
         "id": "thickness",
