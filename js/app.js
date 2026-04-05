@@ -987,7 +987,6 @@ const siteHeader = document.querySelector(".site-header");
 const hiddenProductName = document.getElementById("hidden-product-name");
 const hiddenProductCategory = document.getElementById("hidden-product-category");
 const hiddenQuoteType = document.getElementById("hidden-quote-type");
-const hiddenProductImageUrl = document.getElementById("hidden-product-image-url");
 const hiddenSummary = document.getElementById("hidden-summary");
 const hiddenSubject = document.getElementById("hidden-subject");
 
@@ -1288,14 +1287,6 @@ function setSelectedSaleItem(item) {
   updateSummary();
 }
 
-function getSubmissionImagePath() {
-  if (state.currentProduct?.id === "items-for-sale" && state.selectedSaleItem?.image) {
-    return state.selectedSaleItem.image;
-  }
-
-  return state.currentProduct?.image || "";
-}
-
 function syncSubmissionHiddenFields() {
   if (!state.currentProduct) {
     return;
@@ -1304,7 +1295,6 @@ function syncSubmissionHiddenFields() {
   hiddenProductName.value = state.currentProduct.name;
   hiddenProductCategory.value = state.currentProduct.category;
   hiddenQuoteType.value = state.currentProduct.quoteType;
-  hiddenProductImageUrl.value = resolveAbsoluteUrl(getSubmissionImagePath());
   hiddenSubject.value = `Customizer Inquiry - ${state.currentProduct.name}`;
 }
 
@@ -2636,7 +2626,6 @@ async function handleSubmit(event) {
   formData.set("product_name", hiddenProductName.value);
   formData.set("product_category", hiddenProductCategory.value);
   formData.set("quote_type", hiddenQuoteType.value);
-  formData.set("product_image_url", hiddenProductImageUrl.value);
   formData.set("configuration_summary", hiddenSummary.value);
   formData.set("_subject", hiddenSubject.value);
 
@@ -2783,6 +2772,3 @@ function setStatus(message, isError = false) {
   statusNode.classList.toggle("is-success", Boolean(message) && !isError);
 }
 
-function resolveAbsoluteUrl(path) {
-  return new URL(path, window.location.href).toString();
-}
