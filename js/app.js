@@ -9,7 +9,7 @@ const FALLBACK_ITEMS_FOR_SALE = {
       title: "Spice Rack",
       subtitle: "Raw Paint yourself",
       price: "$145.00",
-      image: "assets/images/items-for-sale/spice-rack.png",
+      image: "assets/images/items-for-sale/spice-rack.webp",
       imageAlt: "Raw Paint yourself",
     },
     {
@@ -25,14 +25,14 @@ const FALLBACK_ITEMS_FOR_SALE = {
       title: "Dog friendly welcome",
       subtitle: "Deep carved lettering 5ft 8in",
       price: "$235.00",
-      image: "assets/images/items-for-sale/dog-sign.png",
+      image: "assets/images/items-for-sale/dog-sign.webp",
       imageAlt: "Dog friendly welcome sign",
     },
     {
       title: "Frosty the Server",
       subtitle: "Solid Maple Serving Tray",
       price: "$205.00",
-      image: "assets/images/items-for-sale/snowman-server.png",
+      image: "assets/images/items-for-sale/snowman-server.webp",
       imageAlt: "Frosy christmas Serving Tray",
     },
   ],
@@ -42,6 +42,71 @@ const FALLBACK_ITEMS_FOR_SALE = {
 
 const navToggle = document.querySelector(".site-nav-toggle");
 const siteNav = document.getElementById("site-nav");
+const PDF_LIBRARY_SOURCES = [
+  "https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js",
+  "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js",
+];
+let pdfLibrariesPromise = null;
+
+function trackAnalyticsEvent(eventName, detail = {}) {
+  const payload = {
+    event: eventName,
+    ...detail,
+  };
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(payload);
+  document.dispatchEvent(new CustomEvent(`analytics:${eventName}`, { detail: payload }));
+}
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector(`script[src="${src}"]`);
+    if (existing) {
+      if (existing.dataset.loaded === "true") {
+        resolve();
+        return;
+      }
+
+      existing.addEventListener("load", () => resolve(), { once: true });
+      existing.addEventListener("error", () => reject(new Error(`Failed to load ${src}`)), { once: true });
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    script.addEventListener(
+      "load",
+      () => {
+        script.dataset.loaded = "true";
+        resolve();
+      },
+      { once: true }
+    );
+    script.addEventListener("error", () => reject(new Error(`Failed to load ${src}`)), { once: true });
+    document.head.append(script);
+  });
+}
+
+async function ensurePdfLibraries() {
+  if (window.jspdf?.jsPDF && typeof window.html2canvas === "function") {
+    return;
+  }
+
+  if (!pdfLibrariesPromise) {
+    pdfLibrariesPromise = (async () => {
+      for (const src of PDF_LIBRARY_SOURCES) {
+        await loadScript(src);
+      }
+    })().catch((error) => {
+      pdfLibrariesPromise = null;
+      throw error;
+    });
+  }
+
+  await pdfLibrariesPromise;
+}
 
 function closeMobileNav() {
   if (!navToggle || !siteNav) return;
@@ -95,7 +160,7 @@ const FALLBACK_PRODUCTS = [
     detailLinkLabel: "Portfolio Gallery",
     detailLinkHref: "https://www.lignumartifex.com/gallery.html",
     active: true,
-    image: "assets/images/products/jewel-box.png",
+    image: "assets/images/products/jewel-box.webp",
     quoteType: "Custom review required",
     rules: [
       "Gift concepts vary widely, so this form is used to capture direction before product details are finalized.",
@@ -125,21 +190,21 @@ const FALLBACK_PRODUCTS = [
           {
             value: "walnut",
             label: "Walnut",
-            image: "assets/images/wood-species/black-walnut.png",
+            image: "assets/images/wood-species/black-walnut.webp",
             imageAlt: "Black walnut wood grain sample",
             imageCaption: "Black Walnut",
           },
           {
             value: "maple",
             label: "Maple",
-            image: "assets/images/wood-species/maple.png",
+            image: "assets/images/wood-species/maple.webp",
             imageAlt: "Maple wood grain sample",
             imageCaption: "Maple",
           },
           {
             value: "oak",
             label: "Oak",
-            image: "assets/images/wood-species/oak-wood.png",
+            image: "assets/images/wood-species/oak-wood.webp",
             imageAlt: "Oak wood grain sample",
             imageCaption: "Oak",
           },
@@ -228,7 +293,7 @@ const FALLBACK_PRODUCTS = [
     detailLinkLabel: "Portfolio Gallery",
     detailLinkHref: "https://www.lignumartifex.com/gallery.html",
     active: true,
-    image: "assets/images/products/board-1.png",
+    image: "assets/images/products/board-1.webp",
     quoteType: "Custom review required",
     rules: [
       "Dimensions, species, finish, and personalization details are finalized during quote review.",
@@ -468,21 +533,21 @@ const FALLBACK_PRODUCTS = [
           {
             value: "walnut",
             label: "Walnut",
-            image: "assets/images/wood-species/black-walnut.png",
+            image: "assets/images/wood-species/black-walnut.webp",
             imageAlt: "Black walnut wood grain sample",
             imageCaption: "Black Walnut",
           },
           {
             value: "maple",
             label: "Maple",
-            image: "assets/images/wood-species/maple.png",
+            image: "assets/images/wood-species/maple.webp",
             imageAlt: "Maple wood grain sample",
             imageCaption: "Maple",
           },
           {
             value: "oak",
             label: "Oak",
-            image: "assets/images/wood-species/oak-wood.png",
+            image: "assets/images/wood-species/oak-wood.webp",
             imageAlt: "Oak wood grain sample",
             imageCaption: "Oak",
           },
@@ -627,7 +692,7 @@ const FALLBACK_PRODUCTS = [
     detailLinkLabel: "Portfolio Gallery",
     detailLinkHref: "https://www.lignumartifex.com/gallery.html",
     active: true,
-    image: "assets/images/products/rivertable.png",
+    image: "assets/images/products/rivertable.webp",
     quoteType: "Custom review required",
     rules: [
       "River table slab selection and resin tone are confirmed during quote review.",
@@ -648,7 +713,7 @@ const FALLBACK_PRODUCTS = [
           {
             value: "water-fall-end",
             label: "Water Fall End",
-            image: "assets/images/river-table-types/waterfall-edge.png",
+            image: "assets/images/river-table-types/waterfall-edge.webp",
             imageAlt: "Water Fall End table type preview",
             imageCaption: "Water Fall End",
           },
@@ -663,28 +728,28 @@ const FALLBACK_PRODUCTS = [
           {
             value: "walnut",
             label: "Walnut",
-            image: "assets/images/wood-species/black-walnut.png",
+            image: "assets/images/wood-species/black-walnut.webp",
             imageAlt: "Black walnut wood grain sample",
             imageCaption: "Black Walnut",
           },
           {
             value: "maple",
             label: "Maple",
-            image: "assets/images/wood-species/maple.png",
+            image: "assets/images/wood-species/maple.webp",
             imageAlt: "Maple wood grain sample",
             imageCaption: "Maple",
           },
           {
             value: "oak",
             label: "Oak",
-            image: "assets/images/wood-species/oak-wood.png",
+            image: "assets/images/wood-species/oak-wood.webp",
             imageAlt: "Oak wood grain sample",
             imageCaption: "Oak",
           },
           {
             value: "elm",
             label: "Elm",
-            image: "assets/images/wood-species/elm-wood.png",
+            image: "assets/images/wood-species/elm-wood.webp",
             imageAlt: "Elm wood grain sample",
             imageCaption: "Elm",
           },
@@ -851,7 +916,7 @@ const FALLBACK_PRODUCTS = [
       "An inquiry for finished pieces, currently available shop items, and one-off work that may already be built or close to ready.",
     active: false,
     hideContactForm: true,
-    image: "assets/images/items-for-sale/spice-rack.png",
+    image: "assets/images/items-for-sale/spice-rack.webp",
     quoteType: "Availability review required",
     rules: [
       "Available pieces can change quickly, so this form is used to confirm interest before availability is promised.",
@@ -1088,7 +1153,7 @@ function cloneGalleryItems(items) {
 
 function bindStaticEvents() {
   productSelect.addEventListener("change", (event) => {
-    selectProduct(event.target.value, { scrollToConfiguration: true });
+    selectProduct(event.target.value, { scrollToConfiguration: true, trackAnalytics: true });
   });
 
   downloadSummaryButton?.addEventListener("click", handleDownloadSummary);
@@ -1300,7 +1365,7 @@ function populateProductSelector() {
     card.setAttribute("aria-pressed", "false");
     card.innerHTML = `
       <div class="product-card-media">
-        <img src="${product.image}" alt="${product.name}" />
+        <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async" />
       </div>
       <div class="product-card-body">
         <p class="product-card-kicker">${product.category}</p>
@@ -1311,7 +1376,7 @@ function populateProductSelector() {
       </div>
     `;
     card.addEventListener("click", () => {
-      selectProduct(product.id, { scrollToConfiguration: true });
+      selectProduct(product.id, { scrollToConfiguration: true, trackAnalytics: true });
     });
     productCardGrid.append(card);
   });
@@ -1339,6 +1404,14 @@ function selectProduct(productId, options = {}) {
   clearValidationErrors();
   setStatus("");
 
+  if (options.trackAnalytics) {
+    trackAnalyticsEvent("product_selected", {
+      product_id: product.id,
+      product_name: product.name,
+      product_category: product.category,
+    });
+  }
+
   if (options.scrollToConfiguration && configurationSection) {
     window.requestAnimationFrame(() => {
       const headerHeight = siteHeader?.getBoundingClientRect().height || 0;
@@ -1359,6 +1432,7 @@ function syncSelectedProductCard(productId) {
 }
 
 function renderProductDetails(product) {
+  productPreviewImageNode.decoding = "async";
   productNameNode.textContent = product.name;
   productCategoryNode.textContent = product.category;
   productDescriptionNode.textContent = product.description;
@@ -1680,7 +1754,7 @@ function createSwatchPicker(field, input) {
       button.style.setProperty("--swatch-base", choice.swatchBase);
       button.style.setProperty("--swatch-accent", choice.swatchAccent || choice.swatchBase);
       button.innerHTML = choice.swatchImage
-        ? `<img class="swatch-option-media" src="${choice.swatchImage}" alt="" /><span class="visually-hidden">${choice.label}</span>`
+        ? `<img class="swatch-option-media" src="${choice.swatchImage}" alt="" loading="lazy" decoding="async" /><span class="visually-hidden">${choice.label}</span>`
         : `<span class="visually-hidden">${choice.label}</span>`;
     } else {
       button.classList.add("swatch-option-text");
@@ -2208,15 +2282,26 @@ async function renderSnapshotCanvas() {
 }
 
 async function handleDownloadSummary() {
-  const jsPDF = window.jspdf?.jsPDF;
+  downloadSummaryButton.disabled = true;
+  setSummaryActionStatus("Loading snapshot tools...");
 
+  try {
+    await ensurePdfLibraries();
+  } catch (error) {
+    console.error(error);
+    setSummaryActionStatus("PDF export tools could not be loaded. Refresh the page and try again.");
+    downloadSummaryButton.disabled = false;
+    return;
+  }
+
+  const jsPDF = window.jspdf?.jsPDF;
   if (!jsPDF) {
     setSummaryActionStatus("PDF export is not available right now. Refresh the page and try again.");
+    downloadSummaryButton.disabled = false;
     return;
   }
 
   const fileName = buildSnapshotFileName();
-  downloadSummaryButton.disabled = true;
   setSummaryActionStatus("Building visual snapshot...");
 
   try {
@@ -2243,6 +2328,11 @@ async function handleDownloadSummary() {
 
     pdf.save(fileName);
     setSummaryActionStatus(`Inquiry Snapshot downloaded as ${fileName}.`);
+    trackAnalyticsEvent("inquiry_snapshot_downloaded", {
+      file_name: fileName,
+      product_id: state.currentProduct?.id || "",
+      product_name: state.currentProduct?.name || "",
+    });
   } catch (error) {
     console.error(error);
     setSummaryActionStatus("Visual PDF export could not be created. Refresh the page and try again.");
@@ -2347,6 +2437,8 @@ function updateChoiceVisuals() {
                             class="choice-visual-card-image"
                             src="${item.image}"
                             alt="${item.imageAlt || item.title || "Available item"}"
+                            loading="lazy"
+                            decoding="async"
                             data-lightbox-src="${item.image}"
                             data-lightbox-alt="${item.imageAlt || item.title || "Available item"}"
                             role="button"
@@ -2375,6 +2467,8 @@ function updateChoiceVisuals() {
           class="choice-visual-image"
           src="${choice.image}"
           alt="${choice.imageAlt || `${choice.label} reference`}"
+          loading="lazy"
+          decoding="async"
           data-lightbox-src="${choice.image}"
           data-lightbox-alt="${choice.imageAlt || `${choice.label} reference`}"
           role="button"
@@ -2546,11 +2640,20 @@ async function handleSubmit(event) {
     }
 
     setStatus("Inquiry sent. The request is now in the Lignum Artifex quote inbox.", false);
+    trackAnalyticsEvent("quote_request_submitted", {
+      product_id: state.currentProduct?.id || "",
+      product_name: state.currentProduct?.name || "",
+      quote_type: hiddenQuoteType.value,
+    });
     const selectedProductId = state.currentProduct.id;
     form.reset();
     selectProduct(selectedProductId);
   } catch (error) {
     setStatus("The request did not send. Try again in a moment or contact Lignum Artifex directly from the main site.", true);
+    trackAnalyticsEvent("quote_request_failed", {
+      product_id: state.currentProduct?.id || "",
+      product_name: state.currentProduct?.name || "",
+    });
     console.error(error);
   } finally {
     submitButton.disabled = false;

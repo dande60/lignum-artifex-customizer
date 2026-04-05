@@ -8,7 +8,7 @@
     "detailLinkLabel": "Portfolio Gallery",
     "detailLinkHref": "https://www.lignumartifex.com/gallery.html",
     "active": true,
-    "image": "assets/images/products/jewel-box.png",
+    "image": "assets/images/products/jewel-box.webp",
     "quoteType": "Custom review required",
     "rules": [
       "Gift concepts vary widely, so this form is used to capture direction before product details are finalized.",
@@ -50,21 +50,21 @@
           {
             "value": "walnut",
             "label": "Walnut",
-    "image": "assets/images/wood-species/black-walnut.png",
+    "image": "assets/images/wood-species/black-walnut.webp",
             "imageAlt": "Black walnut wood grain sample",
             "imageCaption": "Black Walnut"
           },
           {
             "value": "maple",
             "label": "Maple",
-    "image": "assets/images/wood-species/maple.png",
+    "image": "assets/images/wood-species/maple.webp",
             "imageAlt": "Maple wood grain sample",
             "imageCaption": "Maple"
           },
           {
             "value": "oak",
             "label": "Oak",
-    "image": "assets/images/wood-species/oak-wood.png",
+    "image": "assets/images/wood-species/oak-wood.webp",
             "imageAlt": "Oak wood grain sample",
             "imageCaption": "Oak"
           },
@@ -212,7 +212,7 @@
     "detailLinkLabel": "Portfolio Gallery",
     "detailLinkHref": "https://www.lignumartifex.com/gallery.html",
     "active": true,
-    "image": "assets/images/products/board-1.png",
+    "image": "assets/images/products/board-1.webp",
     "quoteType": "Custom review required",
     "rules": [
       "Dimensions, species, finish, and personalization details are finalized during quote review.",
@@ -563,21 +563,21 @@
           {
             "value": "walnut",
             "label": "Walnut",
-    "image": "assets/images/wood-species/black-walnut.png",
+    "image": "assets/images/wood-species/black-walnut.webp",
             "imageAlt": "Black walnut wood grain sample",
             "imageCaption": "Black Walnut"
           },
           {
             "value": "maple",
             "label": "Maple",
-    "image": "assets/images/wood-species/maple.png",
+    "image": "assets/images/wood-species/maple.webp",
             "imageAlt": "Maple wood grain sample",
             "imageCaption": "Maple"
           },
           {
             "value": "oak",
             "label": "Oak",
-    "image": "assets/images/wood-species/oak-wood.png",
+    "image": "assets/images/wood-species/oak-wood.webp",
             "imageAlt": "Oak wood grain sample",
             "imageCaption": "Oak"
           },
@@ -799,7 +799,7 @@
     "detailLinkLabel": "Portfolio Gallery",
     "detailLinkHref": "https://www.lignumartifex.com/gallery.html",
     "active": true,
-    "image": "assets/images/products/rivertable.png",
+    "image": "assets/images/products/rivertable.webp",
     "quoteType": "Custom review required",
     "rules": [
       "River table slab selection and resin tone are confirmed during quote review.",
@@ -829,7 +829,7 @@
           {
             "value": "water-fall-end",
             "label": "Water Fall End",
-            "image": "assets/images/river-table-types/waterfall-edge.png",
+            "image": "assets/images/river-table-types/waterfall-edge.webp",
             "imageAlt": "Water Fall End table type preview",
             "imageCaption": "Water Fall End"
           }
@@ -844,28 +844,28 @@
           {
             "value": "walnut",
             "label": "Walnut",
-    "image": "assets/images/wood-species/black-walnut.png",
+    "image": "assets/images/wood-species/black-walnut.webp",
             "imageAlt": "Black walnut wood grain sample",
             "imageCaption": "Black Walnut"
           },
           {
             "value": "maple",
             "label": "Maple",
-    "image": "assets/images/wood-species/maple.png",
+    "image": "assets/images/wood-species/maple.webp",
             "imageAlt": "Maple wood grain sample",
             "imageCaption": "Maple"
           },
           {
             "value": "oak",
             "label": "Oak",
-    "image": "assets/images/wood-species/oak-wood.png",
+    "image": "assets/images/wood-species/oak-wood.webp",
             "imageAlt": "Oak wood grain sample",
             "imageCaption": "Oak"
           },
           {
             "value": "elm",
             "label": "Elm",
-    "image": "assets/images/wood-species/elm-wood.png",
+    "image": "assets/images/wood-species/elm-wood.webp",
             "imageAlt": "Elm wood grain sample",
             "imageCaption": "Elm"
           },
@@ -1071,7 +1071,7 @@
     "description": "An inquiry for finished pieces, currently available shop items, and one-off work that may already be built or close to ready.",
     "active": false,
     "hideContactForm": true,
-    "image": "assets/images/items-for-sale/spice-rack.png",
+    "image": "assets/images/items-for-sale/spice-rack.webp",
     "quoteType": "Availability review required",
     "rules": [
       "Available pieces can change quickly, so this form is used to confirm interest before availability is promised.",

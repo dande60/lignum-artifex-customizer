@@ -42,8 +42,10 @@ After GitHub Pages is enabled for the repo, the default published URL will be:
 
 `https://dande60.github.io/lignum-artifex-customizer/`
 
-## Temporary Public State
+No `CNAME` file is included yet. A custom domain should only be added after the DNS record exists and is ready to point at GitHub Pages.
 
-- The public root page currently shows a branded coming-soon experience.
-- The unfinished customizer is preserved privately at [customizer-preview.html](./customizer-preview.html).
-- The preview page is intentionally unlinked from the public landing page.
+## Public State
+
+- The main public page is the live quote-request customizer.
+- The site includes crawl metadata, structured data, and social-share metadata for the published GitHub Pages URL.
+- Cloudflare Web Analytics is enabled using the same beacon token as the main site.

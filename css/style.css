@@ -186,7 +186,7 @@ h3 {
   inset: 0;
   background:
     linear-gradient(120deg, rgba(16, 25, 39, 0.88), rgba(16, 25, 39, 0.52)),
-    url("../assets/images/hero.png") center/cover no-repeat;
+    url("../assets/images/hero.webp") center/cover no-repeat;
 }
 
 .hero::after {

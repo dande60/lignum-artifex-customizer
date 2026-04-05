@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dande60.github.io/lignum-artifex-customizer/sitemap.xml
