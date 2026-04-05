@@ -647,7 +647,7 @@ const FALLBACK_PRODUCTS = [
           },
           {
             value: "guiat-neck",
-            label: "Guiat Neck",
+            label: "Guitar Neck",
             exclusive: true,
             showWhen: { field: "board_type", equals: "pizza-peel" },
           },
