@@ -1376,7 +1376,7 @@ textarea {
 
 [data-field-id="material_direction"] .choice-visual-frame,
 [data-field-id="wood_species"] .choice-visual-frame {
-  max-width: 72px;
+  max-width: 80px;
   aspect-ratio: 1 / 1;
   background: transparent;
   padding: 4px;
