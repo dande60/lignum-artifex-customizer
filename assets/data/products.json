@@ -785,7 +785,11 @@
             "label": "Natural",
             "hideWhen": {
               "field": "board_type",
-              "equals": "pizza-peel"
+              "equalsAny": [
+                "charcuterie-board",
+                "cutting-board",
+                "pizza-peel"
+              ]
             }
           },
           {
@@ -793,7 +797,11 @@
             "label": "Laquered",
             "hideWhen": {
               "field": "board_type",
-              "equals": "pizza-peel"
+              "equalsAny": [
+                "charcuterie-board",
+                "cutting-board",
+                "pizza-peel"
+              ]
             }
           },
           {
@@ -801,7 +809,66 @@
             "label": "Painted",
             "hideWhen": {
               "field": "board_type",
-              "equals": "pizza-peel"
+              "equalsAny": [
+                "charcuterie-board",
+                "cutting-board",
+                "pizza-peel"
+              ]
+            }
+          },
+          {
+            "value": "matte-hardwax",
+            "label": "Matte hardwax",
+            "showWhen": {
+              "field": "board_type",
+              "equalsAny": [
+                "charcuterie-board",
+                "cutting-board"
+              ]
+            }
+          },
+          {
+            "value": "satin-hardwax",
+            "label": "Satin hardwax",
+            "showWhen": {
+              "field": "board_type",
+              "equalsAny": [
+                "charcuterie-board",
+                "cutting-board"
+              ]
+            }
+          },
+          {
+            "value": "lacquer",
+            "label": "Lacquer",
+            "showWhen": {
+              "field": "board_type",
+              "equalsAny": [
+                "charcuterie-board",
+                "cutting-board"
+              ]
+            }
+          },
+          {
+            "value": "other",
+            "label": "Other",
+            "showWhen": {
+              "field": "board_type",
+              "equalsAny": [
+                "charcuterie-board",
+                "cutting-board"
+              ]
+            }
+          },
+          {
+            "value": "needs-guidance",
+            "label": "I need finish guidance",
+            "showWhen": {
+              "field": "board_type",
+              "equalsAny": [
+                "charcuterie-board",
+                "cutting-board"
+              ]
             }
           },
           {

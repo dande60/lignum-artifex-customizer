@@ -666,9 +666,46 @@ const FALLBACK_PRODUCTS = [
         showChoiceVisual: false,
         required: true,
         choices: [
-          { value: "natural", label: "Natural", hideWhen: { field: "board_type", equals: "pizza-peel" } },
-          { value: "laquered", label: "Laquered", hideWhen: { field: "board_type", equals: "pizza-peel" } },
-          { value: "painted", label: "Painted", hideWhen: { field: "board_type", equals: "pizza-peel" } },
+          {
+            value: "natural",
+            label: "Natural",
+            hideWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board", "pizza-peel"] },
+          },
+          {
+            value: "laquered",
+            label: "Laquered",
+            hideWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board", "pizza-peel"] },
+          },
+          {
+            value: "painted",
+            label: "Painted",
+            hideWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board", "pizza-peel"] },
+          },
+          {
+            value: "matte-hardwax",
+            label: "Matte hardwax",
+            showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
+          },
+          {
+            value: "satin-hardwax",
+            label: "Satin hardwax",
+            showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
+          },
+          {
+            value: "lacquer",
+            label: "Lacquer",
+            showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
+          },
+          {
+            value: "other",
+            label: "Other",
+            showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
+          },
+          {
+            value: "needs-guidance",
+            label: "I need finish guidance",
+            showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
+          },
           { value: "unfinished", label: "Unfinished", showWhen: { field: "board_type", equals: "pizza-peel" } },
           {
             value: "food-grade-finish",
