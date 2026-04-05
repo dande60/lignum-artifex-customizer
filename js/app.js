@@ -320,7 +320,7 @@ const FALLBACK_PRODUCTS = [
         label: "Board Shape",
         type: "select",
         required: true,
-        hideWhen: { field: "board_type", equals: "spice-rack" },
+        hideWhen: { field: "board_type", equalsAny: ["spice-rack", "pizza-peel"] },
         choices: [
           {
             value: "rectangular",
@@ -374,6 +374,18 @@ const FALLBACK_PRODUCTS = [
         ],
       },
       {
+        id: "pizza_peel_dimension",
+        label: "Dimension",
+        type: "select",
+        required: true,
+        showWhen: { field: "board_type", equals: "pizza-peel" },
+        choices: [
+          { value: "12", label: "12 in" },
+          { value: "14", label: "14 in" },
+          { value: "16", label: "16 in" },
+        ],
+      },
+      {
         id: "orientation",
         label: "Orientation",
         type: "select",
@@ -402,7 +414,7 @@ const FALLBACK_PRODUCTS = [
         label: "Length",
         type: "select",
         required: true,
-        hideWhen: { field: "board_type", equals: "spice-rack" },
+        hideWhen: { field: "board_type", equalsAny: ["spice-rack", "pizza-peel"] },
         helpMedia: {
           src: "assets/images/dimension-guides/board-length-guide.svg",
           alt: "Length runs from one end of the board to the other.",
@@ -427,7 +439,7 @@ const FALLBACK_PRODUCTS = [
         label: "Custom Length",
         type: "number",
         required: true,
-        hideWhen: { field: "board_type", equals: "spice-rack" },
+        hideWhen: { field: "board_type", equalsAny: ["spice-rack", "pizza-peel"] },
         placeholder: "20",
         unit: "in",
         min: 8,
@@ -439,7 +451,7 @@ const FALLBACK_PRODUCTS = [
         label: "Width",
         type: "select",
         required: true,
-        hideWhen: { field: "board_type", equals: "spice-rack" },
+        hideWhen: { field: "board_type", equalsAny: ["spice-rack", "pizza-peel"] },
         helpMedia: {
           src: "assets/images/dimension-guides/board-width-guide.svg",
           alt: "Width runs across the board from side to side.",
@@ -464,7 +476,7 @@ const FALLBACK_PRODUCTS = [
         label: "Custom Width",
         type: "number",
         required: true,
-        hideWhen: { field: "board_type", equals: "spice-rack" },
+        hideWhen: { field: "board_type", equalsAny: ["spice-rack", "pizza-peel"] },
         placeholder: "10",
         unit: "in",
         min: 6,

@@ -256,7 +256,10 @@
         "required": true,
         "hideWhen": {
           "field": "board_type",
-          "equals": "spice-rack"
+          "equalsAny": [
+            "spice-rack",
+            "pizza-peel"
+          ]
         },
         "choices": [
           {
@@ -326,6 +329,30 @@
         ]
       },
       {
+        "id": "pizza_peel_dimension",
+        "label": "Dimension",
+        "type": "select",
+        "required": true,
+        "showWhen": {
+          "field": "board_type",
+          "equals": "pizza-peel"
+        },
+        "choices": [
+          {
+            "value": "12",
+            "label": "12 in"
+          },
+          {
+            "value": "14",
+            "label": "14 in"
+          },
+          {
+            "value": "16",
+            "label": "16 in"
+          }
+        ]
+      },
+      {
         "id": "orientation",
         "label": "Orientation",
         "type": "select",
@@ -359,7 +386,10 @@
         "required": true,
         "hideWhen": {
           "field": "board_type",
-          "equals": "spice-rack"
+          "equalsAny": [
+            "spice-rack",
+            "pizza-peel"
+          ]
         },
         "helpMedia": {
           "src": "assets/images/dimension-guides/board-length-guide.svg",
@@ -405,7 +435,10 @@
         "required": true,
         "hideWhen": {
           "field": "board_type",
-          "equals": "spice-rack"
+          "equalsAny": [
+            "spice-rack",
+            "pizza-peel"
+          ]
         },
         "placeholder": "20",
         "unit": "in",
@@ -423,7 +456,10 @@
         "required": true,
         "hideWhen": {
           "field": "board_type",
-          "equals": "spice-rack"
+          "equalsAny": [
+            "spice-rack",
+            "pizza-peel"
+          ]
         },
         "helpMedia": {
           "src": "assets/images/dimension-guides/board-width-guide.svg",
@@ -469,7 +505,10 @@
         "required": true,
         "hideWhen": {
           "field": "board_type",
-          "equals": "spice-rack"
+          "equalsAny": [
+            "spice-rack",
+            "pizza-peel"
+          ]
         },
         "placeholder": "10",
         "unit": "in",
