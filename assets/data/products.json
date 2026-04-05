@@ -180,11 +180,7 @@
           },
           {
             "value": "other",
-            "label": "Other"
-          },
-          {
-            "value": "needs-guidance",
-            "label": "I need finish guidance"
+            "label": "Other (describe in notes)"
           }
         ]
       },
@@ -210,8 +206,8 @@
   {
     "id": "charcuterie-boards",
     "name": "Kitchen & Serving",
-    "category": "Serving Boards",
-    "description": "A custom kitchen board inquiry with room to define board type, shape, size, wood selection, handle detail, and engraving direction.",
+    "category": "Kitchen & Serving",
+    "description": "A custom kitchen and serving inquiry with room to define piece type, layout, size, wood selection, finish, and personalization details.",
     "detailLinkText": "Visit the gallery for more ideas:",
     "detailLinkLabel": "Portfolio Gallery",
     "detailLinkHref": "https://www.lignumartifex.com/gallery.html",
@@ -219,8 +215,8 @@
     "image": "assets/images/products/board-1.png",
     "quoteType": "Custom review required",
     "rules": [
-      "Board dimensions, species, and engraving depth are finalized during quote review.",
-      "Food-safe finish assumptions are captured here, but final recommendations may depend on intended use.",
+      "Dimensions, species, finish, and personalization details are finalized during quote review.",
+      "Finish recommendations may vary based on intended use, placement, and maintenance needs.",
       "This version collects direction only. Pricing and file uploads remain outside the current release.",
       "Quote responses are typically sent within 48 to 72 hours."
     ],
@@ -240,6 +236,10 @@
             "label": "Cutting board"
           },
           {
+            "value": "spice-rack",
+            "label": "Spice rack"
+          },
+          {
             "value": "custom-board",
             "label": "Custom board"
           }
@@ -250,22 +250,38 @@
         "label": "Board Shape",
         "type": "select",
         "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
         "choices": [
           {
             "value": "rectangular",
-            "label": "Rectangular"
+            "label": "Rectangular",
+            "image": "assets/images/board-shapes/rectangular.svg",
+            "imageAlt": "Rectangular board shape preview",
+            "imageCaption": "Rectangular"
           },
           {
             "value": "square",
-            "label": "Square"
+            "label": "Square",
+            "image": "assets/images/board-shapes/square.svg",
+            "imageAlt": "Square board shape preview",
+            "imageCaption": "Square"
           },
           {
             "value": "rounded-rectangle",
-            "label": "Rounded rectangle"
+            "label": "Rounded rectangle",
+            "image": "assets/images/board-shapes/rounded-rectangle.svg",
+            "imageAlt": "Rounded rectangle board shape preview",
+            "imageCaption": "Rounded rectangle"
           },
           {
             "value": "paddle-handle",
             "label": "Paddle with handle",
+            "image": "assets/images/board-shapes/paddle-handle.svg",
+            "imageAlt": "Paddle handle board shape preview",
+            "imageCaption": "Paddle with handle",
             "showWhen": {
               "field": "board_type",
               "equals": "charcuterie-board"
@@ -274,6 +290,9 @@
           {
             "value": "live-edge",
             "label": "Live edge style",
+            "image": "assets/images/board-shapes/live-edge.svg",
+            "imageAlt": "Live edge board shape preview",
+            "imageCaption": "Live edge style",
             "showWhen": {
               "field": "board_type",
               "equals": "charcuterie-board"
@@ -281,7 +300,37 @@
           },
           {
             "value": "custom-shape",
-            "label": "Custom shape"
+            "label": "Custom shape",
+            "image": "assets/images/board-shapes/custom-shape.svg",
+            "imageAlt": "Custom board shape preview",
+            "imageCaption": "Custom shape"
+          }
+        ]
+      },
+      {
+        "id": "orientation",
+        "label": "Orientation",
+        "type": "select",
+        "required": true,
+        "suppressConditionalHighlight": true,
+        "showWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "choices": [
+          {
+            "value": "upright",
+            "label": "Upright",
+            "image": "assets/images/spice-rack-orientation/upright.png",
+            "imageAlt": "Upright spice rack preview",
+            "imageCaption": "Upright"
+          },
+          {
+            "value": "table-top",
+            "label": "Table top",
+            "image": "assets/images/spice-rack-orientation/table-top.png",
+            "imageAlt": "Table top spice rack preview",
+            "imageCaption": "Table top"
           }
         ]
       },
@@ -290,6 +339,20 @@
         "label": "Length",
         "type": "select",
         "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "helpMedia": {
+          "src": "assets/images/dimension-guides/board-length-guide.svg",
+          "alt": "Length runs from one end of the board to the other.",
+          "valueSource": {
+            "field": "length",
+            "customField": "custom_length",
+            "customTriggerValue": "other",
+            "unit": "in"
+          }
+        },
         "choices": [
           {
             "value": "10",
@@ -322,6 +385,10 @@
         "label": "Custom Length",
         "type": "number",
         "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
         "placeholder": "20",
         "unit": "in",
         "min": 8,
@@ -336,6 +403,20 @@
         "label": "Width",
         "type": "select",
         "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "helpMedia": {
+          "src": "assets/images/dimension-guides/board-width-guide.svg",
+          "alt": "Width runs across the board from side to side.",
+          "valueSource": {
+            "field": "width",
+            "customField": "custom_width",
+            "customTriggerValue": "other",
+            "unit": "in"
+          }
+        },
         "choices": [
           {
             "value": "6",
@@ -368,6 +449,10 @@
         "label": "Custom Width",
         "type": "number",
         "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
         "placeholder": "10",
         "unit": "in",
         "min": 6,
@@ -382,6 +467,10 @@
         "label": "Thickness",
         "type": "select",
         "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
         "choices": [
           {
             "value": "0.625",
@@ -389,6 +478,14 @@
             "showWhen": {
               "field": "board_type",
               "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "0.625",
+            "label": "5/8 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "spice-rack"
             }
           },
           {
@@ -400,11 +497,27 @@
             }
           },
           {
+            "value": "0.75",
+            "label": "3/4 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "spice-rack"
+            }
+          },
+          {
             "value": "1",
             "label": "1 in",
             "showWhen": {
               "field": "board_type",
               "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "1",
+            "label": "1 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "spice-rack"
             }
           },
           {
@@ -496,6 +609,10 @@
         "emptyPlaceholderText": "Pick type first",
         "deferChoicesUntil": "board_type",
         "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equalsAny": ["custom-board", "spice-rack"]
+        },
         "choices": [
           {
             "value": "none",
@@ -532,6 +649,10 @@
             "showWhen": {
               "field": "board_type",
               "equals": "charcuterie-board"
+            },
+            "hideWhen": {
+              "field": "handle_style",
+              "equals": "extended-paddle"
             }
           }
         ]
@@ -544,20 +665,16 @@
         "required": true,
         "choices": [
           {
-            "value": "food-safe-oil",
-            "label": "Food-safe oil"
+            "value": "natural",
+            "label": "Natural"
           },
           {
-            "value": "hardwax-oil",
-            "label": "Hardwax oil"
+            "value": "laquered",
+            "label": "Laquered"
           },
           {
-            "value": "other",
-            "label": "Other"
-          },
-          {
-            "value": "needs-guidance",
-            "label": "I need finish guidance"
+            "value": "painted",
+            "label": "Painted"
           }
         ]
       },
@@ -657,15 +774,19 @@
         "label": "Do You Have Or Do You Want Custom Artwork Inlay On The Board?",
         "type": "checkbox",
         "required": false,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
         "checkboxLabel": "Yes",
         "checkedNote": "Explain in Board Notes."
       },
       {
         "id": "design_notes",
-        "label": "Board Notes",
+        "label": "Project Notes",
         "type": "textarea",
         "required": false,
-        "placeholder": "Reference the use case, serving style, gift context, or any edge/detail preferences."
+        "placeholder": "Reference the use case, placement, spice storage needs, serving style, or any edge/detail preferences."
       }
     ]
   },
@@ -702,16 +823,15 @@
             "label": "Coffee table"
           },
           {
-            "value": "console-table",
-            "label": "Console table"
-          },
-          {
             "value": "desk",
             "label": "Desk"
           },
           {
             "value": "water-fall-end",
-            "label": "Water Fall End"
+            "label": "Water Fall End",
+            "image": "assets/images/river-table-types/waterfall-edge.png",
+            "imageAlt": "Water Fall End table type preview",
+            "imageCaption": "Water Fall End"
           }
         ]
       },
@@ -949,9 +1069,9 @@
     "name": "Items for Sale",
     "category": "Available Pieces",
     "description": "An inquiry for finished pieces, currently available shop items, and one-off work that may already be built or close to ready.",
-    "active": true,
+    "active": false,
     "hideContactForm": true,
-    "image": "assets/images/products/gift-ideas.png",
+    "image": "assets/images/items-for-sale/spice-rack.png",
     "quoteType": "Availability review required",
     "rules": [
       "Available pieces can change quickly, so this form is used to confirm interest before availability is promised.",

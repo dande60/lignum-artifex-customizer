@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="title desc">
+  <title id="title">Live edge board shape</title>
+  <desc id="desc">Simple black and white live-edge style board shape.</desc>
+  <rect width="320" height="200" fill="#ffffff"/>
+  <path d="M48 78c20-12 34-18 52-14 15 4 23 16 39 18 22 3 34-12 54-12 16 0 28 10 45 13 18 3 34-5 44-1 16 6 22 21 22 37 0 17-7 32-23 40-12 6-26 3-43 2-20-1-33 8-55 8-26 0-37-12-59-12-17 0-27 7-43 5-22-2-42-20-42-44 0-16 4-29 9-40Z" fill="#f7f7f7" stroke="#161616" stroke-width="5" stroke-linejoin="round"/>
+</svg>

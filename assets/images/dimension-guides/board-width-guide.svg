@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title desc">
+  <title id="title">Board width guide</title>
+  <desc id="desc">Black and white diagram showing board width measured side to side.</desc>
+  <rect width="320" height="180" fill="#ffffff"/>
+  <path d="M76 58h118c18 0 32 14 32 32v4c0 18-14 32-32 32H76c-15 0-28-13-28-28V86c0-15 13-28 28-28Z" fill="#f6f6f6" stroke="#111111" stroke-width="4"/>
+  <rect x="226" y="76" width="34" height="32" rx="10" fill="#f6f6f6" stroke="#111111" stroke-width="4"/>
+  <circle cx="245" cy="92" r="5" fill="#ffffff" stroke="#111111" stroke-width="3"/>
+  <path d="M138 64v56" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <path d="M126 72 L134 60 L142 72" fill="none" stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M126 108 L134 120 L142 108" fill="none" stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="134" y1="62" x2="134" y2="118" stroke="#111111" stroke-width="4" stroke-linecap="round"/>
+  <line x1="134" y1="62" x2="152" y2="62" stroke="#111111" stroke-width="3"/>
+  <line x1="134" y1="118" x2="152" y2="118" stroke="#111111" stroke-width="3"/>
+  <text x="88" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">WIDTH</text>
+  <text x="160" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#111111">Measured side to side</text>
+</svg>

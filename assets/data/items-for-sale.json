@@ -13,10 +13,6 @@
       "price": "$115.00",
       "image": "assets/images/items-for-sale/golf-tour-plack.jpg",
       "imageAlt": "Golf Course tour Magnetic Plaque"
-    },
-    {
-      "title": "Placeholder Item 3",
-      "subtitle": "Under $150"
     }
   ],
   "150-300": [
@@ -33,38 +29,8 @@
       "price": "$205.00",
       "image": "assets/images/items-for-sale/snowman-server.png",
       "imageAlt": "Frosy christmas Serving Tray"
-    },
-    {
-      "title": "Placeholder Item 3",
-      "subtitle": "$150 to $300"
     }
   ],
-  "300-600": [
-    {
-      "title": "Placeholder Item 1",
-      "subtitle": "$300 to $600"
-    },
-    {
-      "title": "Placeholder Item 2",
-      "subtitle": "$300 to $600"
-    },
-    {
-      "title": "Placeholder Item 3",
-      "subtitle": "$300 to $600"
-    }
-  ],
-  "600-plus": [
-    {
-      "title": "Placeholder Item 1",
-      "subtitle": "$600+"
-    },
-    {
-      "title": "Placeholder Item 2",
-      "subtitle": "$600+"
-    },
-    {
-      "title": "Placeholder Item 3",
-      "subtitle": "$600+"
-    }
-  ]
+  "300-600": [],
+  "600-plus": []
 }

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title desc">
+  <title id="title">Board length guide</title>
+  <desc id="desc">Black and white diagram showing board length measured from one end to the other.</desc>
+  <rect width="320" height="180" fill="#ffffff"/>
+  <path d="M76 58h118c18 0 32 14 32 32v4c0 18-14 32-32 32H76c-15 0-28-13-28-28V86c0-15 13-28 28-28Z" fill="#f6f6f6" stroke="#111111" stroke-width="4"/>
+  <rect x="226" y="76" width="34" height="32" rx="10" fill="#f6f6f6" stroke="#111111" stroke-width="4"/>
+  <circle cx="245" cy="92" r="5" fill="#ffffff" stroke="#111111" stroke-width="3"/>
+  <path d="M70 92h168" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <path d="M62 38 L50 46 L62 54" fill="none" stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M250 38 L262 46 L250 54" fill="none" stroke="none"/>
+  <path d="M258 38 L270 46 L258 54" fill="none" stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="52" y1="46" x2="268" y2="46" stroke="#111111" stroke-width="4" stroke-linecap="round"/>
+  <line x1="52" y1="46" x2="52" y2="62" stroke="#111111" stroke-width="3"/>
+  <line x1="268" y1="46" x2="268" y2="62" stroke="#111111" stroke-width="3"/>
+  <text x="160" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111111">LENGTH</text>
+  <text x="160" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#111111">Measured end to end</text>
+</svg>

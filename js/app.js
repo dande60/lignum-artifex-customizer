@@ -1,6 +1,7 @@
 const FORM_ENDPOINT = "https://formspree.io/f/xpqoyjvz";
 const PRODUCTS_PATH = "assets/data/products.json";
 const ITEMS_FOR_SALE_PATH = "assets/data/items-for-sale.json";
+const ITEMS_FOR_SALE_RANGE_ORDER = ["under-150", "150-300", "300-600", "600-plus"];
 const FALLBACK_ITEMS_FOR_SALE = {
   "under-150": [
     {
@@ -17,7 +18,6 @@ const FALLBACK_ITEMS_FOR_SALE = {
       image: "assets/images/items-for-sale/golf-tour-plack.jpg",
       imageAlt: "Golf Course tour Magnetic Plaque",
     },
-    { title: "Placeholder Item 3", subtitle: "Under $150" },
   ],
   "150-300": [
     {
@@ -34,18 +34,9 @@ const FALLBACK_ITEMS_FOR_SALE = {
       image: "assets/images/items-for-sale/snowman-server.png",
       imageAlt: "Frosy christmas Serving Tray",
     },
-    { title: "Placeholder Item 3", subtitle: "$150 to $300" },
   ],
-  "300-600": [
-    { title: "Placeholder Item 1", subtitle: "$300 to $600" },
-    { title: "Placeholder Item 2", subtitle: "$300 to $600" },
-    { title: "Placeholder Item 3", subtitle: "$300 to $600" },
-  ],
-  "600-plus": [
-    { title: "Placeholder Item 1", subtitle: "$600+" },
-    { title: "Placeholder Item 2", subtitle: "$600+" },
-    { title: "Placeholder Item 3", subtitle: "$600+" },
-  ],
+  "300-600": [],
+  "600-plus": [],
 };
 const FALLBACK_PRODUCTS = [
   {
@@ -159,8 +150,7 @@ const FALLBACK_PRODUCTS = [
           { value: "oiled", label: "Oiled" },
           { value: "stained", label: "Stained" },
           { value: "lacquer", label: "Lacquer" },
-          { value: "other", label: "Other (Explain in notes)" },
-          { value: "needs-guidance", label: "I need finish guidance" },
+          { value: "other", label: "Other (describe in notes)" },
         ],
       },
       {
@@ -185,9 +175,9 @@ const FALLBACK_PRODUCTS = [
   {
     id: "charcuterie-boards",
     name: "Kitchen & Serving",
-    category: "Serving Boards",
+    category: "Kitchen & Serving",
     description:
-      "A custom kitchen board inquiry with room to define board type, shape, size, wood selection, handle detail, and engraving direction.",
+      "A custom kitchen and serving inquiry with room to define piece type, layout, size, wood selection, finish, and personalization details.",
     detailLinkText: "Visit the gallery for more ideas:",
     detailLinkLabel: "Portfolio Gallery",
     detailLinkHref: "https://www.lignumartifex.com/gallery.html",
@@ -195,8 +185,8 @@ const FALLBACK_PRODUCTS = [
     image: "assets/images/products/board-1.png",
     quoteType: "Custom review required",
     rules: [
-      "Board dimensions, species, and engraving depth are finalized during quote review.",
-      "Food-safe finish assumptions are captured here, but final recommendations may depend on intended use.",
+      "Dimensions, species, finish, and personalization details are finalized during quote review.",
+      "Finish recommendations may vary based on intended use, placement, and maintenance needs.",
       "This version collects direction only. Pricing and file uploads remain outside the current release.",
       "Quote responses are typically sent within 48 to 72 hours.",
     ],
@@ -209,6 +199,7 @@ const FALLBACK_PRODUCTS = [
         choices: [
           { value: "charcuterie-board", label: "Charcuterie board" },
           { value: "cutting-board", label: "Cutting board" },
+          { value: "spice-rack", label: "Spice rack" },
           { value: "custom-board", label: "Custom board" },
         ],
       },
@@ -217,21 +208,76 @@ const FALLBACK_PRODUCTS = [
         label: "Board Shape",
         type: "select",
         required: true,
+        hideWhen: { field: "board_type", equals: "spice-rack" },
         choices: [
-          { value: "rectangular", label: "Rectangular" },
-          { value: "square", label: "Square" },
-          { value: "rounded-rectangle", label: "Rounded rectangle" },
+          {
+            value: "rectangular",
+            label: "Rectangular",
+            image: "assets/images/board-shapes/rectangular.svg",
+            imageAlt: "Rectangular board shape preview",
+            imageCaption: "Rectangular",
+          },
+          {
+            value: "square",
+            label: "Square",
+            image: "assets/images/board-shapes/square.svg",
+            imageAlt: "Square board shape preview",
+            imageCaption: "Square",
+          },
+          {
+            value: "rounded-rectangle",
+            label: "Rounded rectangle",
+            image: "assets/images/board-shapes/rounded-rectangle.svg",
+            imageAlt: "Rounded rectangle board shape preview",
+            imageCaption: "Rounded rectangle",
+          },
           {
             value: "paddle-handle",
             label: "Paddle with handle",
+            image: "assets/images/board-shapes/paddle-handle.svg",
+            imageAlt: "Paddle handle board shape preview",
+            imageCaption: "Paddle with handle",
             showWhen: { field: "board_type", equals: "charcuterie-board" },
           },
           {
             value: "live-edge",
             label: "Live edge style",
+            image: "assets/images/board-shapes/live-edge.svg",
+            imageAlt: "Live edge board shape preview",
+            imageCaption: "Live edge style",
             showWhen: { field: "board_type", equals: "charcuterie-board" },
           },
-          { value: "custom-shape", label: "Custom shape" },
+          {
+            value: "custom-shape",
+            label: "Custom shape",
+            image: "assets/images/board-shapes/custom-shape.svg",
+            imageAlt: "Custom board shape preview",
+            imageCaption: "Custom shape",
+          },
+        ],
+      },
+      {
+        id: "orientation",
+        label: "Orientation",
+        type: "select",
+        required: true,
+        suppressConditionalHighlight: true,
+        showWhen: { field: "board_type", equals: "spice-rack" },
+        choices: [
+          {
+            value: "upright",
+            label: "Upright",
+            image: "assets/images/spice-rack-orientation/upright.png",
+            imageAlt: "Upright spice rack preview",
+            imageCaption: "Upright",
+          },
+          {
+            value: "table-top",
+            label: "Table top",
+            image: "assets/images/spice-rack-orientation/table-top.png",
+            imageAlt: "Table top spice rack preview",
+            imageCaption: "Table top",
+          },
         ],
       },
       {
@@ -239,6 +285,17 @@ const FALLBACK_PRODUCTS = [
         label: "Length",
         type: "select",
         required: true,
+        hideWhen: { field: "board_type", equals: "spice-rack" },
+        helpMedia: {
+          src: "assets/images/dimension-guides/board-length-guide.svg",
+          alt: "Length runs from one end of the board to the other.",
+          valueSource: {
+            field: "length",
+            customField: "custom_length",
+            customTriggerValue: "other",
+            unit: "in",
+          },
+        },
         choices: [
           { value: "10", label: "10 in" },
           { value: "12", label: "12 in" },
@@ -253,6 +310,7 @@ const FALLBACK_PRODUCTS = [
         label: "Custom Length",
         type: "number",
         required: true,
+        hideWhen: { field: "board_type", equals: "spice-rack" },
         placeholder: "20",
         unit: "in",
         min: 8,
@@ -264,6 +322,17 @@ const FALLBACK_PRODUCTS = [
         label: "Width",
         type: "select",
         required: true,
+        hideWhen: { field: "board_type", equals: "spice-rack" },
+        helpMedia: {
+          src: "assets/images/dimension-guides/board-width-guide.svg",
+          alt: "Width runs across the board from side to side.",
+          valueSource: {
+            field: "width",
+            customField: "custom_width",
+            customTriggerValue: "other",
+            unit: "in",
+          },
+        },
         choices: [
           { value: "6", label: "6 in" },
           { value: "8", label: "8 in" },
@@ -278,6 +347,7 @@ const FALLBACK_PRODUCTS = [
         label: "Custom Width",
         type: "number",
         required: true,
+        hideWhen: { field: "board_type", equals: "spice-rack" },
         placeholder: "10",
         unit: "in",
         min: 6,
@@ -289,6 +359,7 @@ const FALLBACK_PRODUCTS = [
         label: "Thickness",
         type: "select",
         required: true,
+        hideWhen: { field: "board_type", equals: "spice-rack" },
         choices: [
           {
             value: "0.625",
@@ -296,14 +367,29 @@ const FALLBACK_PRODUCTS = [
             showWhen: { field: "board_type", equals: "charcuterie-board" },
           },
           {
+            value: "0.625",
+            label: "5/8 in",
+            showWhen: { field: "board_type", equals: "spice-rack" },
+          },
+          {
             value: "0.75",
             label: "3/4 in",
             showWhen: { field: "board_type", equals: "charcuterie-board" },
           },
           {
+            value: "0.75",
+            label: "3/4 in",
+            showWhen: { field: "board_type", equals: "spice-rack" },
+          },
+          {
             value: "1",
             label: "1 in",
             showWhen: { field: "board_type", equals: "charcuterie-board" },
+          },
+          {
+            value: "1",
+            label: "1 in",
+            showWhen: { field: "board_type", equals: "spice-rack" },
           },
           {
             value: "1.5",
@@ -379,6 +465,7 @@ const FALLBACK_PRODUCTS = [
         emptyPlaceholderText: "Pick type first",
         deferChoicesUntil: "board_type",
         required: true,
+        hideWhen: { field: "board_type", equalsAny: ["custom-board", "spice-rack"] },
         choices: [
           {
             value: "none",
@@ -401,6 +488,7 @@ const FALLBACK_PRODUCTS = [
             value: "hanging-hole",
             label: "Hanging hole",
             showWhen: { field: "board_type", equals: "charcuterie-board" },
+            hideWhen: { field: "handle_style", equals: "extended-paddle" },
           },
         ],
       },
@@ -411,10 +499,9 @@ const FALLBACK_PRODUCTS = [
         showChoiceVisual: false,
         required: true,
         choices: [
-          { value: "food-safe-oil", label: "Food-safe oil" },
-          { value: "hardwax-oil", label: "Hardwax oil" },
-          { value: "other", label: "Other" },
-          { value: "needs-guidance", label: "I need finish guidance" },
+          { value: "natural", label: "Natural" },
+          { value: "laquered", label: "Laquered" },
+          { value: "painted", label: "Painted" },
         ],
       },
       {
@@ -471,15 +558,16 @@ const FALLBACK_PRODUCTS = [
         label: "Do You Have Or Do You Want Custom Artwork Inlay On The Board?",
         type: "checkbox",
         required: false,
+        hideWhen: { field: "board_type", equals: "spice-rack" },
         checkboxLabel: "Yes",
         checkedNote: "Explain in Board Notes.",
       },
       {
         id: "design_notes",
-        label: "Board Notes",
+        label: "Project Notes",
         type: "textarea",
         required: false,
-        placeholder: "Reference the use case, serving style, gift context, or any edge/detail preferences.",
+        placeholder: "Reference the use case, placement, spice storage needs, serving style, or any edge/detail preferences.",
       },
     ],
   },
@@ -510,9 +598,14 @@ const FALLBACK_PRODUCTS = [
         choices: [
           { value: "dining-table", label: "Dining table" },
           { value: "coffee-table", label: "Coffee table" },
-          { value: "console-table", label: "Console table" },
           { value: "desk", label: "Desk" },
-          { value: "water-fall-end", label: "Water Fall End" },
+          {
+            value: "water-fall-end",
+            label: "Water Fall End",
+            image: "assets/images/river-table-types/waterfall-edge.png",
+            imageAlt: "Water Fall End table type preview",
+            imageCaption: "Water Fall End",
+          },
         ],
       },
       {
@@ -710,9 +803,9 @@ const FALLBACK_PRODUCTS = [
     category: "Available Pieces",
     description:
       "An inquiry for finished pieces, currently available shop items, and one-off work that may already be built or close to ready.",
-    active: true,
+    active: false,
     hideContactForm: true,
-    image: "assets/images/products/gift-ideas.png",
+    image: "assets/images/items-for-sale/spice-rack.png",
     quoteType: "Availability review required",
     rules: [
       "Available pieces can change quickly, so this form is used to confirm interest before availability is promised.",
@@ -825,7 +918,10 @@ async function init() {
     selectProduct(state.products[0].id);
   } catch (error) {
     console.warn("Falling back to inline product data.", error);
-    state.products = applyItemsForSaleInventory(FALLBACK_PRODUCTS, FALLBACK_ITEMS_FOR_SALE);
+    state.products = applyItemsForSaleInventory(
+      FALLBACK_PRODUCTS.filter((product) => product.active !== false),
+      FALLBACK_ITEMS_FOR_SALE
+    );
     populateProductSelector();
     selectProduct(state.products[0].id);
     setStatus("Loaded fallback product data. For normal use, serve the site from GitHub Pages or a local static server.", false);
@@ -848,6 +944,8 @@ async function loadItemsForSaleInventory() {
 
 function applyItemsForSaleInventory(products, inventory) {
   const itemsForSaleInventory = inventory && typeof inventory === "object" ? inventory : FALLBACK_ITEMS_FOR_SALE;
+  const normalizedItemsForSaleInventory = normalizeItemsForSaleInventory(itemsForSaleInventory);
+  const itemsForSaleCoverImage = findItemsForSaleCoverImage(normalizedItemsForSaleInventory);
 
   return products.map((product) => {
     if (product.id !== "items-for-sale") {
@@ -856,25 +954,82 @@ function applyItemsForSaleInventory(products, inventory) {
 
     return {
       ...product,
+      image: itemsForSaleCoverImage || product.image,
       options: product.options.map((field) => {
         if (field.id !== "sale_budget_range" || field.type !== "select") {
           return field;
         }
 
-        const inventoryOrder = ["under-150", "150-300", "300-600", "600-plus"];
-        const allItems = inventoryOrder.flatMap((range) => cloneGalleryItems(itemsForSaleInventory[range]));
+        const allItems = ITEMS_FOR_SALE_RANGE_ORDER.flatMap((range) =>
+          cloneGalleryItems(normalizedItemsForSaleInventory[range])
+        );
 
         return {
           ...field,
           choices: field.choices.map((choice) => ({
             ...choice,
             galleryItems:
-              choice.value === "open" ? allItems : cloneGalleryItems(itemsForSaleInventory[choice.value]),
+              choice.value === "open" ? allItems : cloneGalleryItems(normalizedItemsForSaleInventory[choice.value]),
           })),
         };
       }),
     };
   });
+}
+
+function normalizeItemsForSaleInventory(inventory) {
+  return ITEMS_FOR_SALE_RANGE_ORDER.reduce((normalizedInventory, range) => {
+    normalizedInventory[range] = filterValidSaleItems(inventory?.[range]);
+    return normalizedInventory;
+  }, {});
+}
+
+function findItemsForSaleCoverImage(inventory) {
+  for (const range of ITEMS_FOR_SALE_RANGE_ORDER) {
+    const items = Array.isArray(inventory[range]) ? inventory[range] : [];
+    const coverItem = items.find(
+      (item) => typeof item?.image === "string" && item.image.trim().length > 0
+    );
+
+    if (coverItem) {
+      return coverItem.image;
+    }
+  }
+
+  return "";
+}
+
+function filterValidSaleItems(items) {
+  if (!Array.isArray(items)) {
+    return [];
+  }
+
+  return items
+    .map((item) => normalizeSaleItem(item))
+    .filter((item) => isRenderableSaleItem(item));
+}
+
+function normalizeSaleItem(item) {
+  return {
+    ...item,
+    title: normalizeSaleItemText(item?.title),
+    subtitle: normalizeSaleItemText(item?.subtitle),
+    price: normalizeSaleItemText(item?.price),
+    image: normalizeSaleItemText(item?.image),
+    imageAlt: normalizeSaleItemText(item?.imageAlt),
+  };
+}
+
+function normalizeSaleItemText(value) {
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function isRenderableSaleItem(item) {
+  const hasTitle = Boolean(item.title);
+  const hasVisualOrDetails = Boolean(item.image || item.price || item.subtitle);
+  const looksLikePlaceholder = /^placeholder item\b/i.test(item.title);
+
+  return hasTitle && hasVisualOrDetails && !looksLikePlaceholder;
 }
 
 function cloneGalleryItems(items) {
@@ -896,6 +1051,7 @@ function bindStaticEvents() {
     syncDynamicChoices();
     applyVisibilityRules();
     updateSwatchPickers();
+    updateFieldHelpMediaValues();
     updateCheckedNotes();
     updateFontPreviews();
     updateChoiceVisuals();
@@ -1129,6 +1285,7 @@ function selectProduct(productId, options = {}) {
   syncDynamicChoices();
   applyVisibilityRules();
   updateSwatchPickers();
+  updateFieldHelpMediaValues();
   updateCheckedNotes();
   updateFontPreviews();
   updateChoiceVisuals();
@@ -1196,7 +1353,7 @@ function renderDynamicFields(product) {
     if (field.id === "finish" || field.id === "material_direction") {
       wrapper.classList.add("field-group-compact");
     }
-    if (field.showWhen) {
+    if (field.showWhen && !field.suppressConditionalHighlight) {
       wrapper.classList.add("field-group-conditional");
     }
     wrapper.dataset.fieldId = field.id;
@@ -1227,6 +1384,35 @@ function renderDynamicFields(product) {
       help.className = "field-help";
       help.textContent = field.helpText;
       wrapper.append(help);
+    }
+
+    if (field.helpMedia?.src) {
+      const media = document.createElement("figure");
+      media.className = "field-help-media";
+
+      const image = document.createElement("img");
+      image.className = "field-help-media-image";
+      image.src = field.helpMedia.src;
+      image.alt = field.helpMedia.alt || "";
+      image.loading = "lazy";
+      image.decoding = "async";
+      media.append(image);
+
+      if (field.helpMedia.valueSource) {
+        const valueBadge = document.createElement("div");
+        valueBadge.className = "field-help-media-value is-hidden";
+        valueBadge.dataset.helpMediaValueFor = field.id;
+        media.append(valueBadge);
+      }
+
+      if (field.helpMedia.caption) {
+        const caption = document.createElement("figcaption");
+        caption.className = "field-help-media-caption";
+        caption.textContent = field.helpMedia.caption;
+        media.append(caption);
+      }
+
+      wrapper.append(media);
     }
 
     if (field.checkedNote) {
@@ -1473,16 +1659,35 @@ function getNamedControl(fieldId) {
 }
 
 function shouldShowChoice(choice) {
-  if (!choice.showWhen) {
-    return true;
+  return matchesVisibilityCondition(choice.showWhen, true) && !matchesVisibilityCondition(choice.hideWhen, false);
+}
+
+function matchesVisibilityCondition(condition, defaultValue) {
+  if (!condition) {
+    return defaultValue;
   }
 
-  const source = getNamedControl(choice.showWhen.field);
+  const source = getNamedControl(condition.field);
   if (!source) {
-    return true;
+    return defaultValue;
   }
 
-  return source.value === choice.showWhen.equals;
+  const controlList = getControlList(source);
+  const isMultiInputGroup =
+    controlList.length > 1 ||
+    controlList.some(
+      (input) => input instanceof HTMLInputElement && (input.type === "checkbox" || input.type === "radio")
+    );
+
+  const values = isMultiInputGroup
+    ? controlList.filter((input) => input.checked).map((input) => input.value)
+    : [source.value];
+
+  if (Array.isArray(condition.equalsAny) && condition.equalsAny.length > 0) {
+    return values.some((value) => condition.equalsAny.includes(value));
+  }
+
+  return values.includes(condition.equals);
 }
 
 function syncSelectOptions(field, control) {
@@ -1609,6 +1814,55 @@ function updateSwatchPickers() {
   });
 }
 
+function updateFieldHelpMediaValues() {
+  if (!state.currentProduct) {
+    return;
+  }
+
+  state.currentProduct.options.forEach((field) => {
+    if (!field.helpMedia?.valueSource) {
+      return;
+    }
+
+    const wrapper = dynamicFields.querySelector(`[data-field-id="${field.id}"]`);
+    const valueBadge = wrapper?.querySelector(`[data-help-media-value-for="${field.id}"]`);
+    const displayValue = getHelpMediaDisplayValue(field.helpMedia.valueSource);
+    const shouldShow = Boolean(displayValue) && !wrapper?.classList.contains("is-hidden");
+
+    if (!valueBadge) {
+      return;
+    }
+
+    valueBadge.textContent = displayValue;
+    valueBadge.classList.toggle("is-hidden", !shouldShow);
+  });
+}
+
+function getHelpMediaDisplayValue(valueSource) {
+  const primaryControl = getNamedControl(valueSource.field);
+  if (!primaryControl) {
+    return "";
+  }
+
+  const primaryValue = typeof primaryControl.value === "string" ? primaryControl.value.trim() : "";
+  if (!primaryValue) {
+    return "";
+  }
+
+  let resolvedValue = primaryValue;
+
+  if (valueSource.customField && primaryValue === valueSource.customTriggerValue) {
+    const customControl = getNamedControl(valueSource.customField);
+    const customValue = typeof customControl?.value === "string" ? customControl.value.trim() : "";
+    if (!customValue) {
+      return "";
+    }
+    resolvedValue = customValue;
+  }
+
+  return valueSource.unit ? `${resolvedValue} ${valueSource.unit}` : resolvedValue;
+}
+
 function getControlList(control) {
   if (typeof RadioNodeList !== "undefined" && control instanceof RadioNodeList) {
     return Array.from(control);
@@ -1733,7 +1987,10 @@ function applyVisibilityRules() {
     const shouldShow = evaluateVisibility(field);
 
     wrapper.classList.toggle("is-hidden", !shouldShow);
-    wrapper.classList.toggle("is-conditional-active", Boolean(field.showWhen) && shouldShow);
+    wrapper.classList.toggle(
+      "is-conditional-active",
+      Boolean(field.showWhen) && !field.suppressConditionalHighlight && shouldShow
+    );
     setFieldDisabled(input, !shouldShow);
 
     if (field.type !== "checkbox-group" && input) {
@@ -1751,16 +2008,7 @@ function applyVisibilityRules() {
 }
 
 function evaluateVisibility(field) {
-  if (!field.showWhen) {
-    return true;
-  }
-
-  const source = getNamedControl(field.showWhen.field);
-  if (!source) {
-    return true;
-  }
-
-  return source.value === field.showWhen.equals;
+  return matchesVisibilityCondition(field.showWhen, true) && !matchesVisibilityCondition(field.hideWhen, false);
 }
 
 function updateSummary() {
@@ -1976,7 +2224,9 @@ function updateChoiceVisuals() {
     const choice = field.choices.find((item) => item.value === input.value);
     const hasGallery = Array.isArray(choice?.galleryItems) && choice.galleryItems.length > 0;
     const hasSingleImage = Boolean(choice?.image);
-    const hasVisual = !wrapper.classList.contains("is-hidden") && (hasGallery || hasSingleImage);
+    const hasEmptySaleState =
+      field.id === "sale_budget_range" && Boolean(choice) && Boolean(input.value) && !hasGallery && !hasSingleImage;
+    const hasVisual = !wrapper.classList.contains("is-hidden") && (hasGallery || hasSingleImage || hasEmptySaleState);
 
     visual.classList.toggle("is-hidden", !hasVisual);
 
@@ -1985,6 +2235,23 @@ function updateChoiceVisuals() {
         state.selectedSaleItem = null;
       }
       visual.innerHTML = "";
+      return;
+    }
+
+    if (hasEmptySaleState) {
+      if (field.id === "sale_budget_range" && state.selectedSaleItem) {
+        state.selectedSaleItem = null;
+      }
+
+      visual.innerHTML = `
+        <div class="choice-visual-empty-state">
+          <p class="choice-visual-empty-title">${
+            choice.value === "open" ? "No items currently listed" : "No items in this range yet"
+          }</p>
+          <p class="choice-visual-empty-copy">${getSaleItemsEmptyStateMessage(choice)}</p>
+        </div>
+        <p class="choice-visual-caption">${getSaleItemsCaption(choice, 0)}</p>
+      `;
       return;
     }
 
@@ -2051,9 +2318,7 @@ function updateChoiceVisuals() {
             )
             .join("")}
         </div>
-        <p class="choice-visual-caption">${
-          choice.value === "open" ? "All available item placeholders." : `Available item placeholders for ${choice.label}.`
-        }</p>
+        <p class="choice-visual-caption">${getSaleItemsCaption(choice, choice.galleryItems.length)}</p>
       `;
       return;
     }
@@ -2073,6 +2338,24 @@ function updateChoiceVisuals() {
       <p class="choice-visual-caption">${choice.imageCaption || choice.label}</p>
     `;
   });
+}
+
+function getSaleItemsEmptyStateMessage(choice) {
+  if (choice.value === "open") {
+    return "There are no items currently listed for sale. Check back soon for new available pieces.";
+  }
+
+  return `There are no items currently listed in the ${choice.label} range. Check back soon for new available pieces.`;
+}
+
+function getSaleItemsCaption(choice, itemCount) {
+  if (itemCount === 0) {
+    return choice.value === "open"
+      ? "No items are currently available for sale."
+      : `No items are currently available for ${choice.label}.`;
+  }
+
+  return choice.value === "open" ? "All items currently available for sale." : `Available items for ${choice.label}.`;
 }
 
 function getFontPreviewText() {

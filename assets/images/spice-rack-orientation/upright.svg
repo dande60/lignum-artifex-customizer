@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="title desc">
+  <title id="title">Upright spice rack</title>
+  <desc id="desc">Simple black and white upright spice rack illustration.</desc>
+  <rect width="320" height="200" fill="#ffffff"/>
+  <rect x="86" y="42" width="148" height="122" rx="10" fill="#f7f7f7" stroke="#161616" stroke-width="5"/>
+  <line x1="106" y1="82" x2="214" y2="82" stroke="#161616" stroke-width="4"/>
+  <line x1="106" y1="122" x2="214" y2="122" stroke="#161616" stroke-width="4"/>
+  <line x1="106" y1="162" x2="214" y2="162" stroke="#161616" stroke-width="4"/>
+  <rect x="102" y="52" width="24" height="24" rx="5" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+  <rect x="148" y="52" width="24" height="24" rx="5" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+  <rect x="194" y="52" width="24" height="24" rx="5" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+  <rect x="102" y="92" width="24" height="24" rx="5" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+  <rect x="148" y="92" width="24" height="24" rx="5" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+  <rect x="194" y="92" width="24" height="24" rx="5" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+  <rect x="102" y="132" width="24" height="24" rx="5" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+  <rect x="148" y="132" width="24" height="24" rx="5" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+  <rect x="194" y="132" width="24" height="24" rx="5" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+</svg>
