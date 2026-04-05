@@ -827,6 +827,10 @@
         "label": "Personalization / Message",
         "type": "text",
         "required": false,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "pizza-peel"
+        },
         "maxLength": 30,
         "helpText": "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
         "placeholder": "Name, monogram, date, or phrase"
@@ -836,6 +840,10 @@
         "label": "Engraving Style",
         "type": "select",
         "required": false,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "pizza-peel"
+        },
         "choices": [
           {
             "value": "painted",
@@ -856,6 +864,10 @@
         "label": "Font Style",
         "type": "select",
         "required": false,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "pizza-peel"
+        },
         "choices": [
           {
             "value": "classic-serif",

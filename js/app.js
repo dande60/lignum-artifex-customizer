@@ -682,6 +682,7 @@ const FALLBACK_PRODUCTS = [
         label: "Personalization / Message",
         type: "text",
         required: false,
+        hideWhen: { field: "board_type", equals: "pizza-peel" },
         maxLength: 30,
         helpText: "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
         placeholder: "Name, monogram, date, or phrase",
@@ -691,6 +692,7 @@ const FALLBACK_PRODUCTS = [
         label: "Engraving Style",
         type: "select",
         required: false,
+        hideWhen: { field: "board_type", equals: "pizza-peel" },
         choices: [
           { value: "painted", label: "Painted" },
           { value: "epoxy-inlay", label: "Epoxy inlay" },
@@ -702,6 +704,7 @@ const FALLBACK_PRODUCTS = [
         label: "Font Style",
         type: "select",
         required: false,
+        hideWhen: { field: "board_type", equals: "pizza-peel" },
         choices: [
           { value: "classic-serif", label: "Classic serif" },
           { value: "times-roman", label: "Times Roman" },
