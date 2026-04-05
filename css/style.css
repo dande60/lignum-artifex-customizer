@@ -1374,6 +1374,28 @@ textarea {
   padding: 6px 8px 8px;
 }
 
+[data-field-id="material_direction"] .choice-visual-frame,
+[data-field-id="wood_species"] .choice-visual-frame {
+  max-width: 72px;
+  aspect-ratio: 1 / 1;
+  background: transparent;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+[data-field-id="material_direction"] .choice-visual-image,
+[data-field-id="wood_species"] .choice-visual-image {
+  object-fit: contain;
+  background: transparent;
+}
+
+[data-field-id="material_direction"] .choice-visual,
+[data-field-id="wood_species"] .choice-visual {
+  width: fit-content;
+  gap: 4px;
+  padding: 4px 6px 6px;
+}
+
 .choice-visual-image {
   width: 100%;
   height: 100%;
