@@ -361,7 +361,7 @@ const FALLBACK_PRODUCTS = [
           {
             value: "epoxy-river-inlay",
             label: "Epoxy river inlay",
-            showWhen: { field: "board_type", equals: "cutting-board" },
+            showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
           },
           {
             value: "custom-shape",

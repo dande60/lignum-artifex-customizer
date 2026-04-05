@@ -306,7 +306,10 @@
             "label": "Epoxy river inlay",
             "showWhen": {
               "field": "board_type",
-              "equals": "cutting-board"
+              "equalsAny": [
+                "charcuterie-board",
+                "cutting-board"
+              ]
             }
           },
           {
