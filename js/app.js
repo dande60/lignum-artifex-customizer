@@ -684,26 +684,16 @@ const FALLBACK_PRODUCTS = [
           {
             value: "matte-hardwax",
             label: "Matte hardwax",
+            hideWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
+          },
+          {
+            value: "unfinished-board",
+            label: "Unfinished",
             showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
           },
           {
-            value: "satin-hardwax",
-            label: "Satin hardwax",
-            showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
-          },
-          {
-            value: "lacquer",
-            label: "Lacquer",
-            showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
-          },
-          {
-            value: "other",
-            label: "Other",
-            showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
-          },
-          {
-            value: "needs-guidance",
-            label: "I need finish guidance",
+            value: "food-grade-oil-wax",
+            label: "Food grade oil and wax",
             showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
           },
           { value: "unfinished", label: "Unfinished", showWhen: { field: "board_type", equals: "pizza-peel" } },
