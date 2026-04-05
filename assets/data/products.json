@@ -759,15 +759,43 @@
         "choices": [
           {
             "value": "natural",
-            "label": "Natural"
+            "label": "Natural",
+            "hideWhen": {
+              "field": "board_type",
+              "equals": "pizza-peel"
+            }
           },
           {
             "value": "laquered",
-            "label": "Laquered"
+            "label": "Laquered",
+            "hideWhen": {
+              "field": "board_type",
+              "equals": "pizza-peel"
+            }
           },
           {
             "value": "painted",
-            "label": "Painted"
+            "label": "Painted",
+            "hideWhen": {
+              "field": "board_type",
+              "equals": "pizza-peel"
+            }
+          },
+          {
+            "value": "unfinished",
+            "label": "Unfinished",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "pizza-peel"
+            }
+          },
+          {
+            "value": "food-grade-finish",
+            "label": "Food grade finish",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "pizza-peel"
+            }
           }
         ]
       },

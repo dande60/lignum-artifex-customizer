@@ -645,9 +645,15 @@ const FALLBACK_PRODUCTS = [
         showChoiceVisual: false,
         required: true,
         choices: [
-          { value: "natural", label: "Natural" },
-          { value: "laquered", label: "Laquered" },
-          { value: "painted", label: "Painted" },
+          { value: "natural", label: "Natural", hideWhen: { field: "board_type", equals: "pizza-peel" } },
+          { value: "laquered", label: "Laquered", hideWhen: { field: "board_type", equals: "pizza-peel" } },
+          { value: "painted", label: "Painted", hideWhen: { field: "board_type", equals: "pizza-peel" } },
+          { value: "unfinished", label: "Unfinished", showWhen: { field: "board_type", equals: "pizza-peel" } },
+          {
+            value: "food-grade-finish",
+            label: "Food grade finish",
+            showWhen: { field: "board_type", equals: "pizza-peel" },
+          },
         ],
       },
       {
