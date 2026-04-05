@@ -295,7 +295,18 @@
             "imageCaption": "Live edge style",
             "showWhen": {
               "field": "board_type",
-              "equals": "charcuterie-board"
+              "equalsAny": [
+                "charcuterie-board",
+                "cutting-board"
+              ]
+            }
+          },
+          {
+            "value": "epoxy-river-inlay",
+            "label": "Epoxy river inlay",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
             }
           },
           {

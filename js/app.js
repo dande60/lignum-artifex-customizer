@@ -356,7 +356,12 @@ const FALLBACK_PRODUCTS = [
             image: "assets/images/board-shapes/live-edge.svg",
             imageAlt: "Live edge board shape preview",
             imageCaption: "Live edge style",
-            showWhen: { field: "board_type", equals: "charcuterie-board" },
+            showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
+          },
+          {
+            value: "epoxy-river-inlay",
+            label: "Epoxy river inlay",
+            showWhen: { field: "board_type", equals: "cutting-board" },
           },
           {
             value: "custom-shape",
