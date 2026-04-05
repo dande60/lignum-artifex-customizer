@@ -691,6 +691,7 @@
           {
             "value": "cutout",
             "label": "Integrated cutout",
+            "exclusive": true,
             "showWhen": {
               "field": "board_type",
               "equals": "cutting-board"
@@ -699,6 +700,7 @@
           {
             "value": "extended-paddle",
             "label": "Paddle Handle (comes with hanging hole)",
+            "exclusive": true,
             "showWhen": {
               "field": "board_type",
               "equals": "charcuterie-board"
@@ -707,6 +709,7 @@
           {
             "value": "juice-groove",
             "label": "Juice Groove",
+            "exclusive": true,
             "showWhen": {
               "field": "board_type",
               "equals": "cutting-board"
@@ -715,6 +718,7 @@
           {
             "value": "hanging-hole",
             "label": "Hanging hole",
+            "exclusive": true,
             "showWhen": {
               "field": "board_type",
               "equals": "charcuterie-board"
@@ -727,6 +731,7 @@
           {
             "value": "regular-handle",
             "label": "Regular handle",
+            "exclusive": true,
             "showWhen": {
               "field": "board_type",
               "equals": "pizza-peel"
@@ -735,6 +740,7 @@
           {
             "value": "guiat-neck",
             "label": "Guiat Neck",
+            "exclusive": true,
             "showWhen": {
               "field": "board_type",
               "equals": "pizza-peel"
@@ -743,6 +749,7 @@
           {
             "value": "custom",
             "label": "Custom",
+            "exclusive": true,
             "showWhen": {
               "field": "board_type",
               "equals": "pizza-peel"
