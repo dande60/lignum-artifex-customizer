@@ -310,6 +310,7 @@ const FALLBACK_PRODUCTS = [
         choices: [
           { value: "charcuterie-board", label: "Charcuterie board" },
           { value: "cutting-board", label: "Cutting board" },
+          { value: "pizza-peel", label: "Pizza Peel" },
           { value: "spice-rack", label: "Spice rack" },
           { value: "custom-board", label: "Custom board" },
         ],

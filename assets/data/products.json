@@ -236,6 +236,10 @@
             "label": "Cutting board"
           },
           {
+            "value": "pizza-peel",
+            "label": "Pizza Peel"
+          },
+          {
             "value": "spice-rack",
             "label": "Spice rack"
           },
