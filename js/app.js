@@ -984,9 +984,6 @@ const productDescriptionLinkAnchorNode = document.getElementById("product-descri
 const productQuoteTypeNode = document.getElementById("product-quote-type");
 const siteHeader = document.querySelector(".site-header");
 
-const hiddenProductName = document.getElementById("hidden-product-name");
-const hiddenProductCategory = document.getElementById("hidden-product-category");
-const hiddenQuoteType = document.getElementById("hidden-quote-type");
 const hiddenSummary = document.getElementById("hidden-summary");
 const hiddenSubject = document.getElementById("hidden-subject");
 
@@ -1292,9 +1289,6 @@ function syncSubmissionHiddenFields() {
     return;
   }
 
-  hiddenProductName.value = state.currentProduct.name;
-  hiddenProductCategory.value = state.currentProduct.category;
-  hiddenQuoteType.value = state.currentProduct.quoteType;
   hiddenSubject.value = `Customizer Inquiry - ${state.currentProduct.name}`;
 }
 
@@ -2622,10 +2616,16 @@ async function handleSubmit(event) {
     return;
   }
 
-  const formData = new FormData(form);
-  formData.set("product_name", hiddenProductName.value);
-  formData.set("product_category", hiddenProductCategory.value);
-  formData.set("quote_type", hiddenQuoteType.value);
+  const formData = new FormData();
+  formData.set("name", form.name.value.trim());
+  formData.set("email", form.email.value.trim());
+  formData.set("phone", form.phone.value.trim());
+
+  if (form.company.value.trim()) {
+    formData.set("company", form.company.value.trim());
+  }
+
+  formData.set("deadline", form.deadline.value.trim());
   formData.set("configuration_summary", hiddenSummary.value);
   formData.set("_subject", hiddenSubject.value);
 
@@ -2649,7 +2649,7 @@ async function handleSubmit(event) {
     trackAnalyticsEvent("quote_request_submitted", {
       product_id: state.currentProduct?.id || "",
       product_name: state.currentProduct?.name || "",
-      quote_type: hiddenQuoteType.value,
+      quote_type: state.currentProduct?.quoteType || "",
     });
     const selectedProductId = state.currentProduct.id;
     form.reset();
