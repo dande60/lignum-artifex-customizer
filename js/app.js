@@ -375,9 +375,10 @@ const FALLBACK_PRODUCTS = [
       },
       {
         id: "pizza_peel_dimension",
-        label: "Dimension",
+        label: "Size",
         type: "select",
         required: true,
+        suppressConditionalHighlight: true,
         showWhen: { field: "board_type", equals: "pizza-peel" },
         choices: [
           { value: "12", label: "12 in" },
