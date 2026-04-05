@@ -368,15 +368,6 @@ const FALLBACK_PRODUCTS = [
         ],
       },
       {
-        id: "artwork_inlay",
-        label: "Do You Have Or Do You Want Custom Artwork Inlay On The Board?",
-        type: "checkbox",
-        required: false,
-        hideWhen: { field: "board_type", equals: "spice-rack" },
-        checkboxLabel: "Yes",
-        checkedNote: "Explain in Board Notes.",
-      },
-      {
         id: "orientation",
         label: "Orientation",
         type: "select",
@@ -672,6 +663,15 @@ const FALLBACK_PRODUCTS = [
         placeholder: "1",
         min: 1,
         max: 50,
+      },
+      {
+        id: "artwork_inlay",
+        label: "Do You Have Or Do You Want Custom Artwork Inlay On The Board?",
+        type: "checkbox",
+        required: false,
+        hideWhen: { field: "board_type", equals: "spice-rack" },
+        checkboxLabel: "Yes",
+        checkedNote: "Explain in Board Notes.",
       },
       {
         id: "design_notes",
