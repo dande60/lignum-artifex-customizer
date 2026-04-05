@@ -723,6 +723,30 @@
               "field": "handle_style",
               "equals": "extended-paddle"
             }
+          },
+          {
+            "value": "regular-handle",
+            "label": "Regular handle",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "pizza-peel"
+            }
+          },
+          {
+            "value": "guiat-neck",
+            "label": "Guiat Neck",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "pizza-peel"
+            }
+          },
+          {
+            "value": "custom",
+            "label": "Custom",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "pizza-peel"
+            }
           }
         ]
       },
