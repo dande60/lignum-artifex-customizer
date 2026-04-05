@@ -489,7 +489,7 @@ const FALLBACK_PRODUCTS = [
         label: "Thickness",
         type: "select",
         required: true,
-        hideWhen: { field: "board_type", equals: "spice-rack" },
+        hideWhen: { field: "board_type", equalsAny: ["spice-rack", "pizza-peel"] },
         choices: [
           {
             value: "0.625",
@@ -548,6 +548,7 @@ const FALLBACK_PRODUCTS = [
         label: "Wood Species",
         type: "select",
         required: true,
+        hideWhen: { field: "board_type", equals: "pizza-peel" },
         choices: [
           {
             value: "walnut",

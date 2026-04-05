@@ -527,7 +527,10 @@
         "required": true,
         "hideWhen": {
           "field": "board_type",
-          "equals": "spice-rack"
+          "equalsAny": [
+            "spice-rack",
+            "pizza-peel"
+          ]
         },
         "choices": [
           {
@@ -617,6 +620,10 @@
         "label": "Wood Species",
         "type": "select",
         "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "pizza-peel"
+        },
         "choices": [
           {
             "value": "walnut",
