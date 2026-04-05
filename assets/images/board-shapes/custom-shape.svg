@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="title desc">
+  <title id="title">Custom board shape</title>
+  <desc id="desc">Simple black and white abstract custom board shape.</desc>
+  <rect width="320" height="200" fill="#ffffff"/>
+  <path d="M58 104c0-29 21-49 51-49 20 0 33 10 49 10 17 0 31-20 56-20 35 0 66 25 66 59 0 28-20 45-42 50-19 4-31 1-46 8-18 8-26 22-50 22-27 0-38-16-56-18-16-2-34 6-49-8-11-10-17-27-17-54Z" fill="#f7f7f7" stroke="#161616" stroke-width="5" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,36 @@
+{
+  "under-150": [
+    {
+     "title": "Spice Rack",
+      "subtitle": "Raw Paint yourself",
+      "price": "$145.00",
+      "image": "assets/images/items-for-sale/spice-rack.webp",
+      "imageAlt": "Raw Paint yourself"
+    },
+    {
+     "title": "Golf Plaque",
+      "subtitle": "Golf Course tour Magnetic Plaque",
+      "price": "$115.00",
+      "image": "assets/images/items-for-sale/golf-tour-plack.jpg",
+      "imageAlt": "Golf Course tour Magnetic Plaque"
+    }
+  ],
+  "150-300": [
+    {
+      "title": "Dog friendly welcome",
+      "subtitle": "Deep carved lettering 5ft 8in",
+      "price": "$235.00",
+      "image": "assets/images/items-for-sale/dog-sign.webp",
+      "imageAlt": "Dog friendly welcome sign"
+    },
+    {
+     "title": "Frosty the Server",
+      "subtitle": "Solid Maple Serving Tray",
+      "price": "$205.00",
+      "image": "assets/images/items-for-sale/snowman-server.webp",
+      "imageAlt": "Frosy christmas Serving Tray"
+    }
+  ],
+  "300-600": [],
+  "600-plus": []
+}

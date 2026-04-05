@@ -1,108 +1,157 @@
 [
   {
-    "id": "custom-sign-template",
-    "name": "Custom Sign Template",
-    "category": "Placeholder Product",
-    "description": "A starter configuration for future signs, plaques, or engraved pieces. The schema is real even though the product details are provisional.",
+    "id": "gift-ideas",
+    "name": "Gift Ideas",
+    "category": "Personalized Gifts",
+    "description": "A flexible inquiry for custom gift pieces, engraved keepsakes, small-batch gifts, and one-off personalized woodworking ideas.",
+    "detailLinkText": "Visit the gallery for more ideas:",
+    "detailLinkLabel": "Portfolio Gallery",
+    "detailLinkHref": "https://www.lignumartifex.com/gallery.html",
     "active": true,
-    "image": "assets/images/hero.png",
+    "image": "assets/images/products/jewel-box.webp",
     "quoteType": "Custom review required",
     "rules": [
-      "This product is a placeholder template so real catalog items can be added later without rebuilding the UI.",
-      "Font selection is already supported as an optional field for future engraved or lettered products.",
-      "Final pricing, uploads, and checkout are intentionally outside the first release."
+      "Gift concepts vary widely, so this form is used to capture direction before product details are finalized.",
+      "Personalization, timelines, and quantity affect feasibility and quote scope.",
+      "This version gathers design intent only. Pricing and uploads remain outside the current release.",
+      "Quote responses are typically sent within 48 to 72 hours."
     ],
     "options": [
       {
-        "id": "size_mode",
-        "label": "Size Approach",
+        "id": "gift_type",
+        "label": "Gift Type",
         "type": "select",
         "required": true,
         "choices": [
           {
-            "value": "standard-guidance",
-            "label": "I want standard size guidance"
+            "value": "engraved-keepsake",
+            "label": "Engraved keepsake"
           },
           {
-            "value": "custom-dimensions",
-            "label": "I know the custom dimensions"
+            "value": "plaque",
+            "label": "Plaque"
+          },
+          {
+            "value": "holiday-gift",
+            "label": "Holiday gift"
+          },
+          {
+            "value": "i-need-guidance",
+            "label": "Need Custom Gift"
           }
         ]
       },
       {
-        "id": "standard_size",
-        "label": "Suggested Size Range",
-        "type": "select",
-        "required": true,
-        "helpText": "Use this until you have exact product measurements.",
-        "showWhen": {
-          "field": "size_mode",
-          "equals": "standard-guidance"
-        },
-        "choices": [
-          {
-            "value": "small-12-18",
-            "label": "Small | 12 to 18 in"
-          },
-          {
-            "value": "medium-24-30",
-            "label": "Medium | 24 to 30 in"
-          },
-          {
-            "value": "large-36-plus",
-            "label": "Large | 36 in or more"
-          }
-        ]
-      },
-      {
-        "id": "width",
-        "label": "Width",
-        "type": "number",
-        "required": true,
-        "placeholder": "24",
-        "unit": "in",
-        "min": 4,
-        "max": 96,
-        "showWhen": {
-          "field": "size_mode",
-          "equals": "custom-dimensions"
-        }
-      },
-      {
-        "id": "height",
-        "label": "Height",
-        "type": "number",
-        "required": true,
-        "placeholder": "12",
-        "unit": "in",
-        "min": 4,
-        "max": 60,
-        "showWhen": {
-          "field": "size_mode",
-          "equals": "custom-dimensions"
-        }
-      },
-      {
-        "id": "material",
-        "label": "Material Direction",
+        "id": "material_direction",
+        "label": "Wood Species",
         "type": "select",
         "required": true,
         "choices": [
           {
-            "value": "hardwood",
-            "label": "Hardwood"
+            "value": "walnut",
+            "label": "Walnut",
+    "image": "assets/images/wood-species/black-walnut.webp",
+            "imageAlt": "Black walnut wood grain sample",
+            "imageCaption": "Black Walnut"
           },
           {
-            "value": "paint-grade",
-            "label": "Paint-grade panel"
+            "value": "maple",
+            "label": "Maple",
+    "image": "assets/images/wood-species/maple.webp",
+            "imageAlt": "Maple wood grain sample",
+            "imageCaption": "Maple"
           },
           {
-            "value": "plywood-core",
-            "label": "Plywood core"
+            "value": "oak",
+            "label": "Oak",
+    "image": "assets/images/wood-species/oak-wood.webp",
+            "imageAlt": "Oak wood grain sample",
+            "imageCaption": "Oak"
           },
           {
             "value": "needs-guidance",
-            "label": "I need material guidance"
+            "label": "Exotics and more Please describe in notes"
+          }
+        ]
+      },
+      {
+        "id": "personalization",
+        "label": "Personalization / Message",
+        "type": "text",
+        "required": false,
+        "maxLength": 30,
+        "helpText": "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
+        "placeholder": "Name, monogram, date, or phrase"
+      },
+      {
+        "id": "engraving_style",
+        "label": "Engraving Style",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "painted",
+            "label": "Painted"
+          },
+          {
+            "value": "epoxy-inlay",
+            "label": "Epoxy inlay"
+          },
+          {
+            "value": "other",
+            "label": "Other (Explain in notes)"
+          }
+        ]
+      },
+      {
+        "id": "font_style",
+        "label": "Font Style",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "classic-serif",
+            "label": "Classic serif"
+          },
+          {
+            "value": "times-roman",
+            "label": "Times Roman"
+          },
+          {
+            "value": "modern-sans",
+            "label": "Modern sans"
+          },
+          {
+            "value": "arial",
+            "label": "Arial"
+          },
+          {
+            "value": "cormorant-garamond",
+            "label": "Cormorant Garamond"
+          },
+          {
+            "value": "marcellus",
+            "label": "Marcellus"
+          },
+          {
+            "value": "josefin-sans",
+            "label": "Josefin Sans"
+          },
+          {
+            "value": "script",
+            "label": "Allura"
+          },
+          {
+            "value": "great-vibes",
+            "label": "Great Vibes"
+          },
+          {
+            "value": "parisienne",
+            "label": "Parisienne"
+          },
+          {
+            "value": "decide-later",
+            "label": "* Decide later *"
           }
         ]
       },
@@ -110,103 +159,28 @@
         "id": "finish",
         "label": "Finish Direction",
         "type": "select",
-        "required": true,
+        "showChoiceVisual": false,
+        "required": false,
         "choices": [
           {
-            "value": "natural-oil",
-            "label": "Natural / oiled"
+            "value": "natural",
+            "label": "Natural"
+          },
+          {
+            "value": "oiled",
+            "label": "Oiled"
           },
           {
             "value": "stained",
             "label": "Stained"
           },
           {
-            "value": "painted",
-            "label": "Painted"
+            "value": "lacquer",
+            "label": "Lacquer"
           },
           {
-            "value": "needs-guidance",
-            "label": "I need finish guidance"
-          }
-        ]
-      },
-      {
-        "id": "copy_text",
-        "label": "Text / Engraving Copy",
-        "type": "text",
-        "required": false,
-        "placeholder": "Enter the wording for the piece"
-      },
-      {
-        "id": "font_style",
-        "label": "Font Style",
-        "type": "select",
-        "required": false,
-        "helpText": "This field exists now so product-specific font lists can be added later.",
-        "choices": [
-          {
-            "value": "none-yet",
-            "label": "Decide later"
-          },
-          {
-            "value": "classic-serif",
-            "label": "Classic serif"
-          },
-          {
-            "value": "clean-sans",
-            "label": "Clean sans"
-          },
-          {
-            "value": "script-inspired",
-            "label": "Script-inspired"
-          }
-        ]
-      },
-      {
-        "id": "mounting",
-        "label": "Mounting Direction",
-        "type": "select",
-        "required": true,
-        "choices": [
-          {
-            "value": "wall-mounted",
-            "label": "Wall mounted"
-          },
-          {
-            "value": "stand-off-hardware",
-            "label": "Stand-off hardware"
-          },
-          {
-            "value": "freestanding",
-            "label": "Freestanding"
-          },
-          {
-            "value": "needs-guidance",
-            "label": "I need mounting guidance"
-          }
-        ]
-      },
-      {
-        "id": "edge_profile",
-        "label": "Edge / Profile",
-        "type": "select",
-        "required": false,
-        "choices": [
-          {
-            "value": "square",
-            "label": "Square edge"
-          },
-          {
-            "value": "eased",
-            "label": "Eased edge"
-          },
-          {
-            "value": "bevel",
-            "label": "Bevel"
-          },
-          {
-            "value": "decide-later",
-            "label": "Decide later"
+            "value": "other",
+            "label": "Other (describe in notes)"
           }
         ]
       },
@@ -215,16 +189,932 @@
         "label": "Quantity",
         "type": "number",
         "required": true,
+        "defaultValue": 1,
         "placeholder": "1",
         "min": 1,
         "max": 100
       },
       {
         "id": "design_notes",
-        "label": "Product-Specific Notes",
+        "label": "Gift Notes",
         "type": "textarea",
         "required": false,
-        "placeholder": "Add any constraints, installation context, or design cues for this specific product."
+        "placeholder": "Describe the occasion, gift tone, budget sensitivity, or any inspiration for the piece."
+      }
+    ]
+  },
+  {
+    "id": "charcuterie-boards",
+    "name": "Kitchen & Serving",
+    "category": "Kitchen & Serving",
+    "description": "A custom kitchen and serving inquiry with room to define piece type, layout, size, wood selection, finish, and personalization details.",
+    "detailLinkText": "Visit the gallery for more ideas:",
+    "detailLinkLabel": "Portfolio Gallery",
+    "detailLinkHref": "https://www.lignumartifex.com/gallery.html",
+    "active": true,
+    "image": "assets/images/products/board-1.webp",
+    "quoteType": "Custom review required",
+    "rules": [
+      "Dimensions, species, finish, and personalization details are finalized during quote review.",
+      "Finish recommendations may vary based on intended use, placement, and maintenance needs.",
+      "This version collects direction only. Pricing and file uploads remain outside the current release.",
+      "Quote responses are typically sent within 48 to 72 hours."
+    ],
+    "options": [
+      {
+        "id": "board_type",
+        "label": "Type",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "charcuterie-board",
+            "label": "Charcuterie board"
+          },
+          {
+            "value": "cutting-board",
+            "label": "Cutting board"
+          },
+          {
+            "value": "spice-rack",
+            "label": "Spice rack"
+          },
+          {
+            "value": "custom-board",
+            "label": "Custom board"
+          }
+        ]
+      },
+      {
+        "id": "board_shape",
+        "label": "Board Shape",
+        "type": "select",
+        "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "choices": [
+          {
+            "value": "rectangular",
+            "label": "Rectangular",
+            "image": "assets/images/board-shapes/rectangular.svg",
+            "imageAlt": "Rectangular board shape preview",
+            "imageCaption": "Rectangular"
+          },
+          {
+            "value": "square",
+            "label": "Square",
+            "image": "assets/images/board-shapes/square.svg",
+            "imageAlt": "Square board shape preview",
+            "imageCaption": "Square"
+          },
+          {
+            "value": "rounded-rectangle",
+            "label": "Rounded rectangle",
+            "image": "assets/images/board-shapes/rounded-rectangle.svg",
+            "imageAlt": "Rounded rectangle board shape preview",
+            "imageCaption": "Rounded rectangle"
+          },
+          {
+            "value": "paddle-handle",
+            "label": "Paddle with handle",
+            "image": "assets/images/board-shapes/paddle-handle.svg",
+            "imageAlt": "Paddle handle board shape preview",
+            "imageCaption": "Paddle with handle",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "live-edge",
+            "label": "Live edge style",
+            "image": "assets/images/board-shapes/live-edge.svg",
+            "imageAlt": "Live edge board shape preview",
+            "imageCaption": "Live edge style",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "custom-shape",
+            "label": "Custom shape",
+            "image": "assets/images/board-shapes/custom-shape.svg",
+            "imageAlt": "Custom board shape preview",
+            "imageCaption": "Custom shape"
+          }
+        ]
+      },
+      {
+        "id": "orientation",
+        "label": "Orientation",
+        "type": "select",
+        "required": true,
+        "suppressConditionalHighlight": true,
+        "showWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "choices": [
+          {
+            "value": "upright",
+            "label": "Upright",
+            "image": "assets/images/spice-rack-orientation/upright.png",
+            "imageAlt": "Upright spice rack preview",
+            "imageCaption": "Upright"
+          },
+          {
+            "value": "table-top",
+            "label": "Table top",
+            "image": "assets/images/spice-rack-orientation/table-top.png",
+            "imageAlt": "Table top spice rack preview",
+            "imageCaption": "Table top"
+          }
+        ]
+      },
+      {
+        "id": "length",
+        "label": "Length",
+        "type": "select",
+        "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "helpMedia": {
+          "src": "assets/images/dimension-guides/board-length-guide.svg",
+          "alt": "Length runs from one end of the board to the other.",
+          "valueSource": {
+            "field": "length",
+            "customField": "custom_length",
+            "customTriggerValue": "other",
+            "unit": "in"
+          }
+        },
+        "choices": [
+          {
+            "value": "10",
+            "label": "10 in"
+          },
+          {
+            "value": "12",
+            "label": "12 in"
+          },
+          {
+            "value": "16",
+            "label": "16 in"
+          },
+          {
+            "value": "20",
+            "label": "20 in"
+          },
+          {
+            "value": "24",
+            "label": "24 in"
+          },
+          {
+            "value": "other",
+            "label": "Other (please fill in your amount)"
+          }
+        ]
+      },
+      {
+        "id": "custom_length",
+        "label": "Custom Length",
+        "type": "number",
+        "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "placeholder": "20",
+        "unit": "in",
+        "min": 8,
+        "max": 48,
+        "showWhen": {
+          "field": "length",
+          "equals": "other"
+        }
+      },
+      {
+        "id": "width",
+        "label": "Width",
+        "type": "select",
+        "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "helpMedia": {
+          "src": "assets/images/dimension-guides/board-width-guide.svg",
+          "alt": "Width runs across the board from side to side.",
+          "valueSource": {
+            "field": "width",
+            "customField": "custom_width",
+            "customTriggerValue": "other",
+            "unit": "in"
+          }
+        },
+        "choices": [
+          {
+            "value": "6",
+            "label": "6 in"
+          },
+          {
+            "value": "8",
+            "label": "8 in"
+          },
+          {
+            "value": "10",
+            "label": "10 in"
+          },
+          {
+            "value": "12",
+            "label": "12 in"
+          },
+          {
+            "value": "14",
+            "label": "14 in"
+          },
+          {
+            "value": "other",
+            "label": "Other (please fill in your amount)"
+          }
+        ]
+      },
+      {
+        "id": "custom_width",
+        "label": "Custom Width",
+        "type": "number",
+        "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "placeholder": "10",
+        "unit": "in",
+        "min": 6,
+        "max": 24,
+        "showWhen": {
+          "field": "width",
+          "equals": "other"
+        }
+      },
+      {
+        "id": "thickness",
+        "label": "Thickness",
+        "type": "select",
+        "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "choices": [
+          {
+            "value": "0.625",
+            "label": "5/8 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "0.625",
+            "label": "5/8 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "spice-rack"
+            }
+          },
+          {
+            "value": "0.75",
+            "label": "3/4 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "0.75",
+            "label": "3/4 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "spice-rack"
+            }
+          },
+          {
+            "value": "1",
+            "label": "1 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "1",
+            "label": "1 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "spice-rack"
+            }
+          },
+          {
+            "value": "1.5",
+            "label": "1 1/2 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
+          },
+          {
+            "value": "2",
+            "label": "2 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
+          },
+          {
+            "value": "2.5",
+            "label": "2 1/2 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
+          },
+          {
+            "value": "3",
+            "label": "3 in",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
+          }
+        ]
+      },
+      {
+        "id": "wood_species",
+        "label": "Wood Species",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "walnut",
+            "label": "Walnut",
+    "image": "assets/images/wood-species/black-walnut.webp",
+            "imageAlt": "Black walnut wood grain sample",
+            "imageCaption": "Black Walnut"
+          },
+          {
+            "value": "maple",
+            "label": "Maple",
+    "image": "assets/images/wood-species/maple.webp",
+            "imageAlt": "Maple wood grain sample",
+            "imageCaption": "Maple"
+          },
+          {
+            "value": "oak",
+            "label": "Oak",
+    "image": "assets/images/wood-species/oak-wood.webp",
+            "imageAlt": "Oak wood grain sample",
+            "imageCaption": "Oak"
+          },
+          {
+            "value": "olive-wood",
+            "label": "Olive wood",
+            "image": "assets/images/wood-species/olive-wood.jpg",
+            "imageAlt": "Olive wood grain sample",
+            "imageCaption": "Olive wood"
+          },
+          {
+            "value": "pear-wood",
+            "label": "Pear wood",
+            "image": "assets/images/wood-species/pear-wood.jpg",
+            "imageAlt": "Pear wood grain sample",
+            "imageCaption": "Pear wood"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "Exotics and more Please describe in notes"
+          }
+        ]
+      },
+      {
+        "id": "handle_style",
+        "label": "Handle / Grip",
+        "type": "checkbox-group",
+        "showEmptyPlaceholder": true,
+        "emptyPlaceholderText": "Pick type first",
+        "deferChoicesUntil": "board_type",
+        "required": true,
+        "hideWhen": {
+          "field": "board_type",
+          "equalsAny": ["custom-board", "spice-rack"]
+        },
+        "choices": [
+          {
+            "value": "none",
+            "label": "No handle",
+            "exclusive": true,
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "cutout",
+            "label": "Integrated cutout"
+          },
+          {
+            "value": "extended-paddle",
+            "label": "Paddle Handle (comes with hanging hole)",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            }
+          },
+          {
+            "value": "juice-groove",
+            "label": "Juice Groove",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
+          },
+          {
+            "value": "hanging-hole",
+            "label": "Hanging hole",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "charcuterie-board"
+            },
+            "hideWhen": {
+              "field": "handle_style",
+              "equals": "extended-paddle"
+            }
+          }
+        ]
+      },
+      {
+        "id": "finish",
+        "label": "Finish Direction",
+        "type": "select",
+        "showChoiceVisual": false,
+        "required": true,
+        "choices": [
+          {
+            "value": "natural",
+            "label": "Natural"
+          },
+          {
+            "value": "laquered",
+            "label": "Laquered"
+          },
+          {
+            "value": "painted",
+            "label": "Painted"
+          }
+        ]
+      },
+      {
+        "id": "engraving",
+        "label": "Personalization / Message",
+        "type": "text",
+        "required": false,
+        "maxLength": 30,
+        "helpText": "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
+        "placeholder": "Name, monogram, date, or phrase"
+      },
+      {
+        "id": "engraving_style",
+        "label": "Engraving Style",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "painted",
+            "label": "Painted"
+          },
+          {
+            "value": "epoxy-inlay",
+            "label": "Epoxy inlay"
+          },
+          {
+            "value": "other",
+            "label": "Other (Explain in notes)"
+          }
+        ]
+      },
+      {
+        "id": "font_style",
+        "label": "Font Style",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "classic-serif",
+            "label": "Classic serif"
+          },
+          {
+            "value": "times-roman",
+            "label": "Times Roman"
+          },
+          {
+            "value": "modern-sans",
+            "label": "Modern sans"
+          },
+          {
+            "value": "arial",
+            "label": "Arial"
+          },
+          {
+            "value": "cormorant-garamond",
+            "label": "Cormorant Garamond"
+          },
+          {
+            "value": "marcellus",
+            "label": "Marcellus"
+          },
+          {
+            "value": "josefin-sans",
+            "label": "Josefin Sans"
+          },
+          {
+            "value": "script",
+            "label": "Allura"
+          },
+          {
+            "value": "great-vibes",
+            "label": "Great Vibes"
+          },
+          {
+            "value": "parisienne",
+            "label": "Parisienne"
+          },
+          {
+            "value": "decide-later",
+            "label": "* Decide later *"
+          }
+        ]
+      },
+      {
+        "id": "quantity",
+        "label": "Quantity",
+        "type": "number",
+        "required": true,
+        "defaultValue": 1,
+        "placeholder": "1",
+        "min": 1,
+        "max": 50
+      },
+      {
+        "id": "artwork_inlay",
+        "label": "Do You Have Or Do You Want Custom Artwork Inlay On The Board?",
+        "type": "checkbox",
+        "required": false,
+        "hideWhen": {
+          "field": "board_type",
+          "equals": "spice-rack"
+        },
+        "checkboxLabel": "Yes",
+        "checkedNote": "Explain in Board Notes."
+      },
+      {
+        "id": "design_notes",
+        "label": "Project Notes",
+        "type": "textarea",
+        "required": false,
+        "placeholder": "Reference the use case, placement, spice storage needs, serving style, or any edge/detail preferences."
+      }
+    ]
+  },
+  {
+    "id": "river-tables",
+    "name": "River Tables",
+    "category": "Furniture",
+    "description": "A table inquiry for resin river builds, slab pairing, base style, and room-specific size planning.",
+    "detailLinkText": "Visit the gallery for more ideas:",
+    "detailLinkLabel": "Portfolio Gallery",
+    "detailLinkHref": "https://www.lignumartifex.com/gallery.html",
+    "active": true,
+    "image": "assets/images/products/rivertable.webp",
+    "quoteType": "Custom review required",
+    "rules": [
+      "River table slab selection and resin tone are confirmed during quote review.",
+      "Large-format pieces may require delivery and installation planning based on the final dimensions.",
+      "This form captures direction only. Final pricing, drawings, and finish samples happen afterward.",
+      "Quote responses are typically sent within 48 to 72 hours."
+    ],
+    "options": [
+      {
+        "id": "table_type",
+        "label": "Table Type",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "dining-table",
+            "label": "Dining table"
+          },
+          {
+            "value": "coffee-table",
+            "label": "Coffee table"
+          },
+          {
+            "value": "desk",
+            "label": "Desk"
+          },
+          {
+            "value": "water-fall-end",
+            "label": "Water Fall End",
+            "image": "assets/images/river-table-types/waterfall-edge.webp",
+            "imageAlt": "Water Fall End table type preview",
+            "imageCaption": "Water Fall End"
+          }
+        ]
+      },
+      {
+        "id": "wood_species",
+        "label": "Wood Species",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "walnut",
+            "label": "Walnut",
+    "image": "assets/images/wood-species/black-walnut.webp",
+            "imageAlt": "Black walnut wood grain sample",
+            "imageCaption": "Black Walnut"
+          },
+          {
+            "value": "maple",
+            "label": "Maple",
+    "image": "assets/images/wood-species/maple.webp",
+            "imageAlt": "Maple wood grain sample",
+            "imageCaption": "Maple"
+          },
+          {
+            "value": "oak",
+            "label": "Oak",
+    "image": "assets/images/wood-species/oak-wood.webp",
+            "imageAlt": "Oak wood grain sample",
+            "imageCaption": "Oak"
+          },
+          {
+            "value": "elm",
+            "label": "Elm",
+    "image": "assets/images/wood-species/elm-wood.webp",
+            "imageAlt": "Elm wood grain sample",
+            "imageCaption": "Elm"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "Exotics and more Please describe in notes"
+          }
+        ]
+      },
+      {
+        "id": "table_description",
+        "label": "Describe Your Table",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Describe the overall size, seating intent, room placement, slab look, river tone, and any details you already know about the table."
+      },
+      {
+        "id": "river_color",
+        "label": "River / Resin Tone",
+        "type": "select",
+        "presentation": "swatch-grid",
+        "swatchHeading": "Color",
+        "showChoiceVisual": false,
+        "helpText": "Choose a resin tone visually. Swatches are reference-only and final color can shift with depth, lighting, and finish.",
+        "required": true,
+        "choices": [
+          {
+            "value": "copper",
+            "label": "Copper",
+    "swatchImage": "assets/images/resin-colors/copper.png",
+            "swatchBase": "#9c5637",
+            "swatchAccent": "#d98a56"
+          },
+          {
+            "value": "pearl",
+            "label": "Pearl",
+    "swatchImage": "assets/images/resin-colors/pearl.png",
+            "swatchBase": "#e8e0d4",
+            "swatchAccent": "#fffaf2"
+          },
+          {
+            "value": "whale",
+            "label": "Whale",
+    "swatchImage": "assets/images/resin-colors/whale.png",
+            "swatchBase": "#2e3947",
+            "swatchAccent": "#66778c"
+          },
+          {
+            "value": "azure",
+            "label": "Azure",
+    "swatchImage": "assets/images/resin-colors/azure.png",
+            "swatchBase": "#2567d8",
+            "swatchAccent": "#6ab7ff"
+          },
+          {
+            "value": "smoke",
+            "label": "Dolphin",
+    "swatchImage": "assets/images/resin-colors/dolphin.png",
+            "swatchBase": "#505962",
+            "swatchAccent": "#aeb5bd"
+          },
+          {
+            "value": "caribbean",
+            "label": "Caribbean",
+    "swatchImage": "assets/images/resin-colors/caribbean.png",
+            "swatchBase": "#1fb6c9",
+            "swatchAccent": "#8ff0ee"
+          },
+          {
+            "value": "jungle",
+            "label": "Jungle",
+    "swatchImage": "assets/images/resin-colors/jungle.png",
+            "swatchBase": "#216b46",
+            "swatchAccent": "#5bc67c"
+          },
+          {
+            "value": "maui",
+            "label": "Maui",
+    "swatchImage": "assets/images/resin-colors/maui.png",
+            "swatchBase": "#2db7a3",
+            "swatchAccent": "#89efe4"
+          },
+          {
+            "value": "margarita",
+            "label": "Margarita",
+    "swatchImage": "assets/images/resin-colors/margarita.png",
+            "swatchBase": "#a6d84c",
+            "swatchAccent": "#dfff86"
+          },
+          {
+            "value": "gold",
+            "label": "Gold",
+    "swatchImage": "assets/images/resin-colors/gold.png",
+            "swatchBase": "#c79520",
+            "swatchAccent": "#ffe06a"
+          },
+          {
+            "value": "ocean",
+            "label": "Ocean",
+    "swatchImage": "assets/images/resin-colors/ocean.png",
+            "swatchBase": "#145584",
+            "swatchAccent": "#4dd0d7"
+          },
+          {
+            "value": "royal-purple",
+            "label": "Royal Purple",
+    "swatchImage": "assets/images/resin-colors/royal-purple.png",
+            "swatchBase": "#5631a8",
+            "swatchAccent": "#8c67e9"
+          },
+          {
+            "value": "black",
+            "label": "Caviar",
+    "swatchImage": "assets/images/resin-colors/black.png",
+            "swatchBase": "#11161a",
+            "swatchAccent": "#4f5961"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "Contact for more option"
+          }
+        ]
+      },
+      {
+        "id": "base_style",
+        "label": "Base Style",
+        "type": "select",
+        "required": true,
+        "choices": [
+          {
+            "value": "metal-u",
+            "label": "Metal U base"
+          },
+          {
+            "value": "metal-x",
+            "label": "Metal X base"
+          },
+          {
+            "value": "wood-pedestal",
+            "label": "Wood pedestal"
+          },
+          {
+            "value": "client-supplied",
+            "label": "Client supplied base"
+          }
+        ]
+      },
+      {
+        "id": "finish",
+        "label": "Finish Direction",
+        "type": "select",
+        "showChoiceVisual": false,
+        "required": true,
+        "choices": [
+          {
+            "value": "matte-hardwax",
+            "label": "Matte hardwax"
+          },
+          {
+            "value": "satin-hardwax",
+            "label": "Satin hardwax"
+          },
+          {
+            "value": "lacquer",
+            "label": "Lacquer"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          },
+          {
+            "value": "needs-guidance",
+            "label": "I need finish guidance"
+          }
+        ]
+      },
+      {
+        "id": "delivery_scope",
+        "label": "Delivery / Installation",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "pickup",
+            "label": "Pickup"
+          },
+          {
+            "value": "local-delivery",
+            "label": "Local delivery"
+          },
+          {
+            "value": "delivery-install",
+            "label": "Delivery and installation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "items-for-sale",
+    "name": "Items for Sale",
+    "category": "Available Pieces",
+    "description": "An inquiry for finished pieces, currently available shop items, and one-off work that may already be built or close to ready.",
+    "active": false,
+    "hideContactForm": true,
+    "image": "assets/images/items-for-sale/spice-rack.webp",
+    "quoteType": "Availability review required",
+    "rules": [
+      "Available pieces can change quickly, so this form is used to confirm interest before availability is promised.",
+      "Exact dimensions, species, and finish may vary from piece to piece.",
+      "If a listed item is no longer available, similar options can still be discussed after contact.",
+      "Quote responses are typically sent within 48 to 72 hours."
+    ],
+    "options": [
+      {
+        "id": "sale_budget_range",
+        "label": "Budget Range",
+        "type": "select",
+        "required": false,
+        "choices": [
+          {
+            "value": "under-150",
+            "label": "Under $150"
+          },
+          {
+            "value": "150-300",
+            "label": "$150 to $300"
+          },
+          {
+            "value": "300-600",
+            "label": "$300 to $600"
+          },
+          {
+            "value": "600-plus",
+            "label": "$600+"
+          },
+          {
+            "value": "open",
+            "label": "See all items"
+          }
+        ]
+      },
+      {
+        "id": "sale_notes",
+        "label": "Item Notes",
+        "type": "notice",
+        "messageHtml": "Items appear here as products become available. If you require something more bespoke or unique, contact us and we can help bring your vision to life. For more ideas <a href=\"https://www.lignumartifex.com/gallery.html\" target=\"_blank\" rel=\"noreferrer\">Visit our Gallery</a>.",
+        "linkLabel": "Contact Us",
+        "linkHref": "https://www.lignumartifex.com/contact.html"
       }
     ]
   }
