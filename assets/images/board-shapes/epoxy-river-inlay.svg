@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="title desc">
+  <title id="title">Epoxy river inlay board shape</title>
+  <desc id="desc">Simple board shape with a contrasting river inlay running through the center.</desc>
+  <rect width="320" height="200" fill="#ffffff"/>
+  <path d="M22 42h276v116H22z" fill="#f7f7f7" stroke="#161616" stroke-width="5"/>
+  <path d="M150 42c-10 18-7 34 1 48 10 16 14 31 6 47-7 15-7 34 3 69h34c-10-33-10-53-3-68 8-17 4-33-6-48-8-13-11-29-1-48Z" fill="#8fb7c8" stroke="#161616" stroke-width="5" stroke-linejoin="round"/>
+</svg>

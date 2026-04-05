@@ -362,6 +362,9 @@ const FALLBACK_PRODUCTS = [
           {
             value: "epoxy-river-inlay",
             label: "Epoxy river inlay",
+            image: "assets/images/board-shapes/epoxy-river-inlay.svg",
+            imageAlt: "Epoxy river inlay board shape preview",
+            imageCaption: "Epoxy river inlay",
             showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
           },
           {
