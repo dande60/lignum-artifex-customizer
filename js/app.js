@@ -384,7 +384,17 @@ const FALLBACK_PRODUCTS = [
           { value: "12", label: "12 in" },
           { value: "14", label: "14 in" },
           { value: "16", label: "16 in" },
+          { value: "custom", label: "Custom size" },
         ],
+      },
+      {
+        id: "pizza_peel_custom_size",
+        label: "Custom Size",
+        type: "text",
+        required: true,
+        suppressConditionalHighlight: true,
+        showWhen: { field: "pizza_peel_dimension", equals: "custom" },
+        placeholder: "Enter custom size",
       },
       {
         id: "orientation",
