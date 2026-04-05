@@ -932,7 +932,10 @@
         "required": false,
         "hideWhen": {
           "field": "board_type",
-          "equals": "spice-rack"
+          "equalsAny": [
+            "spice-rack",
+            "pizza-peel"
+          ]
         },
         "checkboxLabel": "Yes",
         "checkedNote": "Explain in Board Notes."

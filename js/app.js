@@ -734,7 +734,7 @@ const FALLBACK_PRODUCTS = [
         label: "Do You Have Or Do You Want Custom Artwork Inlay On The Board?",
         type: "checkbox",
         required: false,
-        hideWhen: { field: "board_type", equals: "spice-rack" },
+        hideWhen: { field: "board_type", equalsAny: ["spice-rack", "pizza-peel"] },
         checkboxLabel: "Yes",
         checkedNote: "Explain in Board Notes.",
       },
