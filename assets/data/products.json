@@ -639,7 +639,11 @@
           },
           {
             "value": "cutout",
-            "label": "Integrated cutout"
+            "label": "Integrated cutout",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "cutting-board"
+            }
           },
           {
             "value": "extended-paddle",

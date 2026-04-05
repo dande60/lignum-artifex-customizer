@@ -589,7 +589,7 @@ const FALLBACK_PRODUCTS = [
             exclusive: true,
             showWhen: { field: "board_type", equals: "charcuterie-board" },
           },
-          { value: "cutout", label: "Integrated cutout" },
+          { value: "cutout", label: "Integrated cutout", showWhen: { field: "board_type", equals: "cutting-board" } },
           {
             value: "extended-paddle",
             label: "Paddle Handle (comes with hanging hole)",
