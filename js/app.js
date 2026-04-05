@@ -2,6 +2,7 @@ const FORM_ENDPOINT = "https://formspree.io/f/xpqoyjvz";
 const PRODUCTS_PATH = "assets/data/products.json";
 const ITEMS_FOR_SALE_PATH = "assets/data/items-for-sale.json";
 const ITEMS_FOR_SALE_RANGE_ORDER = ["under-150", "150-300", "300-600", "600-plus"];
+const MOBILE_NAV_BREAKPOINT = 760;
 const FALLBACK_ITEMS_FOR_SALE = {
   "under-150": [
     {
@@ -38,6 +39,51 @@ const FALLBACK_ITEMS_FOR_SALE = {
   "300-600": [],
   "600-plus": [],
 };
+
+const navToggle = document.querySelector(".site-nav-toggle");
+const siteNav = document.getElementById("site-nav");
+
+function closeMobileNav() {
+  if (!navToggle || !siteNav) return;
+  navToggle.classList.remove("is-open");
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("aria-label", "Open navigation menu");
+  siteNav.classList.remove("is-open");
+}
+
+function openMobileNav() {
+  if (!navToggle || !siteNav) return;
+  navToggle.classList.add("is-open");
+  navToggle.setAttribute("aria-expanded", "true");
+  navToggle.setAttribute("aria-label", "Close navigation menu");
+  siteNav.classList.add("is-open");
+}
+
+if (navToggle && siteNav) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navToggle.classList.contains("is-open");
+    if (isOpen) {
+      closeMobileNav();
+      return;
+    }
+
+    openMobileNav();
+  });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= MOBILE_NAV_BREAKPOINT) {
+        closeMobileNav();
+      }
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > MOBILE_NAV_BREAKPOINT) {
+      closeMobileNav();
+    }
+  });
+}
 const FALLBACK_PRODUCTS = [
   {
     id: "gift-ideas",
