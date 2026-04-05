@@ -2185,7 +2185,6 @@ function updateSummary() {
   hiddenSummary.value = [
     `Product: ${state.currentProduct.name}`,
     `Category: ${state.currentProduct.category}`,
-    `Quote Type: ${state.currentProduct.quoteType}`,
     ...summaryLines,
   ].join("\n");
   syncSubmissionHiddenFields();
