@@ -1288,6 +1288,26 @@ function setSelectedSaleItem(item) {
   updateSummary();
 }
 
+function getSubmissionImagePath() {
+  if (state.currentProduct?.id === "items-for-sale" && state.selectedSaleItem?.image) {
+    return state.selectedSaleItem.image;
+  }
+
+  return state.currentProduct?.image || "";
+}
+
+function syncSubmissionHiddenFields() {
+  if (!state.currentProduct) {
+    return;
+  }
+
+  hiddenProductName.value = state.currentProduct.name;
+  hiddenProductCategory.value = state.currentProduct.category;
+  hiddenQuoteType.value = state.currentProduct.quoteType;
+  hiddenProductImageUrl.value = resolveAbsoluteUrl(getSubmissionImagePath());
+  hiddenSubject.value = `Customizer Inquiry - ${state.currentProduct.name}`;
+}
+
 function updateSelectedProductMedia() {
   if (!productPreviewFigureNode || !productPreviewImageNode || !state.currentProduct) {
     return;
@@ -1449,11 +1469,7 @@ function renderProductDetails(product) {
   }
   productQuoteTypeNode.textContent = product.quoteType;
 
-  hiddenProductName.value = product.name;
-  hiddenProductCategory.value = product.category;
-  hiddenQuoteType.value = product.quoteType;
-  hiddenProductImageUrl.value = resolveAbsoluteUrl(product.image);
-  hiddenSubject.value = `Customizer Inquiry - ${product.name}`;
+  syncSubmissionHiddenFields();
   updateSelectedProductMedia();
 
   rulesList.innerHTML = "";
@@ -2188,6 +2204,7 @@ function updateSummary() {
     `Quote Type: ${state.currentProduct.quoteType}`,
     ...summaryLines,
   ].join("\n");
+  syncSubmissionHiddenFields();
 }
 
 function setSummaryActionStatus(message) {
