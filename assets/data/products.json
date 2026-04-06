@@ -1281,10 +1281,6 @@
           {
             "value": "other",
             "label": "Other"
-          },
-          {
-            "value": "needs-guidance",
-            "label": "I need finish guidance"
           }
         ]
       },

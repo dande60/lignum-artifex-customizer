@@ -1004,7 +1004,6 @@ const FALLBACK_PRODUCTS = [
           { value: "lacquer", label: "Lacquer" },
           { value: "high-gloss-finish", label: "High Gloss Finish" },
           { value: "other", label: "Other" },
-          { value: "needs-guidance", label: "I need finish guidance" },
         ],
       },
       {
