@@ -830,7 +830,8 @@
               "field": "board_type",
               "equalsAny": [
                 "charcuterie-board",
-                "cutting-board"
+                "cutting-board",
+                "pizza-peel"
               ]
             }
           },
