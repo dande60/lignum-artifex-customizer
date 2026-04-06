@@ -698,7 +698,7 @@ const FALLBACK_PRODUCTS = [
           {
             value: "matte-hardwax",
             label: "Matte hardwax",
-            hideWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board", "pizza-peel"] },
+            hideWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board", "pizza-peel", "spice-rack"] },
           },
           {
             value: "unfinished-board",
