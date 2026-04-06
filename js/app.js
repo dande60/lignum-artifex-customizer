@@ -505,11 +505,6 @@ const FALLBACK_PRODUCTS = [
         hideWhen: { field: "board_type", equalsAny: ["spice-rack", "pizza-peel"] },
         choices: [
           {
-            value: "1.0833",
-            label: "1 1/12 in",
-            showWhen: { field: "board_type", equals: "charcuterie-board" },
-          },
-          {
             value: "0.625",
             label: "5/8 in",
             showWhen: { field: "board_type", equals: "spice-rack" },
