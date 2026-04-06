@@ -1002,6 +1002,7 @@ const FALLBACK_PRODUCTS = [
           { value: "matte-hardwax", label: "Matte hardwax" },
           { value: "satin-hardwax", label: "Satin hardwax" },
           { value: "lacquer", label: "Lacquer" },
+          { value: "high-gloss-finish", label: "High Gloss Finish" },
           { value: "other", label: "Other" },
           { value: "needs-guidance", label: "I need finish guidance" },
         ],

@@ -1275,6 +1275,10 @@
             "label": "Lacquer"
           },
           {
+            "value": "high-gloss-finish",
+            "label": "High Gloss Finish"
+          },
+          {
             "value": "other",
             "label": "Other"
           },
