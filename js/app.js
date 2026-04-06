@@ -258,7 +258,7 @@ const FALLBACK_PRODUCTS = [
         required: false,
         choices: [
           { value: "natural", label: "Natural" },
-          { value: "oiled", label: "Oiled" },
+          { value: "oiled", label: "Oiled", hideWhen: { field: "gift_type", equals: "plaque" } },
           { value: "stained", label: "Stained" },
           { value: "lacquer", label: "Lacquer" },
           { value: "other", label: "Other (describe in notes)" },

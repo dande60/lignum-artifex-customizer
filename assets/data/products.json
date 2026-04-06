@@ -168,7 +168,11 @@
           },
           {
             "value": "oiled",
-            "label": "Oiled"
+            "label": "Oiled",
+            "hideWhen": {
+              "field": "gift_type",
+              "equals": "plaque"
+            }
           },
           {
             "value": "stained",
