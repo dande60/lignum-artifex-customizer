@@ -585,11 +585,17 @@ const FALLBACK_PRODUCTS = [
             imageCaption: "Oak",
           },
           {
+            value: "pine",
+            label: "Pine",
+            showWhen: { field: "board_type", equals: "spice-rack" },
+          },
+          {
             value: "olive-wood",
             label: "Olive wood",
             image: "assets/images/wood-species/olive-wood.jpg",
             imageAlt: "Olive wood grain sample",
             imageCaption: "Olive wood",
+            hideWhen: { field: "board_type", equals: "spice-rack" },
           },
           {
             value: "pear-wood",
@@ -597,8 +603,13 @@ const FALLBACK_PRODUCTS = [
             image: "assets/images/wood-species/pear-wood.jpg",
             imageAlt: "Pear wood grain sample",
             imageCaption: "Pear wood",
+            hideWhen: { field: "board_type", equals: "spice-rack" },
           },
-          { value: "needs-guidance", label: "Exotics and more Please describe in notes" },
+          {
+            value: "needs-guidance",
+            label: "Exotics and more Please describe in notes",
+            hideWhen: { field: "board_type", equals: "spice-rack" },
+          },
         ],
       },
       {
