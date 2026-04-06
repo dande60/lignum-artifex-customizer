@@ -880,6 +880,14 @@
             }
           },
           {
+            "value": "food-grade-oil-wax-custom",
+            "label": "Food grade oil and Wax",
+            "showWhen": {
+              "field": "board_type",
+              "equals": "custom-board"
+            }
+          },
+          {
             "value": "unfinished",
             "label": "Unfinished",
             "showWhen": {

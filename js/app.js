@@ -710,6 +710,11 @@ const FALLBACK_PRODUCTS = [
             label: "Food grade oil and wax",
             showWhen: { field: "board_type", equalsAny: ["charcuterie-board", "cutting-board"] },
           },
+          {
+            value: "food-grade-oil-wax-custom",
+            label: "Food grade oil and Wax",
+            showWhen: { field: "board_type", equals: "custom-board" },
+          },
           { value: "unfinished", label: "Unfinished", showWhen: { field: "board_type", equals: "pizza-peel" } },
           {
             value: "food-grade-finish",
