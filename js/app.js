@@ -252,7 +252,7 @@ const FALLBACK_PRODUCTS = [
       },
       {
         id: "finish",
-        label: "Finish Direction",
+        label: "Finishes",
         type: "select",
         showChoiceVisual: false,
         required: false,
@@ -675,7 +675,7 @@ const FALLBACK_PRODUCTS = [
       },
       {
         id: "finish",
-        label: "Finish Direction",
+        label: "Finishes",
         type: "select",
         showChoiceVisual: false,
         required: true,
@@ -994,7 +994,7 @@ const FALLBACK_PRODUCTS = [
       },
       {
         id: "finish",
-        label: "Finish Direction",
+        label: "Finishes",
         type: "select",
         showChoiceVisual: false,
         required: true,

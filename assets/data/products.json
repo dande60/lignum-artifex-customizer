@@ -157,7 +157,7 @@
       },
       {
         "id": "finish",
-        "label": "Finish Direction",
+        "label": "Finishes",
         "type": "select",
         "showChoiceVisual": false,
         "required": false,
@@ -802,7 +802,7 @@
       },
       {
         "id": "finish",
-        "label": "Finish Direction",
+        "label": "Finishes",
         "type": "select",
         "showChoiceVisual": false,
         "required": true,
@@ -1257,7 +1257,7 @@
       },
       {
         "id": "finish",
-        "label": "Finish Direction",
+        "label": "Finishes",
         "type": "select",
         "showChoiceVisual": false,
         "required": true,
