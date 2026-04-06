@@ -530,6 +530,11 @@ const FALLBACK_PRODUCTS = [
             showWhen: { field: "board_type", equals: "charcuterie-board" },
           },
           {
+            value: "1.5",
+            label: "1 1/2 in",
+            showWhen: { field: "board_type", equals: "charcuterie-board" },
+          },
+          {
             value: "1",
             label: "1 in",
             showWhen: { field: "board_type", equals: "spice-rack" },
