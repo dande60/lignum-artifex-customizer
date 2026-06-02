@@ -269,7 +269,12 @@ const FALLBACK_PRODUCTS = [
         required: false,
         suppressConditionalHighlight: true,
         showWhen: { field: "gift_type", equals: "baby-name-gift" },
-        placeholder: "Birth date",
+        placeholder: "MM-DD-YYYY",
+        maxLength: 10,
+        inputMode: "numeric",
+        format: "mm-dd-yyyy",
+        pattern: "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])-\\d{4}$",
+        validationMessage: "Use MM-DD-YYYY.",
       },
       {
         id: "engraving_style",
@@ -1311,7 +1316,10 @@ function bindStaticEvents() {
     updateSummary();
   };
 
-  form.addEventListener("input", refreshDynamicState);
+  form.addEventListener("input", (event) => {
+    normalizeFormattedInput(event.target);
+    refreshDynamicState();
+  });
   form.addEventListener("change", (event) => {
     enforceCheckboxGroupRules(event.target);
     refreshDynamicState();
@@ -1827,6 +1835,22 @@ function createControl(field) {
     control.maxLength = Number(field.maxLength);
   }
 
+  if (field.inputMode && field.type !== "notice") {
+    control.inputMode = field.inputMode;
+  }
+
+  if (field.pattern && field.type !== "notice") {
+    control.pattern = field.pattern;
+  }
+
+  if (field.validationMessage && field.type !== "notice") {
+    control.dataset.validationMessage = field.validationMessage;
+  }
+
+  if (field.format && field.type !== "notice") {
+    control.dataset.format = field.format;
+  }
+
   if (typeof field.min !== "undefined" && field.type !== "notice") {
     control.min = String(field.min);
   }
@@ -2005,6 +2029,32 @@ function syncDynamicChoices() {
       updateCheckboxGroupPlaceholder(field, getNamedControl(field.id));
     }
   });
+}
+
+function normalizeFormattedInput(target) {
+  if (!(target instanceof HTMLInputElement)) {
+    return;
+  }
+
+  if (target.dataset.format === "mm-dd-yyyy") {
+    target.value = formatDateAsMonthDayYear(target.value);
+  }
+}
+
+function formatDateAsMonthDayYear(value) {
+  const digits = String(value || "")
+    .replace(/\D/g, "")
+    .slice(0, 8);
+
+  if (digits.length <= 2) {
+    return digits;
+  }
+
+  if (digits.length <= 4) {
+    return `${digits.slice(0, 2)}-${digits.slice(2)}`;
+  }
+
+  return `${digits.slice(0, 2)}-${digits.slice(2, 4)}-${digits.slice(4)}`;
 }
 
 function resolveFieldLabel(field) {
@@ -2927,6 +2977,19 @@ function validateForm() {
       isValid = false;
       wrapper?.classList.add("is-invalid");
       setFieldError(fieldId, "Enter a valid email address.");
+      return;
+    }
+
+    if (
+      control instanceof HTMLInputElement &&
+      control.type === "text" &&
+      control.value &&
+      control.pattern &&
+      control.validity.patternMismatch
+    ) {
+      isValid = false;
+      wrapper?.classList.add("is-invalid");
+      setFieldError(fieldId, control.dataset.validationMessage || "Enter a valid value.");
       return;
     }
 

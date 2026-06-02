@@ -186,7 +186,12 @@
             "field": "gift_type",
             "equals": "baby-name-gift"
           },
-          "placeholder": "Birth date"
+          "placeholder": "MM-DD-YYYY",
+          "maxLength": 10,
+          "inputMode": "numeric",
+          "format": "mm-dd-yyyy",
+          "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])-\\d{4}$",
+          "validationMessage": "Use MM-DD-YYYY."
         },
         {
           "id": "engraving_style",
