@@ -220,7 +220,7 @@ const FALLBACK_PRODUCTS = [
         required: false,
         labelOverrides: [
           {
-            label: "Baby's Name",
+            label: "Baby's first name",
             when: { field: "gift_type", equals: "baby-name-gift" },
           },
         ],
