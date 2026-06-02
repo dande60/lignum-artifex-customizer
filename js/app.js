@@ -246,17 +246,11 @@ const FALLBACK_PRODUCTS = [
         type: "select",
         required: false,
         choices: [
-          { value: "classic-serif", label: "Classic serif" },
-          { value: "times-roman", label: "Times Roman" },
-          { value: "modern-sans", label: "Modern sans" },
-          { value: "arial", label: "Arial" },
-          { value: "cormorant-garamond", label: "Cormorant Garamond" },
-          { value: "marcellus", label: "Marcellus" },
-          { value: "josefin-sans", label: "Josefin Sans" },
-          { value: "script", label: "Allura" },
-          { value: "great-vibes", label: "Great Vibes" },
+          { value: "albertino", label: "Albertino" },
+          { value: "amatic-sc", label: "Amatic SC" },
+          { value: "allura", label: "Allura" },
           { value: "parisienne", label: "Parisienne" },
-          { value: "decide-later", label: "* Decide later *" },
+          { value: "brittany-signature", label: "Brittany Signature" },
         ],
       },
       {
@@ -762,17 +756,11 @@ const FALLBACK_PRODUCTS = [
         required: false,
         hideWhen: { field: "board_type", equals: "pizza-peel" },
         choices: [
-          { value: "classic-serif", label: "Classic serif" },
-          { value: "times-roman", label: "Times Roman" },
-          { value: "modern-sans", label: "Modern sans" },
-          { value: "arial", label: "Arial" },
-          { value: "cormorant-garamond", label: "Cormorant Garamond" },
-          { value: "marcellus", label: "Marcellus" },
-          { value: "josefin-sans", label: "Josefin Sans" },
-          { value: "script", label: "Allura" },
-          { value: "great-vibes", label: "Great Vibes" },
+          { value: "albertino", label: "Albertino" },
+          { value: "amatic-sc", label: "Amatic SC" },
+          { value: "allura", label: "Allura" },
           { value: "parisienne", label: "Parisienne" },
-          { value: "decide-later", label: "* Decide later *" },
+          { value: "brittany-signature", label: "Brittany Signature" },
         ],
       },
       {
@@ -1109,17 +1097,11 @@ const hiddenSummary = document.getElementById("hidden-summary");
 const hiddenSubject = document.getElementById("hidden-subject");
 
 const FONT_PREVIEW_CLASS_MAP = {
-  "classic-serif": "font-preview-serif",
-  "times-roman": "font-preview-times-roman",
-  "modern-sans": "font-preview-sans",
-  arial: "font-preview-arial",
-  "cormorant-garamond": "font-preview-cormorant",
-  marcellus: "font-preview-marcellus",
-  "josefin-sans": "font-preview-josefin",
-  script: "font-preview-script",
-  "great-vibes": "font-preview-great-vibes",
+  albertino: "font-preview-albertino",
+  "amatic-sc": "font-preview-amatic-sc",
+  allura: "font-preview-allura",
   parisienne: "font-preview-parisienne",
-  "decide-later": "font-preview-neutral",
+  "brittany-signature": "font-preview-brittany-signature",
 };
 
 document.addEventListener("DOMContentLoaded", init);

@@ -1209,58 +1209,21 @@ textarea {
   color: rgba(25, 37, 55, 0.68);
 }
 
-.font-preview-serif {
-  font-family: "Cinzel", Georgia, serif;
-  font-size: clamp(1.35rem, 2.1vw, 1.9rem);
-  letter-spacing: 0.04em;
-}
-
-.font-preview-times-roman {
-  font-family: "Times New Roman", Times, serif;
-  font-size: clamp(1.35rem, 2.05vw, 1.85rem);
-}
-
-.font-preview-sans {
-  font-family: "Work Sans", Arial, sans-serif;
-  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
-  font-weight: 500;
-}
-
-.font-preview-arial {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
-  font-weight: 500;
-}
-
-.font-preview-cormorant {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(1.55rem, 2.2vw, 2rem);
-  font-weight: 600;
+.font-preview-albertino {
+  font-family: "Albertino", "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2.15vw, 1.95rem);
   letter-spacing: 0.02em;
 }
 
-.font-preview-marcellus {
-  font-family: "Marcellus", Georgia, serif;
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
-  letter-spacing: 0.08em;
+.font-preview-amatic-sc {
+  font-family: "Amatic SC", cursive;
+  font-size: clamp(1.9rem, 2.8vw, 2.5rem);
+  line-height: 1.05;
 }
 
-.font-preview-josefin {
-  font-family: "Josefin Sans", Arial, sans-serif;
-  font-size: clamp(1.3rem, 1.95vw, 1.7rem);
-  font-weight: 500;
-  letter-spacing: 0.08em;
-}
-
-.font-preview-script {
+.font-preview-allura {
   font-family: "Allura", cursive;
   font-size: clamp(2rem, 3vw, 2.8rem);
-  line-height: 1;
-}
-
-.font-preview-great-vibes {
-  font-family: "Great Vibes", cursive;
-  font-size: clamp(1.95rem, 2.9vw, 2.7rem);
   line-height: 1;
 }
 
@@ -1268,6 +1231,12 @@ textarea {
   font-family: "Parisienne", cursive;
   font-size: clamp(1.95rem, 2.9vw, 2.65rem);
   line-height: 1;
+}
+
+.font-preview-brittany-signature {
+  font-family: "Brittany Signature", cursive;
+  font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+  line-height: 1.02;
 }
 
 .font-preview-neutral {
@@ -2011,4 +1980,15 @@ body.lightbox-is-open {
     gap: 6px;
     padding: 16px 14px;
   }
+}
+@font-face {
+  font-family: "Albertino";
+  src: url("../assets/fonts/Albertino_1.0.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brittany Signature";
+  src: url("../assets/fonts/BrittanySignature.ttf") format("truetype");
+  font-display: swap;
 }

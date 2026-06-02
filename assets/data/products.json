@@ -124,58 +124,34 @@
           }
         ]
       },
-      {
-        "id": "font_style",
-        "label": "Font Style",
-        "type": "select",
-        "required": false,
-        "choices": [
-          {
-            "value": "classic-serif",
-            "label": "Classic serif"
-          },
-          {
-            "value": "times-roman",
-            "label": "Times Roman"
-          },
-          {
-            "value": "modern-sans",
-            "label": "Modern sans"
-          },
-          {
-            "value": "arial",
-            "label": "Arial"
-          },
-          {
-            "value": "cormorant-garamond",
-            "label": "Cormorant Garamond"
-          },
-          {
-            "value": "marcellus",
-            "label": "Marcellus"
-          },
-          {
-            "value": "josefin-sans",
-            "label": "Josefin Sans"
-          },
-          {
-            "value": "script",
-            "label": "Allura"
-          },
-          {
-            "value": "great-vibes",
-            "label": "Great Vibes"
-          },
-          {
-            "value": "parisienne",
-            "label": "Parisienne"
-          },
-          {
-            "value": "decide-later",
-            "label": "* Decide later *"
-          }
-        ]
-      },
+        {
+          "id": "font_style",
+          "label": "Font Style",
+          "type": "select",
+          "required": false,
+          "choices": [
+            {
+              "value": "albertino",
+              "label": "Albertino"
+            },
+            {
+              "value": "amatic-sc",
+              "label": "Amatic SC"
+            },
+            {
+              "value": "allura",
+              "label": "Allura"
+            },
+            {
+              "value": "parisienne",
+              "label": "Parisienne"
+            },
+            {
+              "value": "brittany-signature",
+              "label": "Brittany Signature"
+            }
+          ]
+        },
         {
           "id": "finish",
           "label": "Finishes",
@@ -967,62 +943,38 @@
           }
         ]
       },
-      {
-        "id": "font_style",
-        "label": "Font Style",
-        "type": "select",
-        "required": false,
-        "hideWhen": {
-          "field": "board_type",
-          "equals": "pizza-peel"
+        {
+          "id": "font_style",
+          "label": "Font Style",
+          "type": "select",
+          "required": false,
+          "hideWhen": {
+            "field": "board_type",
+            "equals": "pizza-peel"
+          },
+          "choices": [
+            {
+              "value": "albertino",
+              "label": "Albertino"
+            },
+            {
+              "value": "amatic-sc",
+              "label": "Amatic SC"
+            },
+            {
+              "value": "allura",
+              "label": "Allura"
+            },
+            {
+              "value": "parisienne",
+              "label": "Parisienne"
+            },
+            {
+              "value": "brittany-signature",
+              "label": "Brittany Signature"
+            }
+          ]
         },
-        "choices": [
-          {
-            "value": "classic-serif",
-            "label": "Classic serif"
-          },
-          {
-            "value": "times-roman",
-            "label": "Times Roman"
-          },
-          {
-            "value": "modern-sans",
-            "label": "Modern sans"
-          },
-          {
-            "value": "arial",
-            "label": "Arial"
-          },
-          {
-            "value": "cormorant-garamond",
-            "label": "Cormorant Garamond"
-          },
-          {
-            "value": "marcellus",
-            "label": "Marcellus"
-          },
-          {
-            "value": "josefin-sans",
-            "label": "Josefin Sans"
-          },
-          {
-            "value": "script",
-            "label": "Allura"
-          },
-          {
-            "value": "great-vibes",
-            "label": "Great Vibes"
-          },
-          {
-            "value": "parisienne",
-            "label": "Parisienne"
-          },
-          {
-            "value": "decide-later",
-            "label": "* Decide later *"
-          }
-        ]
-      },
       {
         "id": "quantity",
         "label": "Quantity",
