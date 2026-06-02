@@ -263,6 +263,15 @@ const FALLBACK_PRODUCTS = [
         ],
       },
       {
+        id: "birth_date",
+        label: "Birth Date",
+        type: "text",
+        required: false,
+        suppressConditionalHighlight: true,
+        showWhen: { field: "gift_type", equals: "baby-name-gift" },
+        placeholder: "Birth date",
+      },
+      {
         id: "engraving_style",
         label: "Engraving Style",
         type: "select",
