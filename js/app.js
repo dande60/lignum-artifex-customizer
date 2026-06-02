@@ -178,6 +178,7 @@ const FALLBACK_PRODUCTS = [
           { value: "engraved-keepsake", label: "Engraved keepsake" },
           { value: "plaque", label: "Plaque" },
           { value: "holiday-gift", label: "Holiday gift" },
+          { value: "baby-name-gift", label: "Baby Name Gift" },
           { value: "i-need-guidance", label: "Need Custom Gift" },
         ],
       },
@@ -186,6 +187,7 @@ const FALLBACK_PRODUCTS = [
         label: "Wood Species",
         type: "select",
         required: true,
+        hideWhen: { field: "gift_type", equals: "baby-name-gift" },
         choices: [
           {
             value: "walnut",
@@ -216,6 +218,12 @@ const FALLBACK_PRODUCTS = [
         label: "Personalization / Message",
         type: "text",
         required: false,
+        labelOverrides: [
+          {
+            label: "Baby's Name",
+            when: { field: "gift_type", equals: "baby-name-gift" },
+          },
+        ],
         maxLength: 30,
         helpText: "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
         placeholder: "Name, monogram, date, or phrase",
@@ -225,6 +233,7 @@ const FALLBACK_PRODUCTS = [
         label: "Engraving Style",
         type: "select",
         required: false,
+        hideWhen: { field: "gift_type", equals: "baby-name-gift" },
         choices: [
           { value: "painted", label: "Painted" },
           { value: "epoxy-inlay", label: "Epoxy inlay" },
@@ -256,6 +265,7 @@ const FALLBACK_PRODUCTS = [
         type: "select",
         showChoiceVisual: false,
         required: false,
+        hideWhen: { field: "gift_type", equals: "baby-name-gift" },
         choices: [
           { value: "natural", label: "Natural" },
           { value: "oiled", label: "Oiled", hideWhen: { field: "gift_type", equals: "plaque" } },
@@ -1591,7 +1601,11 @@ function renderDynamicFields(product) {
 
     const label = document.createElement("span");
     label.className = "field-label";
-    label.textContent = field.label;
+    label.dataset.fieldLabelFor = field.id;
+    const labelText = document.createElement("span");
+    labelText.className = "field-label-text";
+    labelText.textContent = resolveFieldLabel(field);
+    label.append(labelText);
     if (field.required) {
       const marker = document.createElement("span");
       marker.className = "field-label-mark";
@@ -1968,6 +1982,15 @@ function syncDynamicChoices() {
   });
 }
 
+function resolveFieldLabel(field) {
+  const overrides = Array.isArray(field.labelOverrides) ? field.labelOverrides : [];
+  const matchingOverride = overrides.find((override) =>
+    matchesVisibilityCondition(override.when, false)
+  );
+
+  return matchingOverride?.label || field.label;
+}
+
 function syncCheckboxGroupOptions(field, control) {
   if (!control || field.type !== "checkbox-group") {
     return;
@@ -2234,8 +2257,25 @@ function applyVisibilityRules() {
       wrapper.classList.remove("is-invalid");
     }
   });
-
+  
+  updateFieldLabels();
   updateChoiceVisuals();
+}
+
+function updateFieldLabels() {
+  if (!state.currentProduct) return;
+
+  state.currentProduct.options.forEach((field) => {
+    const labelTextNode = dynamicFields.querySelector(
+      `[data-field-label-for="${field.id}"] .field-label-text`
+    );
+
+    if (!labelTextNode) {
+      return;
+    }
+
+    labelTextNode.textContent = resolveFieldLabel(field);
+  });
 }
 
 function evaluateVisibility(field) {
@@ -2274,7 +2314,7 @@ function updateSummary() {
       return;
     }
 
-    const line = `${field.label}: ${value}`;
+    const line = `${resolveFieldLabel(field)}: ${value}`;
     summaryItems.push(line);
     summaryLines.push(line);
   });

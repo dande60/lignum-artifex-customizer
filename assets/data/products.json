@@ -82,15 +82,24 @@
           }
         ]
       },
-      {
-        "id": "personalization",
-        "label": "Personalization / Message",
-        "type": "text",
-        "required": false,
-        "maxLength": 30,
-        "helpText": "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
-        "placeholder": "Name, monogram, date, or phrase"
-      },
+        {
+          "id": "personalization",
+          "label": "Personalization / Message",
+          "type": "text",
+          "required": false,
+          "labelOverrides": [
+            {
+              "label": "Baby's Name",
+              "when": {
+                "field": "gift_type",
+                "equals": "baby-name-gift"
+              }
+            }
+          ],
+          "maxLength": 30,
+          "helpText": "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
+          "placeholder": "Name, monogram, date, or phrase"
+        },
         {
           "id": "engraving_style",
           "label": "Engraving Style",
