@@ -246,7 +246,7 @@ const FALLBACK_PRODUCTS = [
         inputMode: "numeric",
         format: "mm-dd-yyyy",
         pattern: "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])-\\d{4}$",
-        validationMessage: "Use MM-DD-YYYY.",
+        validationMessage: "Use a real date in MM-DD-YYYY.",
       },
       {
         id: "engraving_style",
@@ -2057,6 +2057,29 @@ function formatDateAsMonthDayYear(value) {
   return `${digits.slice(0, 2)}-${digits.slice(2, 4)}-${digits.slice(4)}`;
 }
 
+function isValidMonthDayYearDate(value) {
+  const match = /^(\d{2})-(\d{2})-(\d{4})$/.exec(String(value || ""));
+  if (!match) {
+    return false;
+  }
+
+  const month = Number(match[1]);
+  const day = Number(match[2]);
+  const year = Number(match[3]);
+
+  if (!Number.isInteger(month) || !Number.isInteger(day) || !Number.isInteger(year)) {
+    return false;
+  }
+
+  const candidate = new Date(year, month - 1, day);
+
+  return (
+    candidate.getFullYear() === year &&
+    candidate.getMonth() === month - 1 &&
+    candidate.getDate() === day
+  );
+}
+
 function resolveFieldLabel(field) {
   const overrides = Array.isArray(field.labelOverrides) ? field.labelOverrides : [];
   const matchingOverride = overrides.find((override) =>
@@ -2986,6 +3009,18 @@ function validateForm() {
       control.value &&
       control.pattern &&
       control.validity.patternMismatch
+    ) {
+      isValid = false;
+      wrapper?.classList.add("is-invalid");
+      setFieldError(fieldId, control.dataset.validationMessage || "Enter a valid value.");
+      return;
+    }
+
+    if (
+      control instanceof HTMLInputElement &&
+      control.value &&
+      control.dataset.format === "mm-dd-yyyy" &&
+      !isValidMonthDayYearDate(control.value)
     ) {
       isValid = false;
       wrapper?.classList.add("is-invalid");
