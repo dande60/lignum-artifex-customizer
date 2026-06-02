@@ -224,6 +224,12 @@ const FALLBACK_PRODUCTS = [
             when: { field: "gift_type", equals: "baby-name-gift" },
           },
         ],
+        placeholderOverrides: [
+          {
+            placeholder: "Name",
+            when: { field: "gift_type", equals: "baby-name-gift" },
+          },
+        ],
         maxLength: 10,
         helpText: "Maximum 10 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
         placeholder: "Name, monogram, date, or phrase",
@@ -1801,7 +1807,7 @@ function createControl(field) {
   }
 
   if (field.placeholder && field.type !== "notice") {
-    control.placeholder = field.placeholder;
+    control.placeholder = resolveFieldPlaceholder(field);
   }
 
   if (typeof field.defaultValue !== "undefined" && field.type !== "checkbox" && field.type !== "checkbox-group" && field.type !== "notice") {
@@ -1999,6 +2005,17 @@ function resolveFieldLabel(field) {
   );
 
   return matchingOverride?.label || field.label;
+}
+
+function resolveFieldPlaceholder(field) {
+  const overrides = Array.isArray(field.placeholderOverrides)
+    ? field.placeholderOverrides
+    : [];
+  const matchingOverride = overrides.find((override) =>
+    matchesVisibilityCondition(override.when, false)
+  );
+
+  return matchingOverride?.placeholder || field.placeholder || "";
 }
 
 function syncCheckboxGroupOptions(field, control) {
@@ -2285,6 +2302,25 @@ function updateFieldLabels() {
     }
 
     labelTextNode.textContent = resolveFieldLabel(field);
+  });
+
+  updateFieldPlaceholders();
+}
+
+function updateFieldPlaceholders() {
+  if (!state.currentProduct) return;
+
+  state.currentProduct.options.forEach((field) => {
+    if (field.type === "notice" || typeof field.placeholder === "undefined") {
+      return;
+    }
+
+    const control = getNamedControl(field.id);
+    if (!control || field.type === "checkbox-group" || field.type === "checkbox") {
+      return;
+    }
+
+    control.placeholder = resolveFieldPlaceholder(field);
   });
 }
 
