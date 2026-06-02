@@ -31,14 +31,18 @@
             "value": "plaque",
             "label": "Plaque"
           },
-          {
-            "value": "holiday-gift",
-            "label": "Holiday gift"
-          },
-          {
-            "value": "i-need-guidance",
-            "label": "Need Custom Gift"
-          }
+            {
+              "value": "holiday-gift",
+              "label": "Holiday gift"
+            },
+            {
+              "value": "baby-name-gift",
+              "label": "Baby Name Gift"
+            },
+            {
+              "value": "i-need-guidance",
+              "label": "Need Custom Gift"
+            }
         ]
       },
       {
