@@ -247,6 +247,10 @@ const FALLBACK_PRODUCTS = [
         format: "mm-dd-yyyy",
         pattern: "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])-\\d{4}$",
         validationMessage: "Use a real date in MM-DD-YYYY.",
+        derivedDisplay: {
+          format: "long-date",
+          prefix: "Displays as: ",
+        },
       },
       {
         id: "engraving_style",
@@ -1309,6 +1313,7 @@ function bindStaticEvents() {
     syncDynamicChoices();
     applyVisibilityRules();
     updateSwatchPickers();
+    updateFieldDerivedDisplays();
     updateFieldHelpMediaValues();
     updateCheckedNotes();
     updateFontPreviews();
@@ -1554,6 +1559,7 @@ function selectProduct(productId, options = {}) {
   syncDynamicChoices();
   applyVisibilityRules();
   updateSwatchPickers();
+  updateFieldDerivedDisplays();
   updateFieldHelpMediaValues();
   updateCheckedNotes();
   updateFontPreviews();
@@ -1662,6 +1668,13 @@ function renderDynamicFields(product) {
       help.className = "field-help";
       help.textContent = field.helpText;
       wrapper.append(help);
+    }
+
+    if (field.derivedDisplay?.format) {
+      const derivedDisplay = document.createElement("p");
+      derivedDisplay.className = "field-derived-display is-hidden";
+      derivedDisplay.dataset.derivedDisplayFor = field.id;
+      wrapper.append(derivedDisplay);
     }
 
     if (field.helpMedia?.src) {
@@ -2078,6 +2091,58 @@ function isValidMonthDayYearDate(value) {
     candidate.getMonth() === month - 1 &&
     candidate.getDate() === day
   );
+}
+
+function formatLongMonthDayYear(value) {
+  if (!isValidMonthDayYearDate(value)) {
+    return "";
+  }
+
+  const match = /^(\d{2})-(\d{2})-(\d{4})$/.exec(String(value || ""));
+  if (!match) {
+    return "";
+  }
+
+  const month = Number(match[1]);
+  const day = Number(match[2]);
+  const year = Number(match[3]);
+  const candidate = new Date(year, month - 1, day);
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(candidate);
+}
+
+function updateFieldDerivedDisplays() {
+  if (!state.currentProduct) {
+    return;
+  }
+
+  state.currentProduct.options.forEach((field) => {
+    if (!field.derivedDisplay?.format) {
+      return;
+    }
+
+    const wrapper = dynamicFields.querySelector(`[data-field-id="${field.id}"]`);
+    const displayNode = wrapper?.querySelector(`[data-derived-display-for="${field.id}"]`);
+    const input = getNamedControl(field.id);
+
+    if (!displayNode || !input) {
+      return;
+    }
+
+    let formattedValue = "";
+    if (field.derivedDisplay.format === "long-date") {
+      formattedValue = formatLongMonthDayYear(input.value);
+    }
+
+    const prefix = field.derivedDisplay.prefix || "";
+    const shouldShow = Boolean(formattedValue) && !wrapper?.classList.contains("is-hidden");
+    displayNode.textContent = shouldShow ? `${prefix}${formattedValue}` : "";
+    displayNode.classList.toggle("is-hidden", !shouldShow);
+  });
 }
 
 function resolveFieldLabel(field) {
