@@ -1277,6 +1277,23 @@ textarea {
   box-shadow: 0 0 0 3px rgba(143, 45, 45, 0.08);
 }
 
+[data-field-id="style_option"].field-group-conditional.is-conditional-active {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+[data-field-id="style_option"].field-group-conditional.is-conditional-active .field-label {
+  color: rgba(25, 37, 55, 0.82);
+}
+
+[data-field-id="style_option"].field-group-conditional.is-conditional-active input,
+[data-field-id="style_option"].field-group-conditional.is-conditional-active select,
+[data-field-id="style_option"].field-group-conditional.is-conditional-active textarea {
+  border-color: rgba(25, 37, 55, 0.14);
+  box-shadow: none;
+}
+
 .choice-visual {
   display: grid;
   gap: 10px;

@@ -234,6 +234,7 @@ const FALLBACK_PRODUCTS = [
         type: "select",
         layout: "wide",
         required: true,
+        suppressConditionalHighlight: true,
         showWhen: { field: "gift_type", equals: "baby-name-gift" },
         helpMedia: {
           src: "assets/images/baby-name-Selection.png",

@@ -106,6 +106,7 @@
           "type": "select",
           "layout": "wide",
           "required": true,
+          "suppressConditionalHighlight": true,
           "showWhen": {
             "field": "gift_type",
             "equals": "baby-name-gift"
