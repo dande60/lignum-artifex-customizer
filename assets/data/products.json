@@ -104,10 +104,16 @@
           "id": "style_option",
           "label": "Style Option",
           "type": "select",
+          "layout": "wide",
           "required": true,
           "showWhen": {
             "field": "gift_type",
             "equals": "baby-name-gift"
+          },
+          "helpMedia": {
+            "src": "assets/images/baby-name-Selection.png",
+            "alt": "Baby name style reference chart showing options A through L.",
+            "caption": "Style reference for options A through L."
           },
           "choices": [
             {

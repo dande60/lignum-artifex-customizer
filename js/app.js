@@ -232,8 +232,14 @@ const FALLBACK_PRODUCTS = [
         id: "style_option",
         label: "Style Option",
         type: "select",
+        layout: "wide",
         required: true,
         showWhen: { field: "gift_type", equals: "baby-name-gift" },
+        helpMedia: {
+          src: "assets/images/baby-name-Selection.png",
+          alt: "Baby name style reference chart showing options A through L.",
+          caption: "Style reference for options A through L.",
+        },
         choices: [
           { value: "a", label: "A" },
           { value: "b", label: "B" },
@@ -1593,7 +1599,7 @@ function renderDynamicFields(product) {
 
   product.options.forEach((field) => {
     const wrapper = document.createElement("div");
-    wrapper.className = `field-group${field.type === "textarea" || field.type === "notice" || field.presentation === "swatch-grid" ? " field-group-wide" : ""}`;
+    wrapper.className = `field-group${field.type === "textarea" || field.type === "notice" || field.presentation === "swatch-grid" || field.layout === "wide" ? " field-group-wide" : ""}`;
     if (field.id === "finish" || field.id === "material_direction") {
       wrapper.classList.add("field-group-compact");
     }

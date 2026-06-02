@@ -1047,6 +1047,15 @@ textarea {
   color: rgba(25, 37, 55, 0.64);
 }
 
+[data-field-id="style_option"] .field-help-media {
+  max-width: min(100%, 860px);
+}
+
+[data-field-id="style_option"] .field-help-media-image {
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.96);
+}
+
 .field-notice {
   display: grid;
   gap: 10px;
@@ -1948,6 +1957,10 @@ body.lightbox-is-open {
     gap: 4px;
     padding: 6px;
     max-width: 220px;
+  }
+
+  [data-field-id="style_option"] .field-help-media {
+    max-width: 100%;
   }
 
   .font-preview {
