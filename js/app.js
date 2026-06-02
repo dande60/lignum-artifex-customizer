@@ -249,6 +249,7 @@ const FALLBACK_PRODUCTS = [
         validationMessage: "Use a real date in MM-DD-YYYY.",
         derivedDisplay: {
           format: "long-date",
+          prefix: "Date confirmation: ",
         },
       },
       {

@@ -126,7 +126,8 @@
           "pattern": "^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])-\\d{4}$",
           "validationMessage": "Use a real date in MM-DD-YYYY.",
           "derivedDisplay": {
-            "format": "long-date"
+            "format": "long-date",
+            "prefix": "Date confirmation: "
           }
         },
         {
