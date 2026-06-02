@@ -284,7 +284,7 @@ const FALLBACK_PRODUCTS = [
         helpMedia: {
           src: "assets/images/baby-name-Selection.png",
           alt: "Baby name style reference chart showing options A through L.",
-          caption: "Style reference for options A through L.",
+          caption: "Style reference for options A through L. Each disc is approx. 5 inches round.",
         },
         choices: [
           { value: "a", label: "A" },
