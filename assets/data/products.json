@@ -45,12 +45,16 @@
             }
         ]
       },
-      {
-        "id": "material_direction",
-        "label": "Wood Species",
-        "type": "select",
-        "required": true,
-        "choices": [
+        {
+          "id": "material_direction",
+          "label": "Wood Species",
+          "type": "select",
+          "required": true,
+          "hideWhen": {
+            "field": "gift_type",
+            "equals": "baby-name-gift"
+          },
+          "choices": [
           {
             "value": "walnut",
             "label": "Walnut",
@@ -87,12 +91,16 @@
         "helpText": "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
         "placeholder": "Name, monogram, date, or phrase"
       },
-      {
-        "id": "engraving_style",
-        "label": "Engraving Style",
-        "type": "select",
-        "required": false,
-        "choices": [
+        {
+          "id": "engraving_style",
+          "label": "Engraving Style",
+          "type": "select",
+          "required": false,
+          "hideWhen": {
+            "field": "gift_type",
+            "equals": "baby-name-gift"
+          },
+          "choices": [
           {
             "value": "painted",
             "label": "Painted"
@@ -159,13 +167,17 @@
           }
         ]
       },
-      {
-        "id": "finish",
-        "label": "Finishes",
-        "type": "select",
-        "showChoiceVisual": false,
-        "required": false,
-        "choices": [
+        {
+          "id": "finish",
+          "label": "Finishes",
+          "type": "select",
+          "showChoiceVisual": false,
+          "required": false,
+          "hideWhen": {
+            "field": "gift_type",
+            "equals": "baby-name-gift"
+          },
+          "choices": [
           {
             "value": "natural",
             "label": "Natural"
