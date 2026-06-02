@@ -224,8 +224,8 @@ const FALLBACK_PRODUCTS = [
             when: { field: "gift_type", equals: "baby-name-gift" },
           },
         ],
-        maxLength: 30,
-        helpText: "Maximum 30 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
+        maxLength: 10,
+        helpText: "Maximum 10 characters. Font size and available space will determine what fits. Need more? Describe it in the note section.",
         placeholder: "Name, monogram, date, or phrase",
       },
       {
